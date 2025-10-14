@@ -15,7 +15,7 @@ const config: Config = {
         'text-primary': '#111827',
       },
       fontFamily: {
-        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['ui-sans-serif', 'system-ui', 'sans-serif', 'Montserrat'],
       },
     },
   },

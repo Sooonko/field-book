@@ -133,7 +133,15 @@ const ContactUsPage = () => {
 
               <div className="mt-8 flex-1">
                 <div className="w-full h-full rounded-[48px] overflow-hidden bg-gray-300">
-                 
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.2935671163296!2d127.1479!3d37.4665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca98a502ae36f%3A0x1f6d6eb5e9e!2z7ISc7Jq47Yq567OE7IucIOygnOq1rCDsm5DsspzsnbTtlZzroZwx!5e0!3m2!1sko!2skr!4v1690000000000"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
             </div>
