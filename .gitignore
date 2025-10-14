@@ -1,0 +1,6 @@
+.DS_Store
+/.next/
+.next/server/
+node_modules/
+.next/static/
+/node_modules
