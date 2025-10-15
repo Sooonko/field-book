@@ -1,6 +1,7 @@
 'use client';
 
 import PageLayout from '../../components/PageLayout';
+import Image from 'next/image';
 
 const AboutUsPage = () => {
   return (
@@ -17,29 +18,59 @@ const AboutUsPage = () => {
         </section>
 
         {/* Our Goal Section */}
-        <section className="py-16 flex items-center">
-          <div className="w-1/2 pr-8">
-            <h2 className="text-3xl font-bold mb-8">Our Goal</h2>
-            <div className="space-y-4">
+        <section className="py-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-gray-900">Our Goal</h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left: Goals list */}
+            <div className="space-y-8">
               <div>
-                <h3 className="font-bold">신뢰성</h3>
-                <p className="text-sm text-gray-600">안정성이 검증된 내구성과 안전 제어로...</p>
+                <h3 className="text-lg font-semibold text-gray-900">신뢰성</h3>
+                <p className="mt-2 text-gray-600 leading-relaxed">
+                  현장에서 검증된 내구성과 안전 제어로, 언제나 믿을 수 있는 파트너가 됩니다.
+                </p>
               </div>
               <div>
-                <h3 className="font-bold">지능형</h3>
-                <p className="text-sm text-gray-600">딥러닝 비전과 정밀 GPS를 기반으로...</p>
+                <h3 className="text-lg font-semibold text-gray-900">지능화</h3>
+                <p className="mt-2 text-gray-600 leading-relaxed">
+                  비전 인식과 정밀 GPS를 기반으로, 플레이를 기록하고 분석하며 더 스마트한 라운드를 만듭니다.
+                </p>
               </div>
               <div>
-                <h3 className="font-bold">편의성</h3>
-                <p className="text-sm text-gray-600">카트 앱 서버를 하나로 이어...</p>
+                <h3 className="text-lg font-semibold text-gray-900">연결성</h3>
+                <p className="mt-2 text-gray-600 leading-relaxed">
+                  카트·앱·서버를 하나로 이어, 운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
+                </p>
               </div>
               <div>
-                <h3 className="font-bold">안전</h3>
-                <p className="text-sm text-gray-600">No-Go Zone과 장애물 감지...</p>
+                <h3 className="text-lg font-semibold text-gray-900">안전</h3>
+                <p className="mt-2 text-gray-600 leading-relaxed">
+                  No-Go Zone과 장애를 감지, 지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: Overlapping images */}
+            <div className="relative">
+              <div className="relative h-[420px] w-full">
+                <Image
+                  src="/BI.svg"
+                  alt="Golf ball on green"
+                  fill
+                  className="rounded-3xl object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute -bottom-10 right-0 w-[220px] md:w-[260px] h-[320px] md:h-[360px]">
+                <Image
+                  src="/BI.svg"
+                  alt="Golf hole with flag"
+                  fill
+                  className="rounded-2xl object-cover shadow-2xl ring-1 ring-black/5 bg-white"
+                />
               </div>
             </div>
           </div>
-          <div className="w-1/2 h-80 bg-gray-300 rounded-lg"></div>
         </section>
 
         {/* Product - FieldBOOK Section */}
