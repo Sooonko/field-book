@@ -6,6 +6,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -15,7 +16,8 @@ const config: Config = {
         'text-primary': '#111827',
       },
       fontFamily: {
-        sans: ['ui-sans-serif', 'system-ui', 'sans-serif', 'Montserrat'],
+        sans: ['ui-sans-serif', 'system-ui', 'sans-serif', 'Montserrat', 'Pretendard'],
+        pretes: ['Pretendard', 'sans-serif'],
       },
     },
   },

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import PageLayout from '../../components/PageLayout';
 import PrivacyModal from '../../components/PrivacyModal';
 import InquiryReceiveModal from '../../components/InquiryReceiveModal';
-import Image from 'next/image';
 
 const ContactUsPage = () => {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
@@ -22,10 +21,10 @@ const ContactUsPage = () => {
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left Column: Form */}
             <div className="flex flex-col">
-              <h1 className="text-3xl font-bold font-pretendard text-[32px] leading-[140%]">
+              <h1 className="text-3xl font-bold font-pret text-[32px] leading-[140%]">
                 무엇이든 편하게 물어보세요.
               </h1>
-              <p className="text-gray-700 mt-2 font-pretendard text-[18px] leading-[140%]">
+              <p className="text-gray-700 mt-2 font-pret text-[18px] leading-[140%]">
                 도입 상담을 원하시면 언제든지 문의 주세요.
                 <br />
                 담당자가 검토 후 영업일 기준 2영업일 내 회신드립니다.
@@ -88,13 +87,13 @@ const ContactUsPage = () => {
                       className="mt-1 block w-full border border-gray-200 rounded-xl p-3"
                     ></textarea>
                   </div>
-                  <div className="md:col-span-2 mt-auto">
-                    <p className="text-xs text-gray-500">
+                  <div className="md:col-span-2 mt-[-0.5rem]">
+                    <p className="text-xs text-gray-500 text-[13px]">
                       제출하신 정보는 문의에 대한 답변을 드리는 용도로만 활용되며{' '}
                       <button
                         type="button"
                         onClick={() => setIsPrivacyModalOpen(true)}
-                        className="underline font-bold"
+                        className="underline font-bold text-[13px] cursor-pointer"
                       >
                         [개인정보 처리방침]
                       </button>
