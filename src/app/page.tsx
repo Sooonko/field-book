@@ -25,31 +25,35 @@ export default function Home() {
             <source src="/main_bg_video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-black opacity-80"></div>
         </div>
         <Header />
-        <main className="relative z-10 min-h-screen flex flex-col items-center justify-center text-white text-center">
-          <div
-            className="absolute flex flex-col items-start"
-            style={{ bottom: "80px", left: "76px" }}
-          >
-            <h1
-              className="font-bold tracking-wider"
-              style={{ fontSize: "60px", marginBottom: "8px" }}
-            >
-              {t("main_title")}
-            </h1>
-            <p className="text-xl md:text-2xl mt-4 mb-6 font-light">
-              {t("subtitle")}
-            </p>
-            <p className="max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-8 whitespace-pre-line text-start">
-              {t("description")}
-            </p>
+        <main className="relative z-10 min-h-screen flex flex-col items-center justify-end text-white pb-10">
+          <div className="w-full flex flex-col items-center text-center md:items-start md:text-start px-4 md:px-20 lg:px-40 mb-20">
+            <div className="mb-10 md:mb-20">
+              <div className="mb-5">
+                <h1 className="font-black text-4xl md:text-5xl lg:text-6xl leading-tight font-montserrat mb-2">
+                  {t("main_title")}
+                </h1>
+                <p className="max-w-2xl mx-auto text-lg md:text-2xl font-extrabold leading-normal font-pretendard whitespace-pre-line text-center md:text-start">
+                  모든 순간을 함께하는 프리미엄&nbsp;
+                  <span className="font-medium text-lg md:text-2xl font-pretendard leading-normal">
+                    AI Caddie
+                  </span>
+                </p>
+              </div>
+              <p className="max-w-2xl mx-auto text-lg md:text-xl font-normal leading-normal font-pretendard whitespace-pre-line text-center md:text-start">
+                {t("description")}
+              </p>
+            </div>
             <button
-              className="bg-transparent border border-white rounded-full text-white font-bold py-3 px-8 text-sm hover:bg-white hover:text-black transition-colors duration-300"
+              className="w-full md:w-[296px] h-[58px] px-7 py-3 border-2 border-white rounded-full bg-transparent text-white font-medium text-[24px] leading-[140%] tracking-[0%] font-montserrat hover:bg-white hover:text-black transition-colors duration-300"
               onClick={() => (window.location.href = "/product")}
             >
-              {t("explore_button")}
+              Explore&nbsp;
+              <span className="font-black text-[24px] leading-[140%] tracking-[0%] font-montserrat">
+                FieldBook
+              </span>
             </button>
           </div>
         </main>

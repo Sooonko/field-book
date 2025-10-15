@@ -50,19 +50,21 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
   return (
     <>
       <header
-        className={`fixed top-[50px] left-[76px] right-[76px] z-30 ${bgColor} ${textColor}`}
+        className={`fixed top-0 left-0 z-30 w-full ${bgColor} ${textColor}`}
       >
-        <div className="flex justify-between items-start ">
+        <div
+          className="flex justify-between items-start p-4 md:p-8 lg:px-16 lg:py-12"
+        >
           <Link href="/" className={`flex flex-col items-start ${logoColor}`}>
             <Image
               src="/BI.svg"
               alt="logo"
               className={`align-middle ${isSolid ? "filter invert" : ""}`}
-              width={130}
-              height={86}
-            />{" "}
+              width={180}
+              height={32}
+            />
           </Link>
-          <div className="flex items-center space-x-5 h-full">
+          <div className="flex items-center space-x-3 md:space-x-5 h-full">
             <div className="relative flex items-center">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
@@ -71,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
                 <Image
                   src="/language.svg"
                   alt="Language"
-                  className={`w-6 h-6 align-middle ${
+                  className={`w-5 h-5 md:w-6 md:h-6 align-middle ${
                     isSolid ? "filter invert" : ""
                   }`}
                   width={38}
