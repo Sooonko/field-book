@@ -240,6 +240,29 @@ const ProductPage = () => {
               </p>
             </section>
           ))}
+          {/* New Two-Column Section */}
+          <section className="container mx-auto flex justify-center py-24">
+            <div className="flex flex-row items-center gap-[60px]">
+              {/* Left Box */}
+              <div className="w-[360px] h-[440px] rounded-[20px] bg-gray-200 flex-shrink-0" />
+
+              {/* Right Content */}
+              <div className="flex flex-col max-w-lg">
+                <h2 className="font-sans font-extrabold text-[32px] leading-[1.4] tracking-normal mb-2">
+                  A Great Feature
+                </h2>
+                <h3 className="font-pretes font-medium text-2xl leading-[1.4] tracking-normal mb-5">
+                  With an amazing subtitle
+                </h3>
+                <p className="font-pretes font-normal text-xl leading-[1.4] tracking-normal text-gray-600">
+                  This section describes the feature in detail, explaining all
+                  the benefits and how it helps the user achieve their goals.
+                  It's crafted with care and attention to provide clarity and
+                  encouragement.
+                </p>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </PageLayout>
