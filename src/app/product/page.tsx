@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageLayout from "../../components/PageLayout";
 import Image from "next/image";
 
@@ -17,6 +17,43 @@ const features = [
   { icon: "/golfmap.svg", title: "전 세계 4만개 코스맵" },
 ];
 
+const navLinks = [
+  {
+    href: "#auto-follow",
+    text: "Auto - Follow",
+    description:
+      "AI 비전으로 사용자를 실시간 인식하여 완전한 핸즈프리 주행을 제공합니다.",
+  },
+  {
+    href: "#smart-guide",
+    text: "스마트 클럽 가이드",
+    description: "공략 거리 별 최적의 클럽 추천을 제공합니다.",
+  },
+  {
+    href: "#swing-analysis",
+    text: "스윙 녹화 / 분석",
+    description: "스윙과 샷 위치를 촬영·저장 후 언제든 재생하세요.",
+  },
+  {
+    href: "#no-go-zone",
+    text: "장애물 감지",
+    description:
+      "AI 비전과 정밀 GPS로 장애물을 감지하고 제한 구역을 자동 회피합니다.",
+  },
+  {
+    href: "#driving-history",
+    text: "주행 능력",
+    description:
+      "최대 25° 경사도 등판이 가능한 고출력 모터와 미끄럼 방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.",
+  },
+  { href: "#ip5x", text: "IP5X 방수" },
+  { href: "#battery", text: "대용량 배터리" },
+  { href: "#101screen", text: "10.1 인치 터치 스크린" },
+  { href: "#fieldbook-app", text: "FieldBOOK  App" },
+  { href: "#jivon", text: "제원" },
+  { href: "#jvyv", text: "주요 기능" },
+];
+
 // Placeholder for icons used in the page
 const IconPlaceholder = ({ name }: { name: string }) => (
   <div className="flex flex-col items-center text-center">
@@ -27,6 +64,38 @@ const IconPlaceholder = ({ name }: { name: string }) => (
 
 const ProductPage = () => {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("main section[id]");
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-25% 0px -75% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, [navLinks]);
+
   return (
     <PageLayout isSolid={true}>
       <section className="relative w-full h-[800px] overflow-hidden">
@@ -126,67 +195,51 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-
-      <div className="container mx-auto flex mt-10">
+      {/* end_nem */}
+      <div className="container mx-auto flex mt-10 gap-[100px]">
         {/* Sticky Sidebar */}
-        <aside className="w-1/4 py-8 pr-8 sticky top-24 h-screen self-start">
-          <h2 className="font-bold mb-4">FieldBook Technology</h2>
+        <aside className="w-1/4 py-8 sticky top-24 h-screen self-start">
+          <h2 className="font-sans text-[28px] leading-[1.4] tracking-normal mb-[48px]">
+            <span className="font-extrabold">FieldBook</span>
+            <span className="font-medium"> Technology</span>
+          </h2>
           <ul className="space-y-3 text-sm text-gray-600">
-            <li>
-              <a href="#auto-follow" className="hover:text-black">
-                Auto - Follow
-              </a>
-            </li>
-            <li>
-              <a href="#smart-guide" className="hover:text-black">
-                스마트 클럽 가이드
-              </a>
-            </li>
-            <li>
-              <a href="#swing-analysis" className="hover:text-black">
-                스윙 녹화/분석
-              </a>
-            </li>
-            <li>
-              <a href="#no-go-zone" className="hover:text-black">
-                No-Go Zone / 장애물 감지
-              </a>
-            </li>
-            <li>
-              <a href="#driving-history" className="hover:text-black">
-                주행 이력
-              </a>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={`hover:text-black transition-all duration-300 ease-in-out ${
+                    activeSection === link.href.substring(1)
+                      ? "font-pretes font-black text-[26px] leading-[1.4] tracking-normal underline text-black"
+                      : "font-pretes font-medium text-[20px] leading-[1.4] tracking-normal text-gray-600"
+                  }`}
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
           </ul>
         </aside>
 
         {/* Main Content */}
-        <main className="w-3/4 py-8">
-          <section id="auto-follow" className="mb-16">
-            <h3 className="text-2xl font-bold mb-4">Auto - Follow</h3>
-            <p className="text-gray-600 mb-4">
-              카트가 플레이어를 자동으로 따라다니며 촬영합니다.
-            </p>
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
-          </section>
-          <section id="smart-guide" className="mb-16">
-            <h3 className="text-2xl font-bold mb-4">스마트 클럽 가이드</h3>
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
-          </section>
-          <section id="swing-analysis" className="mb-16">
-            <h3 className="text-2xl font-bold mb-4">스윙 녹화 / 분석</h3>
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
-          </section>
-          <section id="no-go-zone" className="mb-16">
-            <h3 className="text-2xl font-bold mb-4">
-              No-Go Zone / 장애물 감지
-            </h3>
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
-          </section>
-          <section id="driving-history" className="mb-16">
-            <h3 className="text-2xl font-bold mb-4">주행 이력</h3>
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
-          </section>
+        <main className="w-3/4 py-8 ">
+          {navLinks.map((link) => (
+            <section key={link.href} id={link.href.substring(1)}>
+              <div
+                className="w-[964px] h-[542px] rounded-[20px] bg-gray-100 p-10 "
+                style={{ marginTop: "160px" }}
+              ></div>
+              <h3
+                style={{ marginTop: "32px" }}
+                className="font-sans font-extrabold text-[32px] leading-[1.4] tracking-normal pb-3"
+              >
+                {link.text}
+              </h3>
+              <p className="font-pretes font-medium text-xl leading-[1.4] tracking-normal text-[#626262]">
+                {link.description}
+              </p>
+            </section>
+          ))}
         </main>
       </div>
     </PageLayout>
