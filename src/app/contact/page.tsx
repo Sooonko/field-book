@@ -16,8 +16,8 @@ const ContactUsPage = () => {
 
   return (
     <PageLayout>
-      <main className="flex flex-col items-center px-4 py-16 bg-white">
-        <div className="w-full max-w-6xl mx-auto">
+      <main className=" flex-col items-center px-4 py-16 bg-white flex ">
+        <div className="w-full max-w-6xl ">
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left Column: Form */}
             <div className="flex flex-col">
@@ -31,78 +31,78 @@ const ContactUsPage = () => {
               </p>
 
               <form className="mt-12 flex flex-col flex-1" onSubmit={handleFormSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 flex-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 flex-1">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-bold text-gray-700">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-800">
                       Name
                     </label>
                     <input
                       type="text"
                       id="name"
                       placeholder="이름을 입력해 주세요."
-                      className="mt-1 block w-full border border-gray-200 rounded-xl p-3"
+                      className="mt-2 block w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-gray-700">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-800">
                       E-mail
                     </label>
                     <input
                       type="email"
                       id="email"
                       placeholder="이메일을 입력해 주세요."
-                      className="mt-1 block w-full border border-gray-200 rounded-xl p-3"
+                      className="mt-2 block w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-bold text-gray-700">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-800">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       placeholder="연락처를 입력해 주세요."
-                      className="mt-1 block w-full border border-gray-200 rounded-xl p-3"
+                      className="mt-2 block w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
                     />
                   </div>
                   <div>
-                    <label htmlFor="company" className="block text-sm font-bold text-gray-700">
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-800">
                       Company Name
                     </label>
                     <input
                       type="text"
                       id="company"
                       placeholder="회사명을 입력해 주세요."
-                      className="mt-1 block w-full border border-gray-200 rounded-xl p-3"
+                      className="mt-2 block w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label htmlFor="inquiries" className="block text-sm font-bold text-gray-700">
+                    <label htmlFor="inquiries" className="block text-sm font-medium text-gray-800">
                       Inquiries
                     </label>
                     <textarea
                       id="inquiries"
                       rows={5}
                       placeholder="문의 내용을 남겨주세요."
-                      className="mt-1 block w-full border border-gray-200 rounded-xl p-3"
+                      className="mt-2 block w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
                     ></textarea>
                   </div>
-                  <div className="md:col-span-2 mt-[-0.5rem]">
-                    <p className="text-xs text-gray-500 text-[13px]">
+                  <div className="md:col-span-2 mt-2">
+                    <p className="text-xs text-gray-600">
                       제출하신 정보는 문의에 대한 답변을 드리는 용도로만 활용되며{' '}
                       <button
                         type="button"
                         onClick={() => setIsPrivacyModalOpen(true)}
-                        className="underline font-bold text-[13px] cursor-pointer"
+                        className="underline font-semibold cursor-pointer"
                       >
                         [개인정보 처리방침]
                       </button>
                       을 준수합니다.
                     </p>
-                    <div className="mt-6">
+                    <div className="mt-8">
                       <button
                         type="submit"
-                        className="bg-black text-white font-bold py-5 px-8 rounded-full w-full md:w-auto"
+                        className="bg-black text-white font-bold py-4 px-10 rounded-full w-full md:w-auto hover:bg-gray-800 transition-colors text-lg"
                       >
                         문의하기 (Submit)
                       </button>
