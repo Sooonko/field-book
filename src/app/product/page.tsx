@@ -262,25 +262,44 @@ const ProductPage = () => {
       {/* end_nem */}
       <div className="container mx-auto flex flex-col lg:flex-row mt-10 gap-8 lg:gap-12 px-4">
         {/* Sticky Sidebar */}
-        <aside className="w-full lg:w-1/4 py-8 sticky top-24 h-auto lg:h-screen self-start">
+        <aside className="w-full lg:w-[336px] max-w-[336px] py-2 sticky top-24 h-auto lg:h-screen self-start">
           <div className="flex justify-between items-center lg:block">
             <h2 className="font-sans text-2xl lg:text-3xl leading-normal tracking-normal mb-0 lg:mb-12">
               <span className="font-extrabold">FieldBook</span>
               <span className="font-medium"> Technology</span>
             </h2>
-            <button className="lg:hidden p-2 rounded-md hover:bg-gray-100" onClick={() => setOpen(!open)}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+            <button
+              className="lg:hidden p-2 rounded-md hover:bg-gray-100"
+              onClick={() => setOpen(!open)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+                />
               </svg>
             </button>
           </div>
-          <ul className={`space-y-4 text-base text-gray-600 mt-6 lg:mt-0 ${open ? 'block' : 'hidden'} lg:block`}>
+
+          <ul
+            className={`flex flex-col gap-6 text-base text-gray-600 mt-6 lg:mt-0 ${
+              open ? "block" : "hidden"
+            } lg:flex`}
+          >
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)} // Close menu on link click for mobile
-                  className={`hover:text-black transition-all duration-300 ease-in-out block py-2 ${
+                  className={`hover:text-black transition-all duration-300 ease-in-out block ${
                     activeSection === link.href.substring(1)
                       ? "font-bold text-xl lg:text-2xl underline text-black"
                       : "font-medium text-lg lg:text-xl text-gray-500"
@@ -302,13 +321,13 @@ const ProductPage = () => {
             link.href.includes("battery") ||
             link.href.includes("101screen") ||
             link.href.includes("fieldbook-app") ? null : (
-              <section key={link.href} id={link.href.substring(1)} className="mb-24 scroll-mt-20">
-                <div
-                  className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg"
-                ></div>
-                <h3
-                  className="font-sans font-extrabold text-2xl md:text-3xl mt-8 mb-4"
-                >
+              <section
+                key={link.href}
+                id={link.href.substring(1)}
+                className="mb-24 scroll-mt-20"
+              >
+                <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg"></div>
+                <h3 className="font-sans font-extrabold text-2xl md:text-3xl mt-8 mb-4">
                   {link.text}
                 </h3>
                 <p className="font-pretes font-medium text-lg md:text-xl text-gray-600">
@@ -390,7 +409,8 @@ const ProductPage = () => {
                   10.1인치 터치 스크린
                 </h2>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  10.1인치 대형 터치 스크린을 통해 전세계 4만개 코스를 제공합니다.
+                  10.1인치 대형 터치 스크린을 통해 전세계 4만개 코스를
+                  제공합니다.
                 </p>
               </div>
             </div>
@@ -420,7 +440,8 @@ const ProductPage = () => {
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                   · 간편 로그인: 오늘의 라운드와 최근 기록 확인
                   <br />· 정밀 스코어보드: 홀별 스코어와 전체 통계 제공
-                  <br />· 지도 기반 영상 재생: 코스 맵에 녹화 지점 표시 및 즉시 재생
+                  <br />· 지도 기반 영상 재생: 코스 맵에 녹화 지점 표시 및 즉시
+                  재생
                   <br />· 영상 공유: 링크로 간편하게 공유
                 </p>
               </div>
@@ -443,8 +464,12 @@ const ProductPage = () => {
                   key={idx}
                   className="flex justify-between p-5 border-b-2 border-gray-200"
                 >
-                  <span className="font-medium text-gray-700">{spec.label}</span>
-                  <span className="font-semibold text-gray-900">{spec.value}</span>
+                  <span className="font-medium text-gray-700">
+                    {spec.label}
+                  </span>
+                  <span className="font-semibold text-gray-900">
+                    {spec.value}
+                  </span>
                 </div>
               ))}
             </div>
@@ -457,13 +482,19 @@ const ProductPage = () => {
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-extrabold mb-4">주요 기능</h2>
               <p className="text-lg text-gray-600">
-                필드북이 제공하는 25가지 스마트 기능. 플레이 부터 운영까지, 전방에 필요한 기능을 쉽게 확인할 수 있습니다.
+                필드북이 제공하는 25가지 스마트 기능. 플레이 부터 운영까지,
+                전방에 필요한 기능을 쉽게 확인할 수 있습니다.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {featureSections.map((feature, idx) => (
-                <div key={idx} className="p-6 border rounded-lg bg-gray-50 shadow-md hover:shadow-xl transition-shadow">
-                  <h3 className="font-bold text-xl mb-4 text-gray-800">{feature.title}</h3>
+                <div
+                  key={idx}
+                  className="p-6 border rounded-lg bg-gray-50 shadow-md hover:shadow-xl transition-shadow"
+                >
+                  <h3 className="font-bold text-xl mb-4 text-gray-800">
+                    {feature.title}
+                  </h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
                     {feature.items.map((item, i) => (
                       <li key={i}>{item}</li>
