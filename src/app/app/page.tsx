@@ -127,6 +127,7 @@ const AppPage = () => {
                 <AppStoreButton />
                 <GooglePlayButton />
               </div>
+              l
             </div>
             <div className="w-1/2 flex justify-center">
               <div className="w-48 h-96 bg-gray-200 rounded-3xl"></div>
