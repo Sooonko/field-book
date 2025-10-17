@@ -34,7 +34,7 @@ const AboutUPage = () => {
         </section>
 
         {/* --- Our Goal Section --- */}
-        <section className="py-[150px] px-10">
+        <section className="py-auto px-10 py-[20px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto px-4 px-auto">
             {/* 1st column: heading */}
             <div className=" w-full md:w-[226px]  ">
