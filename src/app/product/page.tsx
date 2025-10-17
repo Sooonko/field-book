@@ -170,7 +170,7 @@ const ProductPage = () => {
 
   return (
     <PageLayout isSolid={true}>
-      <section className="relative w-full h-[800px] overflow-hidden">
+      <section className="relative w-full h-screen overflow-hidden">
         <video
           autoPlay
           muted
@@ -180,30 +180,22 @@ const ProductPage = () => {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div
-          className="absolute text-white z-10"
-          style={{
-            left: "180px",
-            top: "583px",
-          }}
-        >
-          <h1 className="text-4xl font-pretendard font-black text-[48px] leading-[140%] tracking-[0%]">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-black leading-tight mb-4">
             AI로 골퍼의 모든 순간을
           </h1>
-          <p className="text-lg mt-2 font-pretendard font-medium text-[24px] leading-[140%] tracking-[0%]">
+          <p className="text-lg md:text-2xl font-medium">
             가장 쉬운 골프 비서, 필드북과 모든 라운딩을 함께 하세요.
           </p>
         </div>
-
-        {/* 🌑 Overlay (optional for better contrast) */}
-        <div className="absolute inset-0 bg-black/20" />
       </section>
 
       <div className="relative w-full">
         {/* 🔼 Toggle arrow button */}
         <button
           onClick={() => setOpen(!open)}
-          className="absolute right-20 -translate-x-1/2 top-5 z-20 bg-white rounded-full shadow-lg p-2 hover:bg-gray-100 transition"
+          className="absolute right-1/2 translate-x-1/2 -top-5 z-20 bg-white rounded-full shadow-lg p-2 hover:bg-gray-100 transition"
         >
           {open ? (
             <svg
@@ -243,22 +235,22 @@ const ProductPage = () => {
           }`}
         >
           <div className="flex justify-center w-full bg-white py-16">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[40px] text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 text-center">
               {features.map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center justify-center space-y-3"
                 >
-                  <div className="relative w-[120px] h-[120px] bg-[#F5F5F5] rounded-[12px] flex items-center justify-center opacity-100">
+                  <div className="relative w-24 h-24 md:w-32 md:h-32 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={65}
-                      height={68}
-                      className="object-contain opacity-100"
+                      layout="fill"
+                      objectFit="contain"
+                      className="p-4"
                     />
                   </div>
-                  <p className="font-pretendard font-medium text-[18px] leading-[140%] text-center text-gray-800 tracking-normal">
+                  <p className="font-pretendard font-medium text-base md:text-lg text-center text-gray-800">
                     {item.title}
                   </p>
                 </div>
@@ -268,22 +260,30 @@ const ProductPage = () => {
         </div>
       </div>
       {/* end_nem */}
-      <div className="container mx-auto flex mt-10 gap-[100px]">
+      <div className="container mx-auto flex flex-col lg:flex-row mt-10 gap-8 lg:gap-12 px-4">
         {/* Sticky Sidebar */}
-        <aside className="w-1/4 py-8 sticky top-24 h-screen self-start">
-          <h2 className="font-sans text-[28px] leading-[1.4] tracking-normal mb-[48px]">
-            <span className="font-extrabold">FieldBook</span>
-            <span className="font-medium"> Technology</span>
-          </h2>
-          <ul className="space-y-3 text-sm text-gray-600">
+        <aside className="w-full lg:w-1/4 py-8 sticky top-24 h-auto lg:h-screen self-start">
+          <div className="flex justify-between items-center lg:block">
+            <h2 className="font-sans text-2xl lg:text-3xl leading-normal tracking-normal mb-0 lg:mb-12">
+              <span className="font-extrabold">FieldBook</span>
+              <span className="font-medium"> Technology</span>
+            </h2>
+            <button className="lg:hidden p-2 rounded-md hover:bg-gray-100" onClick={() => setOpen(!open)}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+              </svg>
+            </button>
+          </div>
+          <ul className={`space-y-4 text-base text-gray-600 mt-6 lg:mt-0 ${open ? 'block' : 'hidden'} lg:block`}>
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`hover:text-black transition-all duration-300 ease-in-out ${
+                  onClick={() => setOpen(false)} // Close menu on link click for mobile
+                  className={`hover:text-black transition-all duration-300 ease-in-out block py-2 ${
                     activeSection === link.href.substring(1)
-                      ? "font-pretes font-black text-[26px] leading-[1.4] tracking-normal underline text-black"
-                      : "font-pretes font-medium text-[20px] leading-[1.4] tracking-normal text-gray-600"
+                      ? "font-bold text-xl lg:text-2xl underline text-black"
+                      : "font-medium text-lg lg:text-xl text-gray-500"
                   }`}
                 >
                   {link.text}
@@ -294,7 +294,7 @@ const ProductPage = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="w-3/4 py-8 ">
+        <main className="w-full lg:w-3/4 py-8">
           {navLinks.map((link) =>
             link.href.includes("jivon") ||
             link.href.includes("jvyv") ||
@@ -302,18 +302,16 @@ const ProductPage = () => {
             link.href.includes("battery") ||
             link.href.includes("101screen") ||
             link.href.includes("fieldbook-app") ? null : (
-              <section key={link.href} id={link.href.substring(1)}>
+              <section key={link.href} id={link.href.substring(1)} className="mb-24 scroll-mt-20">
                 <div
-                  className="w-[964px] h-[542px] rounded-[20px] bg-gray-100 p-10 "
-                  style={{ marginTop: "160px" }}
+                  className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg"
                 ></div>
                 <h3
-                  style={{ marginTop: "32px" }}
-                  className="font-sans font-extrabold text-[32px] leading-[1.4] tracking-normal pb-3"
+                  className="font-sans font-extrabold text-2xl md:text-3xl mt-8 mb-4"
                 >
                   {link.text}
                 </h3>
-                <p className="font-pretes font-medium text-xl leading-[1.4] tracking-normal text-[#626262]">
+                <p className="font-pretes font-medium text-lg md:text-xl text-gray-600">
                   {link.description}
                 </p>
               </section>
@@ -322,25 +320,21 @@ const ProductPage = () => {
           <section
             key={"ip5x"}
             id={"ip5x"}
-            className="container mx-auto flex justify-center py-24"
+            className="py-12 lg:py-24 scroll-mt-20"
           >
-            <div className="flex flex-row items-center gap-[60px]">
-              {/* Left Box */}
-              <div className="w-[360px] h-[440px] rounded-[20px] bg-gray-100 flex-shrink-0" />
-
-              {/* Right Content */}
-              <div className="flex flex-col max-w-lg">
-                <h2 className="font-montserrat font-extrabold text-[32px] leading-[140%] tracking-[0px] mb-2">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+              <div className="w-full lg:w-1/2 h-auto aspect-square rounded-2xl bg-gray-100 shadow-lg" />
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl font-extrabold mb-3">
                   IP5X 방수
                 </h2>
-                <h3 className="font-pretendard font-medium text-[24px] leading-[140%] tracking-[0px] mb-5">
+                <h3 className="text-xl md:text-2xl font-medium mb-6">
                   IP5X 방진·방수 설계로 어디서나 안정적으로 주행합니다.
                 </h3>
-                <p className="font-pretendard font-normal text-[20px] leading-[140%] tracking-[0px] text-gray-600">
-                  · 먼지 차단 설계 <br />- 미세먼지 유입 최소화 · 내구성 강화{" "}
-                  <br />- 사계절에 최적화 된 견고한 설계 · 현장 신뢰성 <br />-
-                  라운드 전 구간에서 안전적 작동 보장 · 간편 유지관리 <br />-
-                  내부 오염 감소로 점검·유지 비용 최소화
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                  · 먼지 차단 설계: 미세먼지 유입 최소화로 내구성 강화
+                  <br />· 사계절 최적화: 견고한 설계로 현장 신뢰성 보장
+                  <br />· 간편 유지관리: 내부 오염 감소로 점검 비용 최소화
                 </p>
               </div>
             </div>
@@ -348,60 +342,55 @@ const ProductPage = () => {
           <section
             key={"battery"}
             id={"battery"}
-            className="container mx-auto flex justify-center py-24"
+            className="py-12 lg:py-24 scroll-mt-20"
           >
-            <div className="flex flex-row items-center gap-[60px]">
-              {/* Right Content */}
-              <div className="flex flex-col max-w-lg">
-                <h2 className="font-montserrat font-extrabold text-[32px] leading-[140%] tracking-[0px] mb-2">
+            <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
+              <div className="relative w-full lg:w-1/2 h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
+                <Image
+                  src="/battery.svg"
+                  alt="대용량 배터리"
+                  layout="fill"
+                  objectFit="contain"
+                  className="p-8"
+                />
+              </div>
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl font-extrabold mb-3">
                   대용량 배터리
                 </h2>
-                <h3 className="font-pretendard font-medium text-[24px] leading-[140%] tracking-[0px] mb-5">
-                  대용량 탈착식 배터리로 1회 충전 시 36홀 이상 연속 플레이가
-                  가능 합니다.
+                <h3 className="text-xl md:text-2xl font-medium mb-6">
+                  1회 충전으로 36홀 이상 연속 플레이가 가능합니다.
                 </h3>
-                <p className="font-pretendard font-normal text-[20px] leading-[140%] tracking-[0px] text-gray-600">
-                  · 긴 사용시간 - 한 번 충전으로 36홀 이상 연속 주행 가능
-                  <br />· 탈착식 설계 - 예비 배터리 교체로 무중단 운영 가능{" "}
-                  <br />· 고출력·안정공급 - 주행·녹화
-                  <br />
-                  ·통신을 동시에 안정 지원 <br />· 간편 충전·관리 - 충전 부담을
-                  줄이는 실용적 충전 솔루션
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                  · 긴 사용시간: 한 번 충전으로 36홀 이상 연속 주행
+                  <br />· 탈착식 설계: 예비 배터리 교체로 무중단 운영
+                  <br />· 고출력 안정공급: 주행, 녹화, 통신 동시 지원
+                  <br />· 간편 충전: 실용적인 충전 솔루션
                 </p>
-              </div>
-              {/* Left Box */}
-              <div className="w-[360px] h-[440px] rounded-[20px] bg-gray-100 flex items-center justify-center overflow-hidden">
-                <img
-                  src="/battery.svg"
-                  alt="Description"
-                  className="object-contain w-full h-full"
-                />
               </div>
             </div>
           </section>
           <section
             key={"101screen"}
             id={"101screen"}
-            className="container mx-auto flex justify-center py-24"
+            className="py-12 lg:py-24 scroll-mt-20"
           >
-            <div className="flex flex-row items-center gap-[60px]">
-              {/* Left Box */}
-              <div className="w-[360px] h-[440px] rounded-[20px] bg-gray-100 flex items-center justify-center overflow-hidden">
-                <img
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+              <div className="relative w-full lg:w-1/2 h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
+                <Image
                   src="/101screen.svg"
-                  alt="Description"
-                  className="object-contain w-full h-full"
+                  alt="10.1인치 터치 스크린"
+                  layout="fill"
+                  objectFit="contain"
+                  className="p-8"
                 />
               </div>
-              {/* Right Content */}
-              <div className="flex flex-col max-w-lg">
-                <h2 className="font-montserrat font-extrabold text-[32px] leading-[140%] tracking-[0px] mb-2">
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl font-extrabold mb-3">
                   10.1인치 터치 스크린
                 </h2>
-
-                <p className="font-pretendard font-normal text-[20px] leading-[140%] tracking-[0px] text-gray-600">
-                  10.1인치 대형 터치 스크린을 통해 전세계 4만개 코스를
-                  제공합니다
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                  10.1인치 대형 터치 스크린을 통해 전세계 4만개 코스를 제공합니다.
                 </p>
               </div>
             </div>
@@ -409,85 +398,79 @@ const ProductPage = () => {
           <section
             key={"fieldbook-app"}
             id={"fieldbook-app"}
-            className="container mx-auto flex justify-center py-24"
+            className="py-12 lg:py-24 scroll-mt-20"
           >
-            <div className="flex flex-row items-center gap-[60px]">
-              {/* Right Content */}
-              <div className="flex flex-col max-w-lg">
-                <h2 className="font-montserrat font-extrabold text-[32px] leading-[140%] tracking-[0px] mb-2">
+            <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
+              <div className="relative w-full lg:w-1/2 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/fieldBookApp.svg"
+                  alt="FieldBOOK App"
+                  layout="fill"
+                  objectFit="contain"
+                  className="p-8"
+                />
+              </div>
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl font-extrabold mb-3">
                   FieldBOOK App
                 </h2>
-                <h3 className="font-pretendard font-medium text-[24px] leading-[140%] tracking-[0px] mb-5">
-                  FieldBOOK 앱으로 사용자별 클럽 거리와 카트를 자동 연동하고,
-                  스코어 기록부터 위치 기반 스윙 영상 재생·분석까지 한 번에
-                  제공합니다.
+                <h3 className="text-xl md:text-2xl font-medium mb-6">
+                  스코어 기록부터 스윙 영상 분석까지 한 번에 제공합니다.
                 </h3>
-                <p className="font-pretendard font-normal text-[20px] leading-[140%] tracking-[0px] text-gray-600">
-                  · 간편한 로그인·대시보드 - 로그인하면 오늘의 라운드와 최근
-                  기록을 한눈에 확인 <br />· 정밀 스코어보드 - 홀별 스코어와
-                  전체 통계를 제공 <br />· 지도 기반 녹화 지점 및 영상 재생 -
-                  코스 맵에 녹화 지점이 표시 및 즉시 재생 <br />· 바로 공유
-                  가능한 영상·하이라이트 - 링크로 즉시 공유
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                  · 간편 로그인: 오늘의 라운드와 최근 기록 확인
+                  <br />· 정밀 스코어보드: 홀별 스코어와 전체 통계 제공
+                  <br />· 지도 기반 영상 재생: 코스 맵에 녹화 지점 표시 및 즉시 재생
+                  <br />· 영상 공유: 링크로 간편하게 공유
                 </p>
-              </div>
-              {/* Left Box */}
-              <div className=" flex items-center justify-center overflow-hidden">
-                <img
-                  src="/fieldBookApp.svg"
-                  alt="Description"
-                  className="object-contain w-full h-full"
-                />
               </div>
             </div>
           </section>
           <section
             key={"jivon"}
             id={"jivon"}
-            className="px-6 md:px-16 py-12 bg-white text-gray-900"
+            className="px-4 md:px-8 py-12 lg:py-24 bg-gray-50 rounded-2xl scroll-mt-20"
           >
-            {/* 제원 Section */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-extrabold mb-6">제원</h2>
-              <p className="mb-8 text-gray-600">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-extrabold mb-4">제원</h2>
+              <p className="text-lg text-gray-600">
                 상세 사양과 성능 지표를 한눈에 확인하세요.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {specs.map((spec, idx) => (
-                  <div
-                    key={idx}
-                    className="flex justify-between p-4 border rounded-lg bg-gray-50"
-                  >
-                    <span className="font-medium">{spec.label}</span>
-                    <span className="font-semibold">{spec.value}</span>
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-lg">
+              {specs.map((spec, idx) => (
+                <div
+                  key={idx}
+                  className="flex justify-between p-5 border-b-2 border-gray-200"
+                >
+                  <span className="font-medium text-gray-700">{spec.label}</span>
+                  <span className="font-semibold text-gray-900">{spec.value}</span>
+                </div>
+              ))}
             </div>
           </section>
           <section
             key={"jvyv"}
             id={"jvyv"}
-            className="px-6 md:px-16 py-12 bg-white text-gray-900"
+            className="px-4 md:px-8 py-12 lg:py-24 scroll-mt-20"
           >
-            {/* 주요 기능 Section */}
-            <div>
-              <h2 className="text-3xl font-extrabold mb-6">주요 기능</h2>
-              <p className="mb-8 text-gray-600">
-                필드북이 제공하는 25가지 스마트 기능. 플레이 부터 운영까지,
-                전방에 필요한 기능을 쉽게 확인할 수 있습니다.
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-extrabold mb-4">주요 기능</h2>
+              <p className="text-lg text-gray-600">
+                필드북이 제공하는 25가지 스마트 기능. 플레이 부터 운영까지, 전방에 필요한 기능을 쉽게 확인할 수 있습니다.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {featureSections.map((feature, idx) => (
-                  <div key={idx} className="p-6 border rounded-lg bg-gray-50">
-                    <h3 className="font-bold text-xl mb-4">{feature.title}</h3>
-                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                      {feature.items.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {featureSections.map((feature, idx) => (
+                <div key={idx} className="p-6 border rounded-lg bg-gray-50 shadow-md hover:shadow-xl transition-shadow">
+                  <h3 className="font-bold text-xl mb-4 text-gray-800">{feature.title}</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700">
+                    {feature.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
         </main>
