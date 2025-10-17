@@ -16,8 +16,8 @@ const ContactUsPage = () => {
 
   return (
     <PageLayout>
-      <main className=" flex-col items-center px-4 py-16 bg-white flex ">
-        <div className="w-full max-w-6xl ">
+      <div className="flex flex-col items-center px-4 py-20 overflow-hidden md:overflow-visible">
+        <div className="w-full max-w-6xl pt-[102px]">
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left Column: Form */}
             <div className="flex flex-col">
@@ -146,7 +146,7 @@ const ContactUsPage = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       <PrivacyModal isOpen={isPrivacyModalOpen} onClose={() => setIsPrivacyModalOpen(false)} />
       <InquiryReceiveModal isOpen={isInquiryModalOpen} onClose={() => setIsInquiryModalOpen(false)} />
