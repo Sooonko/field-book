@@ -1,13 +1,7 @@
 "use client";
 import Image from "next/image";
 import PageLayout from "../../components/PageLayout";
-
-// Placeholder for social media icons
-const SocialIcon = ({ children }: { children: React.ReactNode }) => (
-  <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-    {children}
-  </div>
-);
+import { useEffect, useState } from "react";
 
 const AppStoreButton = () => (
   <button>
@@ -30,29 +24,6 @@ const GooglePlayButton = () => (
   </button>
 );
 
-const AppInfoSection = ({
-  title,
-  description,
-  children,
-  reverse = false,
-}: {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-  reverse?: boolean;
-}) => (
-  <section
-    className={`py-12 container mx-auto flex flex-col md:flex-row items-center ${
-      reverse ? "md:flex-row-reverse" : ""
-    }`}
-  >
-    <div className="md:w-1/2 p-4">
-      <h2 className="text-3xl font-bold mb-4">{title}</h2>
-      <p className="text-gray-600">{description}</p>
-    </div>
-    <div className="md:w-1/2 p-4">{children}</div>
-  </section>
-);
 const logos = [
   { src: "/fb_logo.svg", alt: "Facebook" },
   { src: "/insta_logo.svg", alt: "Instagram" },
@@ -62,6 +33,17 @@ const logos = [
 ];
 
 const AppPage = () => {
+  const [isPC, setIsPC] = useState(false);
+
+  // Update on window resize
+  useEffect(() => {
+    // This runs only in the browser
+    const handleResize = () => setIsPC(window.innerWidth >= 1024);
+
+    handleResize(); // check initial size
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <PageLayout isSolid={true}>
       <header className="bg-[#1E5E61] text-white  h-[800px] opacity-100">
@@ -97,35 +79,72 @@ const AppPage = () => {
       </header>
 
       <main>
-        <section className="w-full h-[600px] flex items-end justify-center px-16">
-          <div className="max-w-[1400px] w-full flex items-center justify-center">
-            <div className="flex space-x-10">
-              <div
-                className="rounded-[40px]  shadow-xl flex items-center justify-center"
-                style={{ width: "320px" }}
-              >
-                <img src="/score_card_1.svg" alt="Score Detail" />
+        {isPC ? (
+          <section className="w-full h-[600px] flex items-end justify-center px-16">
+            <div className="max-w-[1400px] w-full flex items-center justify-center">
+              <div className="flex space-x-10">
+                <div
+                  className="rounded-[40px]  shadow-xl flex items-center justify-center"
+                  style={{ width: "320px" }}
+                >
+                  <img src="/score_card_1.svg" alt="Score Detail" />
+                </div>
+                <div
+                  className="rounded-[40px] shadow-xl flex items-center justify-center"
+                  style={{ width: "320px" }}
+                >
+                  <img src="/score_card_2.svg" alt="Round Record" />
+                </div>
               </div>
-              <div
-                className="rounded-[40px] shadow-xl flex items-center justify-center"
-                style={{ width: "320px" }}
-              >
-                <img src="/score_card_2.svg" alt="Round Record" />
-              </div>
-            </div>
 
-            {/* Right: Text */}
-            <div className="w-[450px] pl-12 flex flex-col gap-3">
-              <h2 className="font-pretendard font-extrabold text-[40px] leading-[140%] tracking-[0%] text-[#222222]">
-                스코어 카드
-              </h2>
-              <p className="font-pretendard font-medium text-[22px] leading-[140%] tracking-[0%] text-[#626262]">
-                라운드별 스코어와 통계로 플레이를 다시 보고, 기억하고 싶은
-                순간까지 간직하세요
-              </p>
+              {/* Right: Text */}
+              <div className="w-[450px] pl-12 flex flex-col gap-3">
+                <h2 className="text-3xl font-bold"> 스코어 카드</h2>
+                <p className="text-gray-600 mt-2">
+                  라운드별 스코어와 통계로 플레이를 다시 보고, 기억하고 싶은
+                  순간까지 간직하세요
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : (
+          <section className="w-full h-[600px] md:h-auto flex items-end justify-center px-4 md:px-16 py-8">
+            <div className="max-w-[1400px] w-full flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between gap-8 lg:gap-16">
+              {/* Left: Score Cards */}
+              <div className="flex flex-col sm:flex-row items-center sm:space-x-10 space-y-6 sm:space-y-0">
+                <div
+                  className="rounded-[40px] shadow-xl flex items-center justify-center"
+                  style={{ width: "320px" }}
+                >
+                  <img
+                    src="/score_card_1.svg"
+                    alt="Score Detail"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div
+                  className="rounded-[40px] shadow-xl flex items-center justify-center"
+                  style={{ width: "320px" }}
+                >
+                  <img
+                    src="/score_card_2.svg"
+                    alt="Round Record"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Right: Text */}
+              <div className="w-full lg:w-[450px] flex flex-col gap-3 text-center lg:text-left mt-6 lg:mt-0">
+                <h2 className="text-3xl lg:text-3xl font-bold">스코어 카드</h2>
+                <p className="text-gray-600 mt-2 text-sm sm:text-base lg:text-base">
+                  라운드별 스코어와 통계로 플레이를 다시 보고, 기억하고 싶은
+                  순간까지 간직하세요
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="py-12 bg-gray-100 text-center">
           <h2 className="text-3xl font-bold">녹화 영상 재생</h2>
