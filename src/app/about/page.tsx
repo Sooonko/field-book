@@ -6,10 +6,10 @@ import PageLayout from '../../components/PageLayout';
 const AboutUPage = () => {
   return (
     <PageLayout>
-      <main className="container mx-auto px-20 max-w-[1200px] text-gray-800">
+      <div className="container mx-auto w-full text-gray-800 pt-[102px] m-auto p-auto ">
         {/* --- Header Section --- */}
-        <section className="text-center md:text-left py-20">
-          <Image src="/Group.svg" alt="Portrush Logo" width={370} height={46} className="mx-auto md:mx-0" />
+        <section className="text-center md:text-left py-14 m-auto px-10">
+          <Image src="./Group.svg" alt="Portrush Logo" width={370} height={46} className="mx-auto md:mx-0" />
           <h1 className="text-gray-700 mt-2 text-lg font-medium text-[40px] font-montserrat">
             AI mobility + Trusted Technology + Smart Golf
           </h1>
@@ -34,39 +34,38 @@ const AboutUPage = () => {
         </section>
 
         {/* --- Our Goal Section --- */}
-        <section className="py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-x-[100px] items-start">
+        <section className="py-auto px-10 py-[20px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto px-4 px-auto">
             {/* 1st column: heading */}
-            <div className="md:pr-6">
-              <h2 className="text-[28px] md:text-[32px] font-extrabold text-gray-900">Our Goal</h2>
-            
+            <div className=" w-full md:w-[226px]  ">
+              <h2 className="text-3xl md:text-[48px] font-bold font-montserrat text-gray-900">Our Goal</h2>
             </div>
 
             {/* 2nd column */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900">신뢰성</h3>
-                <p className="text-sm text-gray-600 mt-1">
+            <div className="space-y-[28px] ml-auto">
+              <div className="">
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">신뢰성</h3>
+                <p className="text-sm text-gray-600 mt-1  md:text-[20px]">
                   안정성이 검증된 내구성과 안전 제어로,<br></br> 언제나 믿을 수 있는 파트너가 됩니다.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-gray-900">지능형</h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">지능형</h3>
+                <p className="text-sm text-gray-600 mt-1  md:text-[20px]">
                   딥러닝 비전과 정밀 GPS를 기반으로,<br></br> 스마트한 라운드를 제공합니다.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">연결성</h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">연결성</h3>
+                <p className="text-sm text-gray-600 mt-1  md:text-[20px]">
                   카트·앱·서버를 하나로 이어,<br></br>
                   운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">안전</h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">안전</h3>
+                <p className="text-sm text-gray-600 mt-1 md:text-[20px]">
                   No-Go Zone과 장애물 감지,<br></br>
                   지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
                 </p>
@@ -74,9 +73,9 @@ const AboutUPage = () => {
             </div>
 
             {/* 3rd column: images */}
-            <div className="relative w-full flex ">
-              {/* Background image (том зураг) */}
-              <div className="relative w-[371px] rounded-3xl overflow-hidden shadow-md ">
+            <div className="relative flex ml-4 md:ml-10">
+              {/* Background image */}
+              <div className="relative w-[80vw] max-w-[371px] rounded-[48px] overflow-hidden  mr-auto">
                 <Image
                   src="/Frame88.svg"
                   alt="Golf image 1 (background)"
@@ -86,53 +85,70 @@ const AboutUPage = () => {
                 />
               </div>
 
-              {/* Small image: foreground (дээд давхарга) */}
-              <div
-                className="absolute bottom-[-40px] right-6 md:right-16 
-                 rounded-3xl overflow-hidden shadow-md "
-                aria-hidden="true"
-              >
+              {/* Foreground small image */}
+              <div className="absolute bottom-[-15%] right-[-15%] 
+              md:bottom-[-90px] md:right-[-60px] rounded-[36px] overflow-hidden">
                 <Image
                   src="/Frame89.svg"
                   alt="Golf image 2 (foreground)"
                   width={200}
                   height={383}
-                  className="w-full h-auto object-cover"
+                  className="w-[50%] md:w-[200px] h-auto object-cover"
                 />
               </div>
             </div>
+
 
           </div>
         </section>
 
 
         {/* --- Product Section --- */}
-        <section className="py-20 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="rounded-2xl overflow-hidden shadow-md">
+        <section className="py-20 grid md:grid-cols-2 gap-12 items-center m-auto px-10">
+          {/* Left Column: Images */}
+          <div className="relative w-full max-w-[508px] mx-auto">
+            {/* Background image */}
+            <div className="rounded-[48px] overflow-hidden">
               <Image
                 src="./Frame90.svg"
                 alt="FieldBOOK Product"
-                width={550}
-                height={400}
-                className="w-full h-auto object-cover"
+                width={508}
+                height={430}
+                className=" h-auto object-cover"
+              />
+            </div>
+
+            {/* Foreground image (overlap) */}
+            <div className="absolute left-1/4 md:left-[54px] bottom-[-60px] md:bottom-[-120px] w-[50%] md:w-[301px]">
+              <Image
+                src="/Frame91.svg"
+                alt="Golf image 2 (foreground)"
+                width={350}
+                height={256}
+                className=" h-auto object-cover"
               />
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-gray-900">Product - FieldBOOK</h2>
-            <p className="font-semibold text-gray-800 leading-relaxed">
-              필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 차세대 스마트 골프 솔루션입니다.
+
+          {/* Right Column: Text */}
+          <div className="m-auto md:ml-6 py-20">
+            <h2 className="text-[48px] font-bold font-montserrat mb-6 text-gray-900">
+              Product - FieldBOOK
+            </h2>
+            <p className="font-semibold text-gray-800 leading-relaxed text-[28px]">
+              필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 <br /> 차세대 스마트 골프 솔루션입니다.
             </p>
-            <p className="mt-3 text-gray-600 leading-relaxed">
-              AI 비전 기반 자동 주행, 정밀 GPS 시스템, 스윙 자동 녹화·추적, 스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
+            <p className="mt-3 text-gray-600 leading-relaxed text-[22px]">
+              AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,<br />
+              스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
             </p>
           </div>
         </section>
 
+
         {/* --- What We Deliver Section --- */}
-        <section className="py-20 bg-gray-50 rounded-3xl mt-10">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-12 text-gray-900">
+        <section className="py-20 bg-gray-100 mt-[160px] m-auto p-auto p-30">
+          <h2 className="text-[48px] font-extrabold text-center mb-12 text-gray-900">
             What We Deliver
           </h2>
 
@@ -140,21 +156,30 @@ const AboutUPage = () => {
             <DeliverItem
               img="./Frame94.svg"
               title="운영 효율 및 비용 절감"
-              desc="AI 비전-GNSS 기술로 카트 운영을 최적화하고 비용을 절감합니다."
+              desc="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화
+              충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호"
+              type='1'
             />
             <DeliverItem
               img="./Frame92.svg"
               title="수익 창출 및 부가가치 확대"
-              desc="코스와 광고, 부가 정보 연동을 통해 새로운 수익 모델을 창출합니다."
+              desc="골프장 안의 디지털 매출 허브
+              시설 교체 없는 스마트 전환
+              광고·스토어·데이터로 새 수익원 확보"
+              type='2'
             />
             <DeliverItem
               img="./Frame93.svg"
               title="클럽 브랜드 이미지 및 고객 경험 강화"
-              desc="앱과 카트 연동을 통해 브랜드 경험을 강화하고 고객 만족도를 높입니다."
+              desc="스마트 골프코스로 도약
+                SNS를 통한 바이럴 마케팅
+                필드 위에서 실천하는 ESG 가치
+                고객 만족도 및 재방문율 상승"
+              type='3'
             />
           </div>
         </section>
-      </main>
+      </div>
     </PageLayout>
   );
 };
@@ -166,13 +191,37 @@ const GoalItem = ({ title, desc }: { title: string; desc: string }) => (
     <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
   </div>
 );
+const TextItem = ({ text }: { text: string }) => (
+  <div className="flex flex-col items-center space-y-1 text-center">
+    <p className="text-[16px] font-pretendard  text-gray-700">
+      {text}
+    </p>
+  </div>
 
-const DeliverItem = ({ img, title, desc }: { img: string; title: string; desc: string }) => (
-  <div className="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow">
-    <Image src={img} alt={title} width={400} height={250} className="w-full h-[180px] object-cover" />
-    <div className="p-6 text-left">
-      <h3 className="font-bold text-gray-900 mb-2 text-lg">{title}</h3>
-      <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
+);
+
+const DeliverItem = ({ img, title, desc, type }: { img: string; title: string; desc: string, type: string }) => (
+  <div className=" rounded-2xl ">
+    <Image src={img} alt={title} width={374} height={200} className="w-full md-w-[374px] h-[220px] object-cover rounded-[20px]" />
+    <div className="p-6 text-center pt=[6px]">
+      <h3 className="font-bold text-gray-900 mb-2 text-[20px]">{title}</h3>
+      {/* <p className=" text-gray-700 leading-relaxed140 text-[16px]">{desc}</p> */}
+      {
+        type === '1' ? (
+          <><TextItem text='AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화' />
+            <TextItem text='충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호 ' /></>
+        ) : type === '2' ? (
+          <><TextItem text='골프장 안의 디지털 매출 허브' />
+            <TextItem text='시설 교체 없는 스마트 전환' />
+            <TextItem text='광고·스토어·데이터로 새 수익원 확보' />
+          </>
+        ) : (
+          <><TextItem text='스마트 골프코스로 도약' />
+            <TextItem text='SNS를 통한 바이럴 마케팅' />
+            <TextItem text='필드 위에서 실천하는 ESG 가치' />
+            <TextItem text='고객 만족도 및 재방문율 상승' /></>
+        )
+      }
     </div>
   </div>
 );
