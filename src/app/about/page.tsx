@@ -8,7 +8,7 @@ const AboutUPage = () => {
     <PageLayout>
       <div className="container mx-auto w-full text-gray-800 pt-[102px] m-auto p-auto ">
         {/* --- Header Section --- */}
-        <section className="text-center md:text-left py-20 m-auto">
+        <section className="text-center md:text-left py-14 m-auto px-10">
           <Image src="./Group.svg" alt="Portrush Logo" width={370} height={46} className="mx-auto md:mx-0" />
           <h1 className="text-gray-700 mt-2 text-lg font-medium text-[40px] font-montserrat">
             AI mobility + Trusted Technology + Smart Golf
@@ -34,7 +34,7 @@ const AboutUPage = () => {
         </section>
 
         {/* --- Our Goal Section --- */}
-        <section className="py-[150px]">
+        <section className="py-[150px] px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto px-4 px-auto">
             {/* 1st column: heading */}
             <div className=" w-full md:w-[226px]  ">
@@ -104,7 +104,7 @@ const AboutUPage = () => {
 
 
         {/* --- Product Section --- */}
-        <section className="py-20 grid md:grid-cols-2 gap-12 items-center m-auto">
+        <section className="py-20 grid md:grid-cols-2 gap-12 items-center m-auto px-10">
           {/* Left Column: Images */}
           <div className="relative w-full max-w-[508px] mx-auto">
             {/* Background image */}
