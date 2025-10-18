@@ -225,8 +225,8 @@ const ProductPage = () => {
           <aside className="w-full lg:w-[336px] max-w-[336px] py-2 sticky h-auto lg:h-screen self-start top-10">
             <div className="flex justify-between items-center lg:block">
               <h2 className="font-sans flex text-2xl lg:text-3xl leading-normal tracking-normal mb-0 lg:mb-12">
-                <span className="font-extrabold">FieldBook</span>
-                <span className="font-medium">{" \u00A0"}Technology</span>
+                <span className="font-extrabold text-black">FieldBook</span>
+                <span className="font-medium text-black">{" \u00A0"}Technology</span>
               </h2>
               <button
                 className="lg:hidden p-2 rounded-md hover:bg-gray-100"
