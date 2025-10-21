@@ -36,7 +36,7 @@ export default function Home() {
                   {t("main_title")}
                 </h1>
                 <p
-                  className="text-justify max-w-2xl font-pretendard  text-xl md:text-2xl lg:text-3xl font-extrabold leading-[140%] tracking-[0%] text-center md:text-start"
+                  className="text-justify max-w-2xl font-pretendard  text-xl md:text-2xl lg:text-3xl font-extrabold leading-[140%] tracking-[0%] md:text-start"
                   style={{ fontStyle: "ExtraBold" }}
                 >
                   모든 순간을 함께하는 프리미엄&nbsp;
@@ -49,7 +49,7 @@ export default function Home() {
                 </p>
               </div>
               <p
-                className="text-justify font-pretendard  mx-auto text-lg md:text-xl lg:text-2xl font-normal leading-[140%] tracking-[0%] text-white text-center md:text-start font-pretendard"
+                className="text-justify font-pretendard  mx-auto text-lg md:text-xl lg:text-2xl font-normal leading-[140%] tracking-[0%] text-white md:text-start font-pretendard"
                 style={{ fontStyle: "Regular" }}
               >
                 딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적, 맞춤 클럽
