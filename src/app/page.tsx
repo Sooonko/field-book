@@ -32,26 +32,38 @@ export default function Home() {
           <div className="w-full flex flex-col items-center text-center md:items-start md:text-start px-4 md:px-20 lg:px-40 mb-20">
             <div className="mb-10 md:mb-20">
               <div className="mb-5">
-                <h1 className="font-black text-4xl md:text-5xl lg:text-6xl leading-tight font-montserrat mb-2">
+                <h1 className="font-black text-4xl md:text-5xl lg:text-6xl leading-tight font-montserrat mb-2 text-justify">
                   {t("main_title")}
                 </h1>
-                <p className="max-w-2xl mx-auto text-lg md:text-2xl font-extrabold leading-normal font-pretendard whitespace-pre-line text-center md:text-start">
+                <p
+                  className="text-justify max-w-2xl font-pretendard  text-xl md:text-2xl lg:text-3xl font-extrabold leading-[140%] tracking-[0%] text-center md:text-start"
+                  style={{ fontStyle: "ExtraBold" }}
+                >
                   모든 순간을 함께하는 프리미엄&nbsp;
-                  <span className="font-medium text-lg md:text-2xl font-pretendard leading-normal">
+                  <span
+                    className="font-black font-montserrat text-xl md:text-2xl lg:text-3xl leading-[140%] tracking-[0%]"
+                    style={{ fontStyle: "Black" }}
+                  >
                     AI Caddie
                   </span>
                 </p>
               </div>
-              <p className="max-w-2xl mx-auto text-lg md:text-xl font-normal leading-normal font-pretendard whitespace-pre-line text-center md:text-start">
-                {t("description")}
+              <p
+                className="text-justify font-pretendard  mx-auto text-lg md:text-xl lg:text-2xl font-normal leading-[140%] tracking-[0%] text-white text-center md:text-start font-pretendard"
+                style={{ fontStyle: "Regular" }}
+              >
+                딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적, 맞춤 클럽
+                추천, <br />
+                플레이 영상 자동 저장을 제공함으로써 골프장의 운영 효율성과 고객
+                만족도를 높입니다.
               </p>
             </div>
             <button
-              className="w-full md:w-[296px] h-[58px] px-7 py-3 border-2 border-white rounded-full bg-transparent text-white font-medium text-[24px] leading-[140%] tracking-[0%] font-montserrat hover:bg-white hover:text-black transition-colors duration-300"
+              className="w-full md:w-[296px] h-[58px] px-7 py-3 border-2 border-white rounded-full bg-transparent text-white font-medium text-lg md:text-xl lg:text-2xl leading-[140%] tracking-[0%] font-montserrat hover:bg-white hover:text-black transition-colors duration-300"
               onClick={() => (window.location.href = "/product")}
             >
               Explore&nbsp;
-              <span className="font-black text-[24px] leading-[140%] tracking-[0%] font-montserrat">
+              <span className="font-black text-lg md:text-xl lg:text-2xl leading-[140%] tracking-[0%] font-montserrat">
                 FieldBook
               </span>
             </button>

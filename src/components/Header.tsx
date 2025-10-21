@@ -17,7 +17,7 @@ const MenuIcon = ({
   <Image
     color={colorConv}
     className={`w-6 h-6 align-middle ${isSolid ? "filter invert" : ""}`}
-    src="/icons_menu_black.svg"
+    src="/menu.svg"
     alt="menu"
     width={36}
     height={37.67}
