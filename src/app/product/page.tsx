@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import PageLayout from "../../components/PageLayout";
 import Image from "next/image";
 import Header from "@/components/Header";
+import FooterModal from "@/components/Footer";
 
 const features = [
   { icon: "/auto-follow.svg", title: "Auto-Follow" },
@@ -250,20 +251,18 @@ const ProductPage = () => {
             </div>
 
             <ul
-              className={`flex flex-col gap-6 text-base text-gray-600 mt-6 lg:mt-0 ${
-                open ? "block" : "hidden"
-              } lg:flex`}
+              className={`flex flex-col gap-6 text-base text-gray-600 mt-6 lg:mt-0 ${open ? "block" : "hidden"
+                } lg:flex`}
             >
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)} // Close menu on link click for mobile
-                    className={`hover:text-black transition-all duration-300 ease-in-out block ${
-                      activeSection === link.href.substring(1)
+                    className={`hover:text-black transition-all duration-300 ease-in-out block ${activeSection === link.href.substring(1)
                         ? "font-bold text-xl lg:text-2xl underline text-black"
                         : "font-medium text-lg lg:text-xl text-gray-500"
-                    }`}
+                      }`}
                   >
                     {link.text}
                   </a>
@@ -276,11 +275,11 @@ const ProductPage = () => {
           <main className=" w-full mx-auto py-8">
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
-              link.href.includes("jvyv") ||
-              link.href.includes("ip5x") ||
-              link.href.includes("battery") ||
-              link.href.includes("101screen") ||
-              link.href.includes("fieldbook-app") ? null : (
+                link.href.includes("jvyv") ||
+                link.href.includes("ip5x") ||
+                link.href.includes("battery") ||
+                link.href.includes("101screen") ||
+                link.href.includes("fieldbook-app") ? null : (
                 <section
                   key={link.href}
                   id={link.href.substring(1)}
@@ -486,6 +485,7 @@ const ProductPage = () => {
           />
         </svg>
       </button>
+      <FooterModal isOpen={true} onClose={() => { }} />
     </div>
   );
 };

@@ -2,15 +2,16 @@
 
 import Image from 'next/image';
 import PageLayout from '../../components/PageLayout';
+import FooterModal from '@/components/Footer';
 
 const AboutUPage = () => {
   return (
     <PageLayout>
-      <div className="container mx-auto w-full text-gray-800 pt-[102px] m-auto p-auto ">
+      <div className="container mx-auto w-full text-gray-800 mt-[100px] m-auto p-auto px-4 py-20 ">
         {/* --- Header Section --- */}
-        <section className="text-center md:text-left py-14 m-auto px-10">
+        <section className="text-center md:text-left py-15 m-auto px-14">
           <Image src="./Group.svg" alt="Portrush Logo" width={370} height={46} className="mx-auto md:mx-0" />
-          <h1 className="text-gray-700 mt-2 text-lg font-medium text-[40px] font-montserrat">
+          <h1 className="text-gray-900 text-lg font-medium text-[40px] font-montserrat leading-[140%] mt-[18px]">
             AI mobility + Trusted Technology + Smart Golf
           </h1>
 
@@ -179,6 +180,7 @@ const AboutUPage = () => {
             />
           </div>
         </section>
+        <FooterModal isOpen={true} onClose={() => { }} />
       </div>
     </PageLayout>
   );

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import PageLayout from "../../components/PageLayout";
+import FooterModal from "@/components/Footer";
 
 const AppStoreButton = () => (
   <button className="w-36 md:w-auto">
@@ -218,6 +219,7 @@ const AppPage = () => {
             © 주식회사 포트버시 ALL RIGHTS RESERVED
           </p>
         </section>
+        <FooterModal isOpen={true} onClose={() => { }} />
       </main>
     </PageLayout>
   );
