@@ -124,7 +124,7 @@ const AboutUPage = () => {
           </section>
 
           {/* --- Product Section --- */}
-          <section className="pt-8 md:pt-10 flex flex-col md:flex-row items-center m-auto px-4 md:px-10">
+          <section className="pt-8 md:pt-10 md:pb-20  flex flex-col md:flex-row items-center m-auto px-4 md:px-10">
             {/* Left Column: Images */}
             <div className="relative w-full max-w-[408px] mx-auto">
               {/* Background image */}
