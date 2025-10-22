@@ -26,3 +26,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.heroSwiper .swiper-pagination {
+  position: relative !important;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heroSwiper .swiper-pagination-bullet {
+  background-color: #c4c4c4;
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.heroSwiper .swiper-pagination-bullet-active {
+  background-color: #111;
+  opacity: 1;
+  width: 24px;
+  border-radius: 8px;
+}
