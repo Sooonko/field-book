@@ -173,25 +173,25 @@ const ProductPage = () => {
         className={`transition-all duration-500 overflow-hidden opacity-100" 
           }`}
       >
-        <div className="flex justify-center w-full bg-white py-24">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-16 text-center">
+        <div className="flex justify-center w-full bg-white py-12 md:py-24">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-16 text-center">
             {features.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center w-[150px] h-[161px] space-y-4"
+                className="flex flex-col items-center justify-center space-y-4"
               >
                 {item.icon.endsWith(".png") ? (
-                  <div className="relative w-[120px] h-[120px] bg-gray-100 rounded-[12px]">
+                  <div className="relative w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg">
                     <Image
                       src={item.icon}
                       alt={item.title}
                       width={41}
                       height={72}
-                      className="absolute top-[24px] left-[40px]"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     />
                   </div>
                 ) : (
-                  <div className="relative w-[120px] h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-7">
+                  <div className="relative w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
                     <Image
                       src={item.icon}
                       alt={item.title}
@@ -202,7 +202,7 @@ const ProductPage = () => {
                   </div>
                 )}
 
-                <p className="font-pret font-medium text-[18px] leading-[140%] text-gray-900 text-center">
+                <p className="font-pret font-medium text-base md:text-lg leading-[140%] text-gray-900 text-center">
                   {item.title}
                 </p>
               </div>
@@ -214,7 +214,7 @@ const ProductPage = () => {
         <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
           <aside className="w-full lg:w-[336px] max-w-[336px] py-2 sticky h-auto lg:h-screen self-start top-10">
             <div className="flex justify-between items-center lg:block">
-              <h2 className="flex text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
+              <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
                 <span className="font-montserrat font-extrabold text-gray-900">
                   FieldBook
                 </span>
@@ -255,8 +255,8 @@ const ProductPage = () => {
                     onClick={() => setOpen(false)} // Close menu on link click for mobile
                     className={`transition-all duration-300 ease-in-out block align-middle ${
                       activeSection === link.href.substring(1)
-                        ? "font-pretendard font-black text-[26px] leading-[140%] underline text-gray-900"
-                        : "font-pretendard font-medium text-[20px] leading-[140%] text-gray-500"
+                        ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
+                        : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
                     }`}
                   >
                     {link.text}
@@ -279,10 +279,10 @@ const ProductPage = () => {
                   className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
                 >
                   <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg"></div>
-                  <h3 className="font-montserrat font-[800] text-[32px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
+                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
                     {link.text}
                   </h3>
-                  <p className="font-pretendard font-[500] text-[20px] leading-[140%] tracking-[0%] text-[#626262]">
+                  <p className="font-pretendard font-[500] text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
                     {link.description}
                   </p>
                 </section>
@@ -302,10 +302,10 @@ const ProductPage = () => {
                   <h2 className="text-2xl md:text-3xl font-extrabold mb-3">
                     IP5X 방수
                   </h2>
-                  <h3 className="font-pretendard font-[500] text-[24px] leading-[140%] tracking-[0%] text-[#222222] mb-6">
+                  <h3 className="font-pretendard font-[500] text-xl md:text-2xl leading-[140%] tracking-[0%] text-[#222222] mb-6">
                     IP5X 방진·방수 설계로 어디서나 안정적으로 주행합니다.
                   </h3>
-                  <p className="font-pretendard text-[20px] leading-[140%] text-gray-700">
+                  <p className="font-pretendard text-base md:text-lg leading-[140%] text-gray-700">
                     <span className="font-bold text-gray-900">
                       · 먼지 차단 설계
                     </span>{" "}
@@ -345,14 +345,14 @@ const ProductPage = () => {
                   />
                 </div>
                 <div className="w-full lg:w-2/3 text-center lg:text-left">
-                  <h3 className="font-montserrat font-[800] text-[32px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
+                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
                     대용량 배터리
                   </h3>
-                  <h3 className="text-xl md:text-2xl font-medium mb-6">
+                  <h3 className="text-lg md:text-xl font-medium mb-6">
                     대용량 탈착식 배터리로 1회 충전 시<br />
                     36홀 이상 연속 플레이가 가능 합니다.
                   </h3>
-                  <p className="font-pretendard text-[20px] leading-[140%] text-gray-700">
+                  <p className="font-pretendard text-base md:text-lg leading-[140%] text-gray-700">
                     <span className="font-bold text-gray-900">
                       · 긴 사용 시간
                     </span>{" "}
@@ -392,10 +392,10 @@ const ProductPage = () => {
                   />
                 </div>
                 <div className="w-full lg:w-3/5 text-center lg:text-left">
-                  <h2 className="font-pretendard font-extrabold text-[32px] leading-[140%] tracking-[0%] text-[#222222] mb-3">
+                  <h2 className="font-pretendard font-extrabold text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mb-3">
                     10.1인치 터치스크린
                   </h2>
-                  <p className="font-pretendard font-medium text-[20px] leading-[140%] tracking-[0%] text-[#626262]">
+                  <p className="font-pretendard font-medium text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
                     10.1인치 대형 터치스크린으로 <br />전 세계 4만 개 코스를
                     제공합니다.
                   </p>
@@ -418,16 +418,16 @@ const ProductPage = () => {
                 </div>
 
                 <div className="w-full lg:w-2/3 text-center lg:text-left">
-                  <h2 className="font-montserrat font-extrabold text-[32px] leading-[140%] text-gray-900 mb-3">
+                  <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
                     FieldBOOK App
                   </h2>
 
-                  <h3 className="font-pretendard font-medium text-[24px] leading-[140%] text-gray-900 mb-6">
+                  <h3 className="font-pretendard font-medium text-xl md:text-2xl leading-[140%] text-gray-900 mb-6">
                     클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석까지 한
                     번에 제공합니다.
                   </h3>
 
-                  <p className="font-pretendard text-[20px] leading-[140%] text-gray-700">
+                  <p className="font-pretendard text-base md:text-lg leading-[140%] text-gray-700">
                     <span className="font-bold text-gray-900">
                       · 간편 로그인·대시보드
                     </span>{" "}
@@ -457,56 +457,30 @@ const ProductPage = () => {
               className="w-full rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-pretendard font-extrabold text-[32px] leading-[140%] text-gray-900 mb-4">
+                <h2 className="font-pretendard font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-4">
                   제원
                 </h2>
-                <p className="font-pretendard font-medium text-[24px] leading-[140%] text-gray-900">
+                <p className="font-pretendard font-medium text-xl md:text-2xl leading-[140%] text-gray-900">
                   상세 사양과 성능 지표를 한눈에 확인하세요.
                 </p>
-                <p className="font-pretendard font-normal text-[20px] leading-[140%] text-gray-700 mt-3">
+                <p className="font-pretendard font-normal text-base md:text-lg lg:text-xl leading-[140%] text-gray-700 mt-3">
                   강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀 제어로
                   가파른 경사와 험로에서도 안정적으로 주행합니다. IP5X 방진
                   설계와 실시간 연결성으로 야외 환경에서도 신뢰할 수 있는 운영을
                   제공합니다.
                 </p>
               </div>
-              <div
-                className=" rounded-[20px] opacity-100"
-                style={{
-                  width: "964px",
-                  height: "384px",
-                  paddingTop: "28px",
-                  paddingRight: "36px",
-                  paddingBottom: "28px",
-                  paddingLeft: "36px",
-                }}
-              >
-                <div className="grid grid-cols-4 gap-x-12 gap-y-[48px]">
+              <div className="rounded-[20px] p-7 md:p-9">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
                   {specs.map((spec, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col gap-[4px]"
-                      style={{
-                        width: "223px",
-                        height: "46px",
-                        opacity: 1,
-                      }}
-                    >
-                      <p
-                        className="text-[14px] text-gray-700 font-[500] leading-[140%]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Medium",
-                          letterSpacing: "0%",
-                        }}
-                      >
+                    <div key={index} className="flex flex-col gap-1">
+                      <p className="text-sm text-gray-700 font-medium">
                         {spec.title}
                       </p>
                       <p
-                        className="text-[16px] text-gray-900 font-[500] leading-[140%]"
+                        className="text-base text-gray-900 font-medium leading-[140%]"
                         style={{
                           fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Medium",
                           letterSpacing: "0%",
                         }}
                       >
@@ -523,10 +497,10 @@ const ProductPage = () => {
               className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-pretendard font-extrabold text-[32px] leading-[140%] text-gray-900 mb-4">
+                <h2 className="font-pretendard font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-4">
                   주요 기능
                 </h2>
-                <p className="font-pretendard font-medium text-[24px] leading-[140%] text-gray-700">
+                <p className="font-pretendard font-medium text-xl md:text-2xl leading-[140%] text-gray-700">
                   필드북이 제공하는 25가지 스마트 기능.
                   <br />
                   플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인할 수
@@ -535,7 +509,7 @@ const ProductPage = () => {
               </div>
               <ProductFeatureList />
             </section>
-            <div style={{ marginRight: "30px" }}>
+            <div>
               {" "}
               <FooterModal isOpen={true} onClose={() => {}} />
             </div>

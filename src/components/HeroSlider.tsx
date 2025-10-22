@@ -3,7 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
+import Image from "next/image";
 
 const slides = [
   {
@@ -39,14 +41,17 @@ const slides = [
 ];
 
 export default function HeroSlider() {
-  const swiperRef = useRef<any>(null);
+  // ✅ Use the Swiper type from "swiper"
+  const swiperRef = useRef<SwiperType | null>(null);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const delay = 4000;
 
   useEffect(() => {
-    let interval: any;
+    // ✅ use NodeJS.Timeout (for setInterval return value)
+    let interval: NodeJS.Timeout | undefined;
     if (isPlaying) {
       let start = Date.now();
       interval = setInterval(() => {
@@ -55,7 +60,9 @@ export default function HeroSlider() {
         if (elapsed >= delay) start = Date.now();
       }, 50);
     }
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [isPlaying]);
 
   const toggleAutoplay = () => {
@@ -102,9 +109,11 @@ export default function HeroSlider() {
                 </p>
               </div>
               <div className="flex justify-end items-end flex-shrink-0">
-                <img
+                <Image
                   src={slide.image}
                   alt={slide.title}
+                  width={520}
+                  height={490}
                   className="w-[520px] h-auto object-contain"
                 />
               </div>
@@ -112,18 +121,11 @@ export default function HeroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       {/* Custom pagination bar */}
-      <div className="absolute -bottom-0   left-1/2 -translate-x-1/2 flex items-center gap-[10px] z-20">
+      <div className="absolute -bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-[10px] z-20">
         {/* Progress + Bullets capsule */}
-        <div
-          className="
-      flex items-center gap-[12px]
-      bg-gray-100
-      rounded-[1000px]
-      px-[20px] py-[8px]
-      w-[188px] h-[40px]
-    "
-        >
+        <div className="flex items-center gap-[12px] bg-gray-100 rounded-[1000px] px-[20px] py-[8px] w-[188px] h-[40px]">
           {/* Progress bar */}
           <div className="relative w-[80px] h-[8px] bg-gray-300 rounded-full overflow-hidden">
             <div
@@ -148,13 +150,7 @@ export default function HeroSlider() {
         {/* Play / Pause button */}
         <button
           onClick={toggleAutoplay}
-          className="
-      flex items-center justify-center
-      bg-gray-100
-      rounded-full
-      w-[40px] h-[40px]
-      hover:bg-gray-200 transition
-    "
+          className="flex items-center justify-center bg-gray-100 rounded-full w-[40px] h-[40px] hover:bg-gray-200 transition"
         >
           {isPlaying ? (
             <svg

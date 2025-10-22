@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProductFeatureList() {
   const features = [
     {
@@ -70,9 +72,11 @@ export default function ProductFeatureList() {
           {/* Left Column - Icon + Title */}
           <div className="w-[318px] pr-6">
             <div className="flex items-start gap-[12px]">
-              <img
+              <Image
                 src={feature.icon}
                 alt={`${feature.title} icon`}
+                height={20}
+                width={20}
                 className="w-[20px] h-[20px] mt-[2px] opacity-100"
               />
               <p
