@@ -21,11 +21,11 @@ const AboutUPage = () => {
             <h1 className="font-montserrat font-normal text-2xl md:text-4xl leading-[140%] tracking-[0%] text-[#222222] mt-[8px]">
               AI mobility + Trusted Technology + Smart Golf
             </h1>
-            <p className="mt-6 md:mt-10 font-pret font-bold text-xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222]">
+            <p className="mt-6 md:mt-10 font-pretendard  font-bold text-xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222]">
               (주)포트러시는 검증된 기술력과 축적된 필드 경험으로, 골프장의 운영
               효율과 골퍼의 만족을 동시에 높입니다.
             </p>
-            <p className="mt-4 font-pret font-normal text-base md:text-xl leading-[140%] tracking-[0%] text-[#626262]">
+            <p className="mt-4 font-pretendard  font-normal text-base md:text-xl leading-[140%] tracking-[0%] text-[#626262]">
               우리는 AI 비전·GNSS·모바일 연동 기술을 기반으로 스마트 골프
               모빌리티를 개발·제공합니다. 정밀 기술과 운영 안정성을 바탕으로
               국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고 있습니다.
@@ -55,38 +55,38 @@ const AboutUPage = () => {
               {/* 2nd column */}
               <div className="space-y-[28px]">
                 <div className="">
-                  <h3 className="font-pret font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     신뢰성
                   </h3>
-                  <p className="font-pret font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     안정성이 검증된 내구성과 안전 제어로,
                     <br />
                     언제나 믿을 수 있는 파트너가 됩니다.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-pret font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     지능형
                   </h3>
-                  <p className="font-pret font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     딥러닝 비전과 정밀 GPS를 기반으로,<br></br> 스마트한
                     라운드를 제공합니다.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-pret font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     연결성
                   </h3>
-                  <p className="font-pret font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     카트·앱·서버를 하나로 이어,<br></br>
                     운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-pret font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     안전
                   </h3>
-                  <p className="font-pret font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     No-Go Zone과 장애물 감지,<br></br>
                     지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
                   </p>
@@ -155,11 +155,11 @@ const AboutUPage = () => {
               <h2 className="font-montserrat font-black text-3xl md:text-5xl leading-[140%] tracking-[0%] text-[#222222] mb-4 md:mb-10">
                 Product - FieldBOOK
               </h2>
-              <p className="font-pret font-bold text-xl md:text-2xl leading-[140%] tracking-[0%] text-[#222222]">
+              <p className="font-pretendard  font-bold text-xl md:text-2xl leading-[140%] tracking-[0%] text-[#222222]">
                 필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 차세대 스마트 골프
                 솔루션입니다.
               </p>
-              <p className="mt-2 md:mt-3 font-pret font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262]">
+              <p className="mt-2 md:mt-3 font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262]">
                 AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
                 스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
               </p>

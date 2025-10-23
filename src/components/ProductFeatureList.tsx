@@ -6,9 +6,9 @@ export default function ProductFeatureList() {
       icon: "/phone_icon.svg",
       title: "디자인 및 디스플레이",
       items: [
-        "10.1” LCD 터치스크린",
-        "듀얼 밸런스 알버커 시스템",
-        "IP5X 방수 및 방진 설계",
+        "10.1인치 LCD 터치스크린",
+        "IP5X 방진/방수 설계",
+        "듀얼 밸런스 앞바퀴 시스템",
       ],
     },
     {
@@ -16,10 +16,10 @@ export default function ProductFeatureList() {
       title: "주행 성능 및 안전",
       items: [
         "AI 비전 기반 자동 추종",
-        "350W 고출력 모터",
-        "미끌림 방지 및 험로 방지 기능",
-        "No-Go Zone 감지 및 회피",
-        "자동 장애물 감지 회피",
+        "고출력(350W급) 모터",
+        "미끄럼 방지 전자식 브레이크",
+        "제한구역(그린·벙커·헤저드) 감지·회피",
+        "자동 장애물 감지·회피",
       ],
     },
     {
@@ -27,10 +27,10 @@ export default function ProductFeatureList() {
       title: "GPS 및 코스 내비게이션",
       items: [
         "고정밀 GPS 기반 코스맵",
-        "그린 핀별 정확한 거리 표시 (앞/중/뒤)",
-        "Full Hole View & 홀 자동 전환",
+        "그린 핀별 거리 표시(앞·중앙·뒤)",
+        "전체 홀 맵·홀 전환",
         "빠른 GPS 연결",
-        "40,000개 이상 골프장 지원",
+        "전 세계 4만 개 코스 지원",
       ],
     },
     {
@@ -40,8 +40,7 @@ export default function ProductFeatureList() {
         "스윙 영상 자동 녹화 및 재생",
         "위치 기반 스윙 영상 저장",
         "스코어 및 퍼팅 기록 기능",
-        "플레이 기록 자동 저장",
-        "SNS 공유 기능",
+        "링크·SNS 공유",
       ],
     },
     {
@@ -49,8 +48,9 @@ export default function ProductFeatureList() {
       title: "스마트 클럽 가이드 & UI",
       items: [
         "지능형 클럽 추천 기능",
-        "핀치 줌 조작 기능",
-        "멀티터치 디스플레이",
+        "알림 및 음성 가이드",
+        "핀치 투 줌 기능",
+        "다국어 지원",
         "iOS/Android 전용 앱 연동",
       ],
     },
@@ -58,9 +58,9 @@ export default function ProductFeatureList() {
       icon: "/battery_icon.svg",
       title: "배터리 및 연결성",
       items: [
-        "36홀 이상 주행 가능한 대용량 배터리",
+        "36홀 이상 주행 가능한 탈착식 배터리",
         "OTA 무선 업데이트 지원",
-        "Wi-Fi 및 LTE Cat.M1 내장",
+        "Wi‑Fi/LTE Cat.M1 통신 지원",
       ],
     },
   ];
@@ -97,7 +97,7 @@ export default function ProductFeatureList() {
             {feature.items.map((item, i) => (
               <p
                 key={i}
-                className="text-gray-700 font-[500] text-[16px] leading-[160%]"
+                className="text-gray-900 font-[500] text-[16px] leading-[160%]"
                 style={{
                   fontFamily: "Pretendard, sans-serif",
                   fontStyle: "Medium",

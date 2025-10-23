@@ -23,7 +23,7 @@ const ContactUsPage = () => {
             {/* Left Column: Form */}
             <div className="flex flex-col">
               <h1
-                className="font-pret font-black text-[32px] leading-[140%] tracking-[0%] text-[#222222]"
+                className="font-pretendard font-black text-[32px] leading-[140%] tracking-[0%] text-[#222222]"
                 style={{
                   fontFamily: "Pretendard",
                   fontWeight: 900,
@@ -34,7 +34,7 @@ const ContactUsPage = () => {
               >
                 무엇이든 편하게 물어보세요.
               </h1>
-              <p className="text-[#626262] mt-2 font-pret text-[18px] leading-[140%] font-pretendard">
+              <p className="text-[#626262] mt-2 text-[18px] leading-[140%] font-pretendard">
                 도입 상담을 원하시면 언제든지 문의 주세요.
                 <br />
                 담당자가 검토 후 영업일 기준 2영업일 내 회신드립니다.
@@ -58,7 +58,7 @@ const ContactUsPage = () => {
                       id="name"
                       placeholder="이름을 입력해 주세요."
                       className="mt-2 block w-full bg-white border border-gray-300 rounded-lg p-3  transition
-             placeholder:font-pret placeholder:font-medium placeholder:text-[15px] 
+             placeholder:font-pretendard placeholder:font-medium placeholder:text-[15px] 
              placeholder:leading-[140%] placeholder:tracking-[0%] placeholder:text-[#B1B1B1]"
                     />
                   </div>
@@ -74,7 +74,7 @@ const ContactUsPage = () => {
                       id="email"
                       placeholder="이메일을 입력해 주세요."
                       className="mt-2 block w-full bg-white border border-gray-300 rounded-lg p-3  transition
-             placeholder:font-pret placeholder:font-medium placeholder:text-[15px] 
+             placeholder:font-pretendard placeholder:font-medium placeholder:text-[15px] 
              placeholder:leading-[140%] placeholder:tracking-[0%] placeholder:text-[#B1B1B1]"
                     />
                   </div>
@@ -90,7 +90,7 @@ const ContactUsPage = () => {
                       id="phone"
                       placeholder="연락처를 입력해 주세요."
                       className="mt-2 block w-full bg-white border border-gray-300 rounded-lg p-3  transition
-             placeholder:font-pret placeholder:font-medium placeholder:text-[15px] 
+             placeholder:font-pretendard  placeholder:font-medium placeholder:text-[15px] 
              placeholder:leading-[140%] placeholder:tracking-[0%] placeholder:text-[#B1B1B1]"
                     />
                   </div>
@@ -106,7 +106,7 @@ const ContactUsPage = () => {
                       id="company"
                       placeholder="회사명을 입력해 주세요."
                       className="mt-2 block w-full bg-white border border-gray-300 rounded-lg p-3  transition
-             placeholder:font-pret placeholder:font-medium placeholder:text-[15px] 
+             placeholder:font-pretendard  placeholder:font-medium placeholder:text-[15px] 
              placeholder:leading-[140%] placeholder:tracking-[0%] placeholder:text-[#B1B1B1]"
                     />
                   </div>
@@ -122,19 +122,19 @@ const ContactUsPage = () => {
                       rows={5}
                       placeholder="문의 내용을 남겨주세요."
                       className="mt-2 block w-full bg-white border border-gray-300 rounded-lg p-3  transition
-             placeholder:font-pret placeholder:font-medium placeholder:text-[15px] 
+             placeholder:font-pretendard  placeholder:font-medium placeholder:text-[15px] 
              placeholder:leading-[140%] placeholder:tracking-[0%] placeholder:text-[#B1B1B1]"
                     ></textarea>
                   </div>
                 </div>
               </form>
               <div className="mt-[16px] md:col-span-2 ">
-                <p className="text-[14px] font-pret font-normal leading-[140%] tracking-[0%] text-[#626262]">
+                <p className="text-[14px] font-pretendard  font-normal leading-[140%] tracking-[0%] text-[#626262]">
                   제출하신 정보는 문의에 대한 답변을 드리는 용도로만 활용되며{" "}
                   <button
                     type="button"
                     onClick={() => setIsPrivacyModalOpen(true)}
-                    className="font-pret font-bold text-[14px] leading-[140%] tracking-[0%] text-[#626262] underline underline-solid decoration-solid decoration-1 cursor-pointer"
+                    className="font-pretendard  font-bold text-[14px] leading-[140%] tracking-[0%] text-[#626262] underline underline-solid decoration-solid decoration-1 cursor-pointer"
                   >
                     개인정보 처리방침
                   </button>
@@ -144,7 +144,7 @@ const ContactUsPage = () => {
                 <div className="mt-[40px]">
                   <button
                     type="submit"
-                    className="bg-black text-white font-pret font-bold text-[16px] leading-[140%] tracking-[0%] 
+                    className="bg-black text-white font-pretendard  font-bold text-[16px] leading-[140%] tracking-[0%] 
              rounded-[1000px] w-[189px] h-[62px] px-[32px] py-[20px] gap-[10px] 
              hover:bg-gray-800 transition-colors"
                   >
