@@ -26,28 +26,33 @@ const navLinks = [
     text: "Auto - Follow",
     description:
       "AI 비전으로 사용자를 실시간으로 인식해 완전한 핸즈프리 주행을 제공합니다.",
+    url: "/videos/auto-follow.mov",
   },
   {
     href: "#smart-guide",
     text: "스마트 클럽 가이드",
     description: "공략거리별 최적 클럽을 추천합니다.",
+    url: "/videos/smart-guide.mov",
   },
   {
     href: "#swing-analysis",
     text: "스윙 녹화/분석",
     description: "스윙과 샷 위치를 촬영·저장하고 언제든 재생하세요.",
+    url: "/videos/save-analyse.mov",
   },
   {
     href: "#no-go-zone",
     text: "No-Go Zone/장애물 감지",
     description:
       "AI 비전과 정밀 GPS로 장애물과 제한구역을 실시간 자동 감지·회피합니다.",
+    url: "/videos/no-gozone.mov",
   },
   {
     href: "#driving-history",
     text: "주행 능력",
     description:
       "고출력 모터로 최대 25° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주 행을 안전하게 제어합니다.",
+    url: "/videos/drive-history.mov",
   },
   { href: "#ip5x", text: "IP5X 방진/방수" },
   { href: "#battery", text: "대용량 배터리" },
@@ -244,18 +249,20 @@ const ProductPage = () => {
             </div>
 
             <ul
-              className={`flex flex-col gap-6 text-base mt-6 lg:mt-0 ${open ? "block" : "hidden"
-                } lg:flex`}
+              className={`flex flex-col gap-6 text-base mt-6 lg:mt-0 ${
+                open ? "block" : "hidden"
+              } lg:flex`}
             >
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)} // Close menu on link click for mobile
-                    className={`transition-all duration-300 ease-in-out block align-middle ${activeSection === link.href.substring(1)
-                      ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
-                      : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
-                      }`}
+                    className={`transition-all duration-300 ease-in-out block align-middle ${
+                      activeSection === link.href.substring(1)
+                        ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
+                        : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
+                    }`}
                   >
                     {link.text}
                   </a>
@@ -266,17 +273,27 @@ const ProductPage = () => {
           <main className="flex-1 min-w-0 w-full mx-auto py-8">
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
-                link.href.includes("jvyv") ||
-                link.href.includes("ip5x") ||
-                link.href.includes("battery") ||
-                link.href.includes("101screen") ||
-                link.href.includes("fieldbook-app") ? null : (
+              link.href.includes("jvyv") ||
+              link.href.includes("ip5x") ||
+              link.href.includes("battery") ||
+              link.href.includes("101screen") ||
+              link.href.includes("fieldbook-app") ? null : (
                 <section
                   key={link.href}
                   id={link.href.substring(1)}
                   className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
                 >
-                  <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg"></div>
+                  <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg overflow-hidden relative">
+                    <video
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                      src={link.url}
+                      // type="video/quicktime"
+                      controls
+                      playsInline
+                    >
+                      귀하의 브라우저는 이 게시물을 지원하지 않습니다.
+                    </video>
+                  </div>{" "}
                   <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
                     {link.text}
                   </h3>
@@ -293,9 +310,16 @@ const ProductPage = () => {
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
                 <div
-                  className="w-full lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg"
+                  className="w-full lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg overflow-hidden"
                   style={{ height: "440px" }}
-                />
+                >
+                  <img
+                    src="/ip5x-section.svg"
+                    alt="description"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
                 <div className="w-full lg:w-2/3 text-center lg:text-left">
                   <h2 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
                     IP5X 방진/방수
@@ -509,7 +533,7 @@ const ProductPage = () => {
             </section>
             <div>
               {" "}
-              <FooterModal isOpen={true} onClose={() => { }} />
+              <FooterModal isOpen={true} onClose={() => {}} />
             </div>
           </main>
         </div>
