@@ -34,7 +34,7 @@ const logos = [
 const AppPage = () => {
   return (
     <PageLayout isSolid={true}>
-      <header className="bg-[#1E5E61] text-white h-auto lg:h-[800px] py-16 lg:py-0">
+      <header className="bg-[#1E5E61] text-white h-auto lg:h-[800px] pt-16 lg:py-0">
         <div className="max-w-[1400px] mx-auto h-full flex flex-col lg:flex-row items-end justify-center lg:justify-between px-6 sm:px-12">
           {/* Left: Phone Mockup */}
           <div className="w-full lg:w-1.5/4 flex justify-center order-2 lg:order-1 mt-10 lg:mt-0">
@@ -70,15 +70,15 @@ const AppPage = () => {
         <section className="w-full pt-16 lg:py-0 lg:h-[680px] flex items-end justify-center px-4 md:px-16">
           <div className="max-w-[1400px] w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
             {/* Left: Score Cards */}
-            <div className="flex flex-col sm:flex-row items-end gap-6 sm:gap-10 order-2 lg:order-1 mt-8 lg:mt-0">
-              <div className="rounded-[40px] shadow-xl w-[280px] sm:w-[320px]">
+            <div className="flex flex-row flex-wrap justify-between gap-6 mt-8 lg:mt-0 order-2 lg:order-1">
+              <div className="rounded-[40px] shadow-xl flex-[0_0_45%]">
                 <img
                   src="/score_card_1.svg"
                   alt="Score Detail"
                   className="w-full h-auto"
                 />
               </div>
-              <div className="rounded-[40px] shadow-xl w-[280px] sm:w-[320px]">
+              <div className="rounded-[40px] shadow-xl flex-[0_0_45%]">
                 <img
                   src="/score_card_2.svg"
                   alt="Round Record"
@@ -99,13 +99,13 @@ const AppPage = () => {
           </div>
         </section>
 
-        <section className=" md:py-36 bg-gray-100 text-center px-4">
+        <section className="py-20 bg-gray-100 text-center px-4">
           <h2 className="text-2xl md:text-3xl font-bold">녹화 영상 재생</h2>
           <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
             오늘의 라운드가 끝나도, 그날의 스윙과 퍼팅을 앱 속에 간직하세요.
           </p>
 
-          <div className="relative container mx-auto mt-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl aspect-[9/16] sm:aspect-video flex items-center justify-center">
+          <div className="relative container mx-auto mt-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl aspect-[2] sm:aspect-video flex items-center justify-center">
             {/* Phone frame background */}
             <div className="absolute inset-0 w-full h-full">
               <img
@@ -150,11 +150,11 @@ const AppPage = () => {
         </section>
 
         <section className="bg-gray-50 py-20 md:py-25 flex flex-col items-center justify-center text-center px-4">
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-[70px]">
+          <div className="flex overflow-x-auto gap-6 sm:gap-10 mb-[70px]">
             {logos.map((logo, index) => (
               <div
                 key={index}
-                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center"
+                className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center"
               >
                 <Image
                   src={logo.src}

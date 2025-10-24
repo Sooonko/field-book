@@ -60,17 +60,20 @@ export default function ProductFeatureList() {
       items: [
         "36홀 이상 주행 가능한 탈착식 배터리",
         "OTA 무선 업데이트 지원",
-        "Wi‑Fi/LTE Cat.M1 통신 지원",
+        "Wi-Fi/LTE Cat.M1 통신 지원",
       ],
     },
   ];
 
   return (
-    <div className="w-[730px] bg-transparent border-t border-gray-200">
+    <div className="w-full max-w-[730px] bg-transparent border-t border-gray-200">
       {features.map((feature, index) => (
-        <div key={index} className="flex border-b border-gray-200 py-6">
+        <div
+          key={index}
+          className="flex flex-col md:flex-row border-b border-gray-200 py-6"
+        >
           {/* Left Column - Icon + Title */}
-          <div className="w-[318px] pr-6">
+          <div className="w-full md:w-[318px] md:pr-6 mb-4 md:mb-0">
             <div className="flex items-start gap-[12px]">
               <Image
                 src={feature.icon}
