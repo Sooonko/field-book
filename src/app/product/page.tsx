@@ -26,33 +26,33 @@ const navLinks = [
     text: "Auto - Follow",
     description:
       "AI 비전으로 사용자를 실시간으로 인식해 완전한 핸즈프리 주행을 제공합니다.",
-    url: "/videos/auto-follow.mov",
+    url: "/videos/auto-follow.mp4",
   },
   {
     href: "#smart-guide",
     text: "스마트 클럽 가이드",
     description: "공략거리별 최적 클럽을 추천합니다.",
-    url: "/videos/smart-guide.mov",
+    url: "/videos/smart-guide.mp4",
   },
   {
     href: "#swing-analysis",
     text: "스윙 녹화/분석",
     description: "스윙과 샷 위치를 촬영·저장하고 언제든 재생하세요.",
-    url: "/videos/save-analyse.mov",
+    url: "/videos/save-analyse.mp4",
   },
   {
     href: "#no-go-zone",
     text: "No-Go Zone/장애물 감지",
     description:
       "AI 비전과 정밀 GPS로 장애물과 제한구역을 실시간 자동 감지·회피합니다.",
-    url: "/videos/no-gozone.mov",
+    url: "/videos/no-gozone.mp4",
   },
   {
     href: "#driving-history",
     text: "주행 능력",
     description:
       "고출력 모터로 최대 25° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주 행을 안전하게 제어합니다.",
-    url: "/videos/drive-history.mov",
+    url: "/videos/drive-history.mp4",
   },
   { href: "#ip5x", text: "IP5X 방진/방수" },
   { href: "#battery", text: "대용량 배터리" },

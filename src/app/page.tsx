@@ -22,7 +22,7 @@ export default function Home() {
       <div className="relative min-h-screen">
         <div className="absolute inset-0 z-0">
           <video autoPlay loop muted className="w-full h-full object-cover">
-            <source src="/videos/main.mov" type="video/mp4" />
+            <source src="/videos/main.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black opacity-80"></div>
@@ -49,7 +49,7 @@ export default function Home() {
                 </p>
               </div>
               <p
-                className="text-justify font-pretendard  mx-auto text-lg md:text-xl lg:text-2xl font-normal leading-[140%] tracking-[0%] text-white md:text-start font-pretendard"
+                className="text-justify mx-auto text-lg md:text-xl lg:text-2xl font-normal leading-[140%] tracking-[0%] text-white md:text-start font-pretendard"
                 style={{ fontStyle: "Regular" }}
               >
                 딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적, 맞춤 클럽
