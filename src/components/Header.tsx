@@ -7,23 +7,6 @@ import "../i18n";
 import Link from "next/link";
 import Image from "next/image";
 
-const MenuIcon = ({
-  colorConv,
-  isSolid,
-}: {
-  colorConv: string;
-  isSolid: boolean;
-}) => (
-  <Image
-    color={colorConv}
-    className={`w-6 h-6 align-middle ${isSolid ? "filter invert" : ""}`}
-    src="/menu.svg"
-    alt="menu"
-    width={36}
-    height={37.67}
-  />
-);
-
 interface HeaderProps {
   variant?: "transparent" | "solid";
 }
@@ -36,15 +19,10 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
   const isSolid = variant === "solid";
   const textColor = isSolid ? "text-black" : "text-white";
   const bgColor = isSolid ? "bg-white" : "bg-transparent";
-  const logoColor = isSolid ? "text-gray-800" : "text-white";
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setIsLangMenuOpen(false);
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -53,36 +31,40 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
         className={`absolute top-0 left-0 z-30 w-full ${bgColor} ${textColor}`}
       >
         <div className="flex justify-between items-start p-4 md:p-8 lg:px-16 lg:py-12">
-          <Link href="/" className={`flex flex-col items-start ${logoColor}`}>
+          {/* Desktop Logo unchanged */}
+          <Link href="/" className="flex flex-col items-start">
             <Image
               src="/BI.svg"
               alt="logo"
-              className={`align-middle ${isSolid ? "filter invert" : ""}`}
               width={180}
               height={32}
+              className={isSolid ? "filter invert" : ""}
             />
           </Link>
+
+          {/* Lang + Menu Buttons remain unchanged */}
           <div className="flex items-center space-x-3 md:space-x-5 h-full">
             <div className="relative flex items-center">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center justify-center focus:outline-none"
+                className="hidden md:block"
               >
                 <Image
                   src="/language.svg"
                   alt="Language"
-                  className={`w-5 h-5 md:w-6 md:h-6 align-middle ${
-                    isSolid ? "filter invert" : ""
-                  }`}
                   width={38}
                   height={38}
+                  className={`w-5 h-5 md:w-6 md:h-6 ${
+                    isSolid ? "filter invert" : ""
+                  }`}
                 />
               </button>
+
               {isLangMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg p-1 shadow-lg">
+                <div className="absolute top-full right-0 mt-2 bg-white border rounded-lg p-1 shadow-lg">
                   <button
                     onClick={() => changeLanguage("ko")}
-                    className={`block w-full text-left px-3 py-1 text-sm text-black ${
+                    className={`block px-3 py-1 text-sm text-gray-900 ${
                       i18n.language === "ko" ? "font-bold" : ""
                     }`}
                   >
@@ -90,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
                   </button>
                   <button
                     onClick={() => changeLanguage("en")}
-                    className={`block w-full text-left px-3 py-1 text-sm text-black ${
+                    className={`block px-3 py-1 text-sm text-gray-900 ${
                       i18n.language === "en" ? "font-bold" : ""
                     }`}
                   >
@@ -100,19 +82,20 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
               )}
             </div>
 
-            <button
-              onClick={toggleMenu}
-              className="flex items-center justify-center focus:outline-none"
-            >
-              <MenuIcon
-                colorConv={isSolid ? "text-black" : "text-white"}
-                isSolid={isSolid}
+            <button onClick={() => setIsMenuOpen(true)}>
+              <Image
+                src="/menu.svg"
+                alt="menu"
+                width={36}
+                height={38}
+                className={isSolid ? "filter invert" : ""}
               />
             </button>
           </div>
         </div>
       </header>
-      <MenuModal isOpen={isMenuOpen} onClose={toggleMenu} />
+
+      <MenuModal isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );
 };

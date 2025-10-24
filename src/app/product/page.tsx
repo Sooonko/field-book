@@ -215,9 +215,9 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 px-4 lg:px-10 bg-[#FBFBFE]">
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 bg-[#FBFBFE]">
         <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
-          <aside className="w-full lg:w-[336px] max-w-[336px] py-2 sticky h-auto lg:h-screen self-start top-10">
+          <aside className="w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 sticky h-auto lg:h-screen self-start top-10">
             <div className="flex justify-between items-center lg:block">
               <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
                 <span className="font-montserrat font-extrabold text-gray-900">
@@ -311,7 +311,6 @@ const ProductPage = () => {
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
                 <div
                   className="w-full lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg overflow-hidden"
-                  style={{ height: "440px" }}
                 >
                   <img
                     src="/ip5x-section.svg"
@@ -430,7 +429,7 @@ const ProductPage = () => {
               className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
             >
               <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
-                <div className="relative w-full lg:w-1/3 h-[530px] lg:h-[530px] flex items-center justify-center overflow-hidden">
+                <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
                   <Image
                     src="/product_fb_app.svg"
                     alt="10.1인치 터치 스크린"
@@ -542,7 +541,7 @@ const ProductPage = () => {
       {!showButton ? null : (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed z-20 w-[52px] h-[52px] right-[32px] bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
+          className="fixed z-20 w-[52px] h-[52px] right-[16px] bottom-[16px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
         >
           <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
         </button>
