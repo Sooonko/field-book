@@ -127,31 +127,31 @@ const ContactUsPage = () => {
                     ></textarea>
                   </div>
                 </div>
-              </form>
-              <div className="mt-[16px] md:col-span-2 ">
-                <p className="text-[14px] font-pretendard  font-normal leading-[140%] tracking-[0%] text-[#626262]">
-                  제출하신 정보는 문의에 대한 답변을 드리는 용도로만 활용되며{" "}
-                  <button
-                    type="button"
-                    onClick={() => setIsPrivacyModalOpen(true)}
-                    className="font-pretendard  font-bold text-[14px] leading-[140%] tracking-[0%] text-[#626262] underline underline-solid decoration-solid decoration-1 cursor-pointer"
-                  >
-                    개인정보 처리방침
-                  </button>
-                  을 준수합니다.
-                </p>
+                <div className="mt-[16px] md:col-span-2 ">
+                  <p className="text-[14px] font-pretendard  font-normal leading-[140%] tracking-[0%] text-[#626262]">
+                    제출하신 정보는 문의에 대한 답변을 드리는 용도로만 활용되며{" "}
+                    <button
+                      type="button"
+                      onClick={() => setIsPrivacyModalOpen(true)}
+                      className="font-pretendard  font-bold text-[14px] leading-[140%] tracking-[0%] text-[#626262] underline underline-solid decoration-solid decoration-1 cursor-pointer"
+                    >
+                      개인정보 처리방침
+                    </button>
+                    을 준수합니다.
+                  </p>
 
-                <div className="mt-[40px]">
-                  <button
-                    type="submit"
-                    className="bg-black text-white font-pretendard  font-bold text-[16px] leading-[140%] tracking-[0%] 
+                  <div className="mt-[40px]">
+                    <button
+                      type="submit"
+                      className="bg-black text-white font-pretendard  font-bold text-[16px] leading-[140%] tracking-[0%] 
              rounded-[1000px] w-[189px] h-[62px] px-[32px] py-[20px] gap-[10px] 
              hover:bg-gray-800 transition-colors"
-                  >
-                    문의하기 (Submit)
-                  </button>
+                    >
+                      문의하기 (Submit)
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
 
             {/* Right Column: Info & Map */}
