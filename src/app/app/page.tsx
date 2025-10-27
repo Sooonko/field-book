@@ -104,25 +104,35 @@ const AppPage = () => {
           <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
             오늘의 라운드가 끝나도, 그날의 스윙과 퍼팅을 앱 속에 간직하세요.
           </p>
+          <div className="relative mx-auto mt-8 w-full max-w-2xl aspect-[2/1]">
+            {/* Frame image */}
+            <img
+              src="/phone_frame.svg"
+              alt="Phone Frame"
+              className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+            />
 
-          <div className="relative container mx-auto mt-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl aspect-[2] sm:aspect-video flex items-center justify-center">
-            {/* Phone frame background */}
-            <div className="absolute inset-0 w-full h-full">
-              <img
-                src="/phone_frame.svg"
-                alt="Phone Frame"
-                className="w-full h-full object-contain pointer-events-none"
+            {/* Video area */}
+            <div
+              className="
+      absolute overflow-hidden
+      sm:rounded-[26px]
+      md:rounded-[33px]
+    "
+              style={{
+                width: "96.5%",
+                height: "88%",
+                top: "6%",
+                left: "2%",
+              }}
+            >
+              <video
+                className="w-full h-full object-cover"
+                src="/videos/app_video.mp4"
+                controls
+                playsInline
               />
             </div>
-
-            {/* Video inside the screen */}
-            {/* <div className="absolute w-[78%] h-[70%] top-[15%] left-[11%]">
-              <video
-                className="w-full h-full object-cover rounded-lg"
-                src="/main_bg_video.mp4"
-                controls
-              />
-            </div> */}
           </div>
         </section>
 

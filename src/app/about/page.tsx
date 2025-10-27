@@ -10,13 +10,12 @@ const AboutUPage = () => {
       <div>
         <div className="container mx-auto w-full text-gray-800 mt-10 md:mt-20 lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
-          <section className="text-center md:text-left  py-15 m-auto px-14">
+          <section className="text-start md:text-left  py-15 m-auto px-4">
             <Image
               src="./Group.svg"
               alt="Portrush Logo"
               width={370}
               height={46}
-              className="mx-auto md:mx-0"
             />
             <h1 className="font-montserrat font-normal text-2xl md:text-4xl leading-[140%] tracking-[0%] text-[#222222] mt-[8px]">
               AI mobility + Trusted Technology + Smart Golf
@@ -43,8 +42,8 @@ const AboutUPage = () => {
           </section>
 
           {/* --- Our Goal Section --- */}
-          <section className="px-4 py-8 md:px-10 md:py-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto px-4 px-auto">
+          <section className="px-4 py-8  md:py-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto">
               {/* 1st column: heading */}
               <div className=" w-full md:w-[226px] ">
                 <h2 className="font-montserrat font-black text-3xl md:text-5xl leading-[140%] tracking-[0%] text-[#222222]">
@@ -94,29 +93,15 @@ const AboutUPage = () => {
               </div>
 
               {/* 3rd column: images */}
-              <div className="relative flex ml-4 md:ml-10">
+              <div className="relative flex">
                 {/* Background image */}
-                <div className="relative w-[80vw] max-w-[371px] rounded-[48px] overflow-hidden  mr-auto">
+                <div className="relative w-[90vw] max-w-[500px] rounded-[48px] overflow-hidden  mr-auto">
                   <Image
-                    src="/Frame88.svg"
+                    src="/Frame88.png"
                     alt="Golf image 1 (background)"
-                    width={371}
+                    width={500}
                     height={485}
                     className="w-full h-auto object-cover"
-                  />
-                </div>
-
-                {/* Foreground small image */}
-                <div
-                  className="absolute bottom-[-15%] right-[-15%] 
-              md:bottom-[-90px] md:right-[-60px] rounded-[36px] overflow-hidden"
-                >
-                  <Image
-                    src="/Frame89.svg"
-                    alt="Golf image 2 (foreground)"
-                    width={200}
-                    height={383}
-                    className="w-[50%] md:w-[200px] h-auto object-cover"
                   />
                 </div>
               </div>
@@ -124,49 +109,50 @@ const AboutUPage = () => {
           </section>
 
           {/* --- Product Section --- */}
-          <section className="pt-8 md:pt-10 md:pb-20  flex flex-col md:flex-row items-center m-auto px-4 md:px-10">
-            {/* Left Column: Images */}
-            <div className="relative w-full max-w-[408px] mx-auto">
+          <section className="pt-8 pb-8 md:pt-10 md:pb-20 flex flex-col md:flex-row items-center m-auto px-4 md:px-10 gap-2">
+            <div className="order-1 md:order-2 py-8 md:py-20 ml-0 md:ml-[clamp(50px,4%,140px)] text-start md:text-left">
+              <h2 className="font-montserrat font-black text-[48px] leading-[140%] tracking-[0%] text-gray-900 mb-4 md:mb-10">
+                Product - FieldBOOK
+              </h2>
+
+              <p className="font-pretendard font-bold text-[28px] leading-[140%] tracking-[0%] text-gray-900">
+                필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 차세대 스마트 골프
+                솔루션입니다.
+              </p>
+
+              <p className="mt-2 md:mt-3 font-pretendard font-normal text-[22px] leading-[140%] tracking-[0%] text-gray-700">
+                AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
+                스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
+              </p>
+            </div>
+
+            {/* Left Column: Images (mobile дээр дараа нь гарах) */}
+            <div className="order-2 md:order-1 relative w-full max-w-[508px] mx-auto mt-8 md:mt-0">
               {/* Background image */}
               <div className="rounded-[48px] overflow-hidden">
                 <Image
                   src="./Frame90.svg"
                   alt="FieldBOOK Product"
-                  width={508}
+                  width={608}
                   height={430}
-                  className=" h-auto object-cover"
+                  className="h-auto object-cover"
                 />
               </div>
 
               {/* Foreground image (overlap) */}
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-[-10%] md:bottom-[-120px] md:right-[-90px] w-[50%] md:w-[301px]">
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20%] md:bottom-[-150px] md:right-[-90px] w-[50%] md:w-[301px]">
                 <Image
                   src="/Frame91.svg"
                   alt="Golf image 2 (foreground)"
                   width={350}
                   height={256}
-                  className=" h-auto object-cover"
+                  className="h-auto object-cover"
                 />
               </div>
             </div>
-
-            {/* Right Column: Text */}
-            <div className="py-8 md:py-20 ml-0 md:ml-[clamp(50px,4%,140px)] text-center md:text-left">
-              <h2 className="font-montserrat font-black text-3xl md:text-5xl leading-[140%] tracking-[0%] text-[#222222] mb-4 md:mb-10">
-                Product - FieldBOOK
-              </h2>
-              <p className="font-pretendard  font-bold text-xl md:text-2xl leading-[140%] tracking-[0%] text-[#222222]">
-                필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 차세대 스마트 골프
-                솔루션입니다.
-              </p>
-              <p className="mt-2 md:mt-3 font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262]">
-                AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
-                스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
-              </p>
-            </div>
           </section>
         </div>
-        <div className=" bg-gray-100">
+        <div className=" bg-gray-100 px-4">
           <section className="pt-10 md:pt-20 bg-gray-100 mt-10 md:mt-20 lg:mt-24 m-auto p-auto container max-w-screen-xl">
             <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 md:mb-12 text-gray-900">
               What We Deliver
