@@ -41,16 +41,13 @@ const slides = [
 ];
 
 export default function HeroSlider() {
-  // ✅ Use the Swiper type from "swiper"
   const swiperRef = useRef<SwiperType | null>(null);
-
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const delay = 4000;
 
   useEffect(() => {
-    // ✅ use NodeJS.Timeout (for setInterval return value)
     let interval: NodeJS.Timeout | undefined;
     if (isPlaying) {
       let start = Date.now();
@@ -73,7 +70,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="relative w-full bg-transparent py-16 overflow-hidden">
+    <div className="relative w-full overflow-visible py-16">
       <Swiper
         modules={[Autoplay]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -83,7 +80,7 @@ export default function HeroSlider() {
         }}
         centeredSlides
         slidesPerView={"auto"}
-        spaceBetween={50}
+        spaceBetween={20} // Peek effect
         pagination={false}
         autoplay={{ delay, disableOnInteraction: false }}
         className="heroSwiper w-full"
@@ -91,30 +88,30 @@ export default function HeroSlider() {
         {slides.map((slide) => (
           <SwiperSlide
             key={slide.id}
-            className="!w-[calc(100%-300px)] transition-all duration-300"
+            className="!w-[85%] sm:!w-[85%] md:!w-[90%] transition-all duration-300 md:pt-2"
           >
             <div
-              className="flex items-end justify-between h-[660px] rounded-[48px] overflow-hidden px-20 pb-16 shadow-sm relative"
-              style={{
-                background:
-                  "linear-gradient(90deg, #EAEAEA 0%, #FDFDFD 33.02%, #EEEEEE 67%, #D3D3D3 100.99%)",
-              }}
+              className="flex flex-col  md:flex-row items-center md:items-end justify-between rounded-[48px] overflow-hidden px-4 md:px-20 shadow-sm relative bg-gradient-to-r from-[#EAEAEA] via-[#FDFDFD] to-[#D3D3D3] py-14 min-h-[600px]"
+              // style={{ height: "500px" }}
             >
-              <div className="flex flex-col gap-4 max-w-[600px] z-10">
-                <h2 className="text-[48px] leading-[1.4] font-black text-gray-900">
+              {/* Text */}
+              <div className="flex flex-col gap-4 z-10 order-1 md:order-1 text-center md:text-left">
+                <h2 className="text-[28px] md:text-[48px] leading-[1.4] font-black text-gray-900">
                   {slide.title}
                 </h2>
-                <p className="text-[24px] leading-[1.4] font-medium text-gray-900">
+                <p className="text-[18px] md:text-[24px] leading-[1.4] font-medium text-gray-900">
                   {slide.desc}
                 </p>
               </div>
-              <div className="flex justify-end items-end flex-shrink-0">
+
+              {/* Image */}
+              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-6 md:mt-0 order-2 md:order-2 w-full md:w-auto">
                 <Image
                   src={slide.image}
                   alt={slide.title}
-                  width={520}
-                  height={490}
-                  className="w-[520px] h-auto object-contain"
+                  width={420}
+                  height={300}
+                  className="w-full h-full max-h-[400px] object-contain"
                 />
               </div>
             </div>
@@ -122,11 +119,9 @@ export default function HeroSlider() {
         ))}
       </Swiper>
 
-      {/* Custom pagination bar */}
+      {/* Custom pagination */}
       <div className="absolute -bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-[10px] z-20">
-        {/* Progress + Bullets capsule */}
         <div className="flex items-center gap-[12px] bg-gray-100 rounded-[1000px] px-[20px] py-[8px] w-[188px] h-[40px]">
-          {/* Progress bar */}
           <div className="relative w-[80px] h-[8px] bg-gray-300 rounded-full overflow-hidden">
             <div
               className="absolute top-0 left-0 h-full bg-gray-800 transition-all duration-75"
@@ -134,7 +129,6 @@ export default function HeroSlider() {
             ></div>
           </div>
 
-          {/* Bullets */}
           <div className="flex items-center gap-2">
             {slides.map((_, i) => (
               <div
@@ -147,7 +141,6 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Play / Pause button */}
         <button
           onClick={toggleAutoplay}
           className="flex items-center justify-center bg-gray-100 rounded-full w-[40px] h-[40px] hover:bg-gray-200 transition"
