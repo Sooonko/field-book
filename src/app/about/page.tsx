@@ -11,15 +11,21 @@ const AboutUPage = () => {
         <div className="container mx-auto w-full text-gray-800 mt-10 md:mt-20 lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
           <section className="text-start md:text-left  py-15 m-auto px-4">
-            <Image
-              src="./Group.svg"
-              alt="Portrush Logo"
-              width={370}
-              height={46}
-            />
-            <h1 className="font-montserrat font-normal text-2xl md:text-4xl leading-[140%] tracking-[0%] text-[#222222] mt-[8px]">
-              AI mobility + Trusted Technology + Smart Golf
+            <div className="w-[225.062px] h-[28px] md:w-auto md:h-auto">
+              <Image
+                src="./Group.svg"
+                alt="Portrush Logo"
+                width={370} // desktop width
+                height={46} // desktop height
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <h1 className="font-montserrat font-normal text-[28px] md:text-4xl leading-[140%] tracking-[0%] text-[#222222] mt-[20px]">
+              AI mobility + <br className="block md:hidden" /> Trusted
+              Technology + <br className="block md:hidden" /> Smart Golf
             </h1>
+
             <p className="mt-6 md:mt-10 font-pretendard  font-bold text-xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222]">
               (주)포트러시는 검증된 기술력과 축적된 필드 경험으로, 골프장의 운영
               효율과 골퍼의 만족을 동시에 높입니다.
@@ -30,13 +36,13 @@ const AboutUPage = () => {
               국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고 있습니다.
             </p>
 
-            <div className="mt-10 rounded-4xl overflow-hidden ">
+            <div className="mt-10 rounded-[24px] md:rounded-[48px] overflow-hidden ">
               <Image
                 src="./Frame87.svg"
                 alt="Golf Field"
                 width={1200}
                 height={500}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto min-h-[120px] object-cover"
               />
             </div>
           </section>

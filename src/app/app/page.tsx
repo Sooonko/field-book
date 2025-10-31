@@ -108,15 +108,14 @@ const AppPage = () => {
         </section>
 
         <section className="py-20 bg-gray-100 text-center px-4">
-          <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
+          <h2 className="text-[28px] md:text-center leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
             녹화 영상 재생
           </h2>
 
-          <p className="font-pretendard font-medium text-[16px] leading-[140%] text-center text-gray-600 md:text-[22px] md:leading-[140%] md:text-left">
+          <p className="font-pretendard font-medium text-[16px] leading-[140%] text-center text-gray-600 md:text-[22px] md:leading-[140%] md:text-center">
             라운드가 끝나도 그날의 스윙은 <br className="block md:hidden" />{" "}
             FieldBOOK 앱에 고스란히 기록됩니다.
-            <br className="block md:hidden" />{" "}
-            <b>베스트 샷의 감동, 다시 꺼내 보세요.</b>
+            <br className="block " /> <b>베스트 샷의 감동, 다시 꺼내 보세요.</b>
           </p>
 
           <div className="relative mx-auto mt-8 w-full max-w-2xl aspect-[2/1]">
@@ -155,7 +154,7 @@ const AppPage = () => {
         </section>
 
         <section className="pt-16 md:pt-20 bg-white flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto px-6 gap-12">
-          <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-12">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-12 mx-auto">
             <div className="text-center lg:text-left max-w-[462px] w-full order-1 lg:order-1">
               <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
                 위치 기반 재생
