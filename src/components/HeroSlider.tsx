@@ -91,7 +91,7 @@ export default function HeroSlider() {
             className="!w-[85%] sm:!w-[85%] md:!w-[90%] transition-all duration-300 md:pt-2"
           >
             <div
-              className="flex flex-col  md:flex-row items-center md:items-end justify-between rounded-[48px] overflow-hidden px-4 md:px-20 shadow-sm relative bg-gradient-to-r from-[#EAEAEA] via-[#FDFDFD] to-[#D3D3D3] py-14 min-h-[600px]"
+              className="flex flex-col  rounded-[20px] md:flex-row items-center md:items-end justify-between md:rounded-[48px] overflow-hidden px-4 md:px-20 shadow-sm relative bg-gradient-to-r from-[#EAEAEA] via-[#FDFDFD] to-[#D3D3D3] py-14 min-h-[600px]"
               // style={{ height: "500px" }}
             >
               {/* Text */}
@@ -105,7 +105,7 @@ export default function HeroSlider() {
               </div>
 
               {/* Image */}
-              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-6 md:mt-0 order-2 md:order-2 w-full md:w-auto">
+              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-[68px] md:mt-0 order-2 md:order-2 w-full md:w-auto">
                 <Image
                   src={slide.image}
                   alt={slide.title}

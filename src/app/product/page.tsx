@@ -178,12 +178,12 @@ const ProductPage = () => {
         className={`transition-all duration-500 overflow-hidden opacity-100" 
           }`}
       >
-        <div className="flex justify-center w-full bg-white py-12 md:py-24">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-16 text-center">
+        <div className="flex justify-center w-full bg-white py-12 md:py-24 px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-16 ">
             {features.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center space-y-4"
+                className="flex flex-row md:flex-col items-center md:items-center justify-start md:justify-center space-x-4 md:space-x-0 md:space-y-4"
               >
                 {item.icon.endsWith(".png") ? (
                   <div className="relative w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg">
@@ -200,14 +200,14 @@ const ProductPage = () => {
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={64} // adjust as needed
-                      height={64} // adjust as needed
+                      width={64}
+                      height={64}
                       objectFit="contain"
                     />
                   </div>
                 )}
 
-                <p className="font-pretendard font-medium text-base md:text-lg leading-[140%] text-gray-900 text-center">
+                <p className="font-pretendard font-medium text-base md:text-lg leading-[140%] text-gray-900 text-left md:text-center">
                   {item.title}
                 </p>
               </div>
@@ -215,8 +215,8 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 bg-[#FBFBFE]">
-        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE]">
+        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
           <aside className="w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 sticky h-auto lg:h-screen self-start lg:top-10">
             <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
               <span className="font-montserrat font-extrabold text-gray-900">
@@ -250,7 +250,7 @@ const ProductPage = () => {
 
             {/* Mobile horizontal scroll */}
             <ul
-              className={`flex lg:hidden overflow-x-auto gap-[20px] py-[19px] px-[20px] w-[375px] h-[60px]`}
+              className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-[375px] h-[60px]`}
             >
               {navLinks.map((link) => (
                 <li key={link.href} className="flex-shrink-0">
@@ -270,7 +270,7 @@ const ProductPage = () => {
             </ul>
           </aside>
 
-          <main className="flex-1 min-w-0 w-full mx-auto py-8">
+          <main className="flex-1 min-w-0 w-full mx-auto md:py-8">
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
               link.href.includes("jvyv") ||
@@ -281,15 +281,17 @@ const ProductPage = () => {
                 <section
                   key={link.href}
                   id={link.href.substring(1)}
-                  className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+                  className="w-full  rounded-[20px] max-w-[964px] md:mx-auto py-6 md:p-9"
                 >
                   <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg overflow-hidden relative">
                     <video
                       className="absolute top-0 left-0 w-full h-full object-cover"
                       src={link.url}
-                      // type="video/quicktime"
-                      controls
+                      autoPlay
+                      muted
+                      loop
                       playsInline
+                      controls={false} // 필요시 true로 변경 가능
                     >
                       귀하의 브라우저는 이 게시물을 지원하지 않습니다.
                     </video>
@@ -306,10 +308,10 @@ const ProductPage = () => {
             <section
               key={"ip5x"}
               id={"ip5x"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+              className="w-full  rounded-[20px]  max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
-                <div className="w-full lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg overflow-hidden">
+                <div className="w-full h-[410px] lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg overflow-hidden">
                   <img
                     src="/ip5x-section.svg"
                     alt="description"
@@ -318,73 +320,38 @@ const ProductPage = () => {
                 </div>
 
                 <div className="w-full lg:w-2/3 text-start lg:text-left">
-                  <h2 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
+                  <h2 className="font-montserrat font-[800] text-[20px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4 md:text-[28px] md:leading-[140%]">
                     IP5X 방진/방수
                   </h2>
-                  <h3 className="font-pretendard font-[500] text-xl md:text-2xl leading-[140%] tracking-[0%] text-[#222222] mb-6">
+                  <h3 className="font-pretendard font-[500] text-[15px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[20px] md:leading-[140%]">
                     IP5X 방진/방수 설계로 어디서나 안정적으로 주행합니다.
                   </h3>
+
                   <div className="flex flex-col gap-2 items-start">
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 먼지 차단 설계{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 먼지 차단 설계&nbsp;{"  "}
+                      <span className="font-[400] text-[#626262] ">
                         - 미세먼지 유입 최소화
                       </span>
                     </p>
 
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 내구성 강화{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 내구성 강화&nbsp;{" "}
+                      <span className="font-[400] text-[#626262] ">
                         - 사계절에 최적화된 견고한 설계
                       </span>
                     </p>
 
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 현장 신뢰성{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 현장 신뢰성&nbsp;{" "}
+                      <span className="font-[400] text-[#626262] ">
                         - 전 구간에서 안정적으로 작동
                       </span>
                     </p>
 
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 간편한 유지관리{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 간편한 유지관리&nbsp;{" "}
+                      <span className="font-[400] text-[#626262]">
                         - 내부 오염 감소로 점검·유지 비용 최소화
                       </span>
                     </p>
@@ -395,108 +362,58 @@ const ProductPage = () => {
             <section
               key={"battery"}
               id={"battery"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9 "
             >
-              <div className="flex flex-col lg:flex-row-reverse items-start justify-center gap-6 lg:gap-14">
-                <div className="relative w-full lg:w-1/3 h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
+              <div
+                className="flex flex-col lg:flex-row-reverse  items-center
+ justify-center gap-6 lg:gap-14"
+              >
+                <div className="relative w-full lg:w-1/3 h-[200px] md:h-auto lg:h-auto aspect-square rounded-[20px] lg:rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
                   <Image
                     src="/battery.svg"
                     alt="대용량 배터리"
                     layout="fill"
                     objectFit="contain"
-                    className="p-8"
+                    className="md:p-8"
                   />
                 </div>
+
                 <div className="w-full lg:w-2/3 text-start lg:text-left">
                   <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
                     대용량 배터리
                   </h3>
-                  <h3 className="text-lg md:text-xl font-medium mb-6">
+                  <h3 className="font-pretendard font-[500] text-[15px] md:text-[20px] leading-[140%] tracking-[0%] text-[#222222] mb-6">
                     대용량 탈착식 배터리로 1회 충전 시<br />
-                    36홀 이상 연속 플레이가 가능 합니다.
+                    36홀 이상 연속 플레이가 가능합니다.
                   </h3>
-                  {/* <p className="font-pretendard text-base md:text-lg leading-[140%] text-gray-700 text-start">
-                    <span className="font-bold text-gray-900">
-                      · 긴 사용 시간
-                    </span>{" "}
-                    - 한 번 충전만으로 36홀 이상 연속 플레이
-                    <br />
-                    <span className="font-bold text-gray-900">
-                      · 탈착식 설계
-                    </span>{" "}
-                    - 예비 배터리 교체로 무중단 운용
-                    <br />
-                    <span className="font-bold text-gray-900">
-                      · 고출력·안정 전원 공급
-                    </span>{" "}
-                    - 주행·녹화·통신을 동시에 안정적으로 지원
-                    <br />
-                    <span className="font-bold text-gray-900">
-                      · 간편한 충전·관리
-                    </span>{" "}
-                    - 충전 부담을 줄이는 실용적 솔루션
-                  </p> */}
+
                   <div className="flex flex-col gap-2 items-start">
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 긴 사용 시간{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 긴 사용 시간&nbsp;&nbsp;
+                      <span className="font-[400] text-[#626262]">
                         - 한 번 충전만으로 36홀 이상 연속 플레이
                       </span>
                     </p>
 
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 탈착식 설계{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 탈착식 설계&nbsp;&nbsp;
+                      <span className="font-[400] text-[#626262]">
                         - 예비 배터리 교체로 무중단 운용
                       </span>
                     </p>
 
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 고출력·안정 전원 공급{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
-                        - 주행·녹화·통신을 동시에 안정적으로 지원
-                      </span>
-                    </p>
+                    <div className="flex flex-col gap-2 items-start">
+                      <p className="text-[15px] font-[700] leading-[140%] text-[#626262]">
+                        · 고출력·안정 전원 공급{" "}
+                        <span className="font-[400] leading-[140%] text-[#626262]">
+                          - 주행·녹화·통신을 동시에 안정적으로 지원
+                        </span>
+                      </p>
+                    </div>
 
-                    <p
-                      className="text-[15px] font-[700] leading-[140%]"
-                      style={{ fontFamily: "Pretendard, sans-serif" }}
-                    >
-                      · 간편한 충전·관리{" "}
-                      <span
-                        className="font-[400] text-[#626262]"
-                        style={{
-                          fontFamily: "Pretendard, sans-serif",
-                          fontStyle: "Regular",
-                        }}
-                      >
+                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 간편한 충전·관리&nbsp;&nbsp;
+                      <span className="font-[400] text-[#626262]">
                         - 충전 부담을 줄이는 실용적 솔루션
                       </span>
                     </p>
@@ -507,24 +424,25 @@ const ProductPage = () => {
             <section
               key={"101screen"}
               id={"101screen"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-                <div className="relative w-full lg:w-2/5 h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
+                <div className="relative w-full lg:w-2/5 h-[200px] md:h-auto lg:h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
                   <Image
                     src="/101screen.svg"
                     alt="10.1인치 터치 스크린"
                     layout="fill"
                     objectFit="contain"
-                    className="p-8"
+                    className="md:p-8"
                   />
                 </div>
-                <div className="w-full lg:w-3/5 text-center lg:text-left">
-                  <h2 className="font-pretendard font-extrabold text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mb-3">
+                <div className="w-full lg:w-3/5 text-start lg:text-left ">
+                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] md:mt-8 md:mb-4 mb-2">
                     10.1인치 터치스크린
-                  </h2>
+                  </h3>
+
                   <p className="font-pretendard font-medium text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
-                    10.1인치 대형 터치스크린으로 <br />전 세계 4만 개 코스를
+                    10.1인치 대형 터치스크린으로 전 세계 4만 개 코스를
                     제공합니다.
                   </p>
                 </div>
@@ -533,7 +451,7 @@ const ProductPage = () => {
             <section
               key={"fieldbook-app"}
               id={"fieldbook-app"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
                 <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
@@ -545,36 +463,29 @@ const ProductPage = () => {
                   />
                 </div>
 
-                <div className="w-full lg:w-2/3 text-center lg:text-left">
+                <div className="w-full lg:w-2/3 text-start lg:text-left">
                   <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
                     FieldBOOK App
                   </h2>
-
-                  <h3 className="font-pretendard font-medium text-xl md:text-2xl leading-[140%] text-gray-900 mb-6">
+                  <h3 className="font-pretendard font-[500] text-[15px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[20px] md:leading-[140%]">
                     클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석까지 한
                     번에 제공합니다.
                   </h3>
 
-                  <p className="font-pretendard text-base md:text-lg leading-[140%] text-gray-700">
-                    <span className="font-bold text-gray-900">
+                  <p className="font-pretendard text-base md:text-lg leading-[140%] text-[#626262]">
+                    <span className="font-bold text-[#626262]">
                       · 간편 로그인·대시보드
                     </span>{" "}
                     - 오늘의 라운드와 최근 기록 한눈에 확인
                     <br />
-                    <span className="font-bold text-gray-900">
-                      · 정밀 스코어보드
-                    </span>{" "}
-                    - 홀별 스코어 및 전체 통계 제공
+                    <span className="font-bold ">· 정밀 스코어보드</span> - 홀별
+                    스코어 및 전체 통계 제공
                     <br />
-                    <span className="font-bold text-gray-900">
-                      · 지도 기반 녹화·재생
-                    </span>{" "}
-                    - 코스 맵 녹화 지점 표시 및 즉시 재생
+                    <span className="font-bold ">· 지도 기반 녹화·재생</span> -
+                    코스 맵 녹화 지점 표시 및 즉시 재생
                     <br />
-                    <span className="font-bold text-gray-900">
-                      · 원탭 공유
-                    </span>{" "}
-                    - 하이라이트 영상을 링크로 즉시 전송
+                    <span className="font-bold ">· 원탭 공유</span> - 하이라이트
+                    영상을 링크로 즉시 전송
                   </p>
                 </div>
               </div>
@@ -582,15 +493,16 @@ const ProductPage = () => {
             <section
               key={"jivon"}
               id={"jivon"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-pretendard font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-4">
+                <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
                   제원
                 </h2>
-                <p className="font-pretendard font-medium text-xl md:text-2xl leading-[140%] text-gray-900">
+                <h3 className="font-pretendard font-[600] text-[15px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[20px] md:leading-[140%]">
                   상세 사양과 성능 지표를 한눈에 확인하세요.
-                </p>
+                </h3>
+
                 <p className="font-pretendard font-normal text-base md:text-lg lg:text-xl leading-[140%] text-gray-700 mt-3">
                   강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀 제어로
                   가파른 경사와 험로에서도 안정적으로 주행합니다. IP5X 방진
@@ -598,8 +510,8 @@ const ProductPage = () => {
                   제공합니다.
                 </p>
               </div>
-              <div className="rounded-[20px] p-7 md:p-9">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+              <div className="rounded-[20px] pb-7 md:p-9">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 md:gap-y-12 bg-gray-100 md:py-[28px] md:px-[36px] py-[20px] px-[26px] rounded-[20px]">
                   {specs.map((spec, index) => (
                     <div key={index} className="flex flex-col gap-1">
                       <p className="text-sm text-gray-700 font-medium">
@@ -622,13 +534,14 @@ const ProductPage = () => {
             <section
               key={"jvyv"}
               id={"jvyv"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto p-6 md:p-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-pretendard font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-4">
+                <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
                   주요 기능
                 </h2>
-                <p className="font-pretendard font-medium text-xl md:text-2xl leading-[140%] text-gray-700">
+
+                <p className="font-pretendard font-normal text-base md:text-lg lg:text-xl leading-[140%] text-gray-700 mt-3">
                   필드북이 제공하는 25가지 스마트 기능.
                   <br />
                   플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인할 수

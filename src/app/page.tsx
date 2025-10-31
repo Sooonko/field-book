@@ -36,27 +36,65 @@ export default function Home() {
         {/* Main Hero Section */}
         <main className="relative z-10 min-h-screen flex flex-col items-start justify-end text-white pb-10">
           <div className="w-full px-5 flex flex-col items-start text-center md:items-start md:text-left md:px-20 lg:px-40 mb-14 md:mb-24">
-            <h1 className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">
+            <h1
+              className="font-montserrat font-black text-[#FFFFFF] 
+  text-[32px] leading-[140%] tracking-[0%]
+  sm:text-[40px] md:text-[50px] lg:text-[60px]
+  mb-[4px] md:mb-[8px]"
+            >
               {t("main_title")}
             </h1>
 
-            <p className="max-w-2xl text-lg md:text-2xl font-extrabold leading-snug font-pretendard mb-6">
-              모든 순간을 함께하는 프리미엄{" "}
-              <span className="font-black font-montserrat text-xl md:text-3xl tracking-tight">
+            <p
+              className="max-w-2xl text-start
+  font-pretendard font-extrabold text-[#FFFFFF]
+  text-[24px] leading-[140%] tracking-[0%]
+  md:text-[32px]
+  mb-6"
+            >
+              모든 순간을 함께하는 <br className="block md:hidden" />
+              프리미엄{" "}
+              <span
+                className="font-montserrat font-black 
+    text-[26px] md:text-[36px] 
+    leading-[140%] tracking-tight text-[#FFFFFF]"
+              >
                 AI Caddie
               </span>
             </p>
-            <p className="max-w-4xl text-start md:text-xl font-normal leading-snug text-white mb-10 md:text-left font-pretendard">
+
+            <p
+              className="max-w-4xl text-start text-[15px] md:text-xl 
+  font-pretendard font-normal leading-[140%] tracking-[0%] 
+  text-white mb-10"
+            >
               딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적,
               <br /> 맞춤 클럽 추천, 플레이 영상 자동 저장을 제공함으로써
               골프장의 운영 효율성과 고객 만족도를 높입니다.
             </p>
-
             <button
-              className="w-full md:w-[296px] h-[58px] border-2 border-white rounded-full bg-transparent text-white font-medium text-lg md:text-xl font-montserrat hover:bg-white hover:text-black transition-colors"
+              className="
+    w-[193px] h-[44px] 
+    md:w-[296px] md:h-[58px] 
+    border-[1.5px] border-white 
+    rounded-[1000px] 
+    bg-transparent 
+    text-white 
+    font-montserrat font-medium 
+    text-[14px] md:text-[24px]
+    leading-[140%] tracking-[0%]
+    flex items-center justify-center text-center
+    md:gap-[10px]
+    pt-[12px] pb-[12px] md:*:pr-[28px] md:pl-[28px]
+    hover:bg-white hover:text-black 
+    transition-colors
+  "
               onClick={() => (window.location.href = "/product")}
             >
-              Explore <span className="font-black ml-1">FieldBook</span>
+              Explore
+              <span className="font-montserrat md:font-black text-[14px] md:text-[24px] leading-[140%] tracking-[0%] ml-1">
+                FieldBOOK
+              </span>
             </button>
           </div>
         </main>
