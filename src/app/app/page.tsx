@@ -49,15 +49,20 @@ const AppPage = () => {
 
           {/* Right: Text and Buttons */}
           <div className="w-full lg:w-2.5/4 lg:pl-3 pb-0 lg:pb-20 text-center lg:text-left order-1 lg:order-2">
-            <h1 className="text-3xl md:text-4xl font-bold leading-snug">
+            <h1 className="font-pretendard md:text-start font-black text-[26px] leading-[140%] text-center md:text-4xl md:leading-snug mt-[100px]">
               FieldBOOK 앱과 함께라면
               <br />
               플레이의 여운은 계속됩니다.
             </h1>
-            <p className="mt-5 text-base md:text-lg leading-relaxed text-gray-100">
-              그날의 스코어를 다시 확인하고, 기억에 남는 순간을 스윙지점과 함께
-              영상으로 제공합니다. 지금 FieldBOOK 앱을 다운로드 하세요.
+
+            <p className="mt-5 text-[16px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:text-lg md:leading-relaxed">
+              그날의 스코어를 다시 확인하고, 기억에 남는
+              <span className="whitespace-nowrap">순간을</span>,
+              <span className="whitespace-nowrap">제공합니다.</span>
+              스윙지점과 함께 영상으로 제공합니다. 지금 FieldBOOK 앱을 다운로드
+              하세요.
             </p>
+
             <div className="mt-8 flex justify-center lg:justify-start space-x-4">
               <AppStoreButton />
               <GooglePlayButton />
@@ -89,8 +94,11 @@ const AppPage = () => {
 
             {/* Right: Text */}
             <div className="w-full lg:w-[450px] lg:pl-12 flex flex-col gap-3 text-center lg:text-left order-1 lg:order-2">
-              <h2 className="text-2xl md:text-3xl font-bold"> 스코어 카드</h2>
-              <p className="text-gray-600 mt-2 text-sm sm:text-base">
+              <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
+                스코어 카드
+              </h2>
+
+              <p className="font-pretendard font-medium text-[16px] leading-[140%] text-center text-gray-600 md:text-[22px] md:leading-[140%] md:text-left">
                 라운드별 스코어·통계로 플레이를 돌아보고,
                 <br />
                 기억하고 싶은 순간을 간직하세요.
@@ -100,10 +108,17 @@ const AppPage = () => {
         </section>
 
         <section className="py-20 bg-gray-100 text-center px-4">
-          <h2 className="text-2xl md:text-3xl font-bold">녹화 영상 재생</h2>
-          <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-            오늘의 라운드가 끝나도, 그날의 스윙과 퍼팅을 앱 속에 간직하세요.
+          <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
+            녹화 영상 재생
+          </h2>
+
+          <p className="font-pretendard font-medium text-[16px] leading-[140%] text-center text-gray-600 md:text-[22px] md:leading-[140%] md:text-left">
+            라운드가 끝나도 그날의 스윙은 <br className="block md:hidden" />{" "}
+            FieldBOOK 앱에 고스란히 기록됩니다.
+            <br className="block md:hidden" />{" "}
+            <b>베스트 샷의 감동, 다시 꺼내 보세요.</b>
           </p>
+
           <div className="relative mx-auto mt-8 w-full max-w-2xl aspect-[2/1]">
             {/* Frame image */}
             <img
@@ -129,8 +144,11 @@ const AppPage = () => {
               <video
                 className="w-full h-full object-cover"
                 src="/videos/app_video.mp4"
-                controls
+                autoPlay
+                muted
+                loop
                 playsInline
+                controls={false} // 필요시 true로 변경 가능
               />
             </div>
           </div>
@@ -139,8 +157,11 @@ const AppPage = () => {
         <section className="pt-16 md:pt-20 bg-white flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto px-6 gap-12">
           <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-12">
             <div className="text-center lg:text-left max-w-[462px] w-full order-1 lg:order-1">
-              <h2 className="text-2xl md:text-3xl font-bold">위치 기반 재생</h2>
-              <p className="text-gray-600 mt-2">
+              <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
+                위치 기반 재생
+              </h2>
+
+              <p className="font-pretendard font-medium text-[16px] leading-[140%] text-center text-gray-600 md:text-[22px] md:leading-[140%] md:text-left">
                 녹화 영상이 코스 맵의 해당 지점에 자동 표시됩니다.
                 <br />
                 지도의 마커를 눌러 그 순간의 영상과
@@ -159,12 +180,12 @@ const AppPage = () => {
           </div>
         </section>
 
-        <section className="bg-gray-50 py-20 md:py-25 flex flex-col items-center justify-center text-center px-4">
-          <div className="flex overflow-x-auto gap-6 sm:gap-10 mb-[70px]">
+        <section className="bg-gray-50 py-20 md:py-25 flex flex-col-reverse md:flex-col  items-center justify-center text-center px-4">
+          <div className="flex overflow-x-auto md:gap-6 gap-6 mb-[70px]">
             {logos.map((logo, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center"
+                className="flex-shrink-0 md:w-16 md:h-16 w-[48px] h-[48px] flex items-center justify-center"
               >
                 <Image
                   src={logo.src}
@@ -177,10 +198,13 @@ const AppPage = () => {
             ))}
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold">간편 공유</h2>
-          <p className="text-gray-600 mt-2 max-w-xl mx-auto">
-            최고의 순간을 하이라이트로 간편하게 저장하고 SNS로 나누세요.
-          </p>
+          <div className="mb-4 md:mb-0">
+            <h2 className="text-2xl md:text-3xl font-bold">간편 공유</h2>
+            <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+              최고의 순간을 하이라이트로 간편하게 저장하고{" "}
+              <br className="block md:hidden" /> SNS로 나누세요.
+            </p>
+          </div>
         </section>
 
         <section className="relative w-full pt-16 px-6 md:px-20">
@@ -200,15 +224,14 @@ const AppPage = () => {
 
             {/* Right: Text and Buttons */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start md:pl-10 text-center md:text-left">
-              <h2 className="font-preterand font-[600] text-[44px] leading-[140%] tracking-[0%] mb-6">
+              <h2 className="font-pretendard font-[600] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-center mb-6">
                 라운드는 끝나도 <br />
-                <span className="font-preterand font-[900] text-[44px] leading-[140%] tracking-[0%] text-[#222222]">
+                <span className="font-pretendard font-[900] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-[#222222] text-center">
                   그날의 여운은 계속됩니다.
                 </span>
               </h2>
-
-              <div className="flex justify-center md:justify-start items-center space-x-4">
-                <button className="w-36 md:w-auto">
+              <div className="w-full flex flex-row justify-center md:justify-start items-center gap-[13px] mb-8 md:mb-0">
+                <button className="md:w-auto h-[40px]">
                   <Image
                     src="/app-store-badge.svg"
                     alt="Download on the App Store"
@@ -217,7 +240,7 @@ const AppPage = () => {
                     className="object-contain"
                   />
                 </button>
-                <button className="w-36 md:w-auto">
+                <button className=" md:w-auto h-[40px]">
                   <Image
                     src="/google-play-badge.svg"
                     alt="Get it on Google Play"
@@ -230,7 +253,7 @@ const AppPage = () => {
             </div>
           </div>
         </section>
-        <div className="mr-6">
+        <div className="mr-6 mb-8 md:mb-0">
           <FooterModal isOpen={true} onClose={() => {}} />
         </div>
       </main>
