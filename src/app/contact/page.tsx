@@ -18,10 +18,10 @@ const ContactUsPage = () => {
   return (
     <PageLayout>
       <div className="flex flex-col items-center px-4  overflow-hidden md:overflow-visible">
-        <div className="w-full max-w-6xl pt-[160px]">
+        <div className="w-full max-w-6xl pt-[80px] md:pt-[120px] lg:pt-[160px]">
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left Column: Form */}
-            <div className="flex flex-col">
+            <div className="flex flex-col pb-6 md:pb-12 border-b border-gray-200">
               <h1
                 className="font-pretendard font-black text-[32px] leading-[140%] tracking-[0%] text-[#222222]"
                 style={{
@@ -34,7 +34,7 @@ const ContactUsPage = () => {
               >
                 무엇이든 편하게 물어보세요.
               </h1>
-              <p className="text-[#626262] mt-2 text-[18px] leading-[140%] font-pretendard">
+              <p className="text-[#626262] mt-2 text-[16px] md:text-[18px] leading-[140%] font-pretendard">
                 도입 상담을 원하시면 언제든지 문의 주세요.
                 <br />
                 담당자가 검토 후 영업일 기준 2영업일 내 회신드립니다.
@@ -135,12 +135,12 @@ const ContactUsPage = () => {
                       onClick={() => setIsPrivacyModalOpen(true)}
                       className="font-pretendard  font-bold text-[14px] leading-[140%] tracking-[0%] text-[#626262] underline underline-solid decoration-solid decoration-1 cursor-pointer"
                     >
-                      개인정보 처리방침
+                      [개인정보 처리방침]
                     </button>
                     을 준수합니다.
                   </p>
 
-                  <div className="mt-[40px]">
+                  <div className="mt-[40px]  flex justify-center">
                     <button
                       type="submit"
                       className="bg-black text-white font-pretendard  font-bold text-[16px] leading-[140%] tracking-[0%] 
@@ -156,24 +156,24 @@ const ContactUsPage = () => {
 
             {/* Right Column: Info & Map */}
             <div className="flex flex-col h-full">
-              <h2 className="font-montserrat font-black text-[33px] leading-[140%] tracking-[0%] text-[#222222]">
+              <h2 className="font-montserrat font-black text-[24px] md:text-[33px] leading-[140%] tracking-[0%] text-[#222222]">
                 Let&lsquo;s Connect and Collaborate
               </h2>
               <div className="mt-2 space-y-1 text-gray-700 text-sm md:text-base">
-                <p>
-                  <strong className="font-montserrat font-black text-[16px] leading-[200%] tracking-[0%] mr-2">
+                <p className="text-[15px] md:text-[16px]">
+                  <strong className="font-montserrat font-black   leading-[200%] tracking-[0%] mr-2">
                     T_
                   </strong>
                   070.7633.0118
                 </p>
-                <p>
-                  <strong className="font-montserrat font-black text-[16px] leading-[200%] tracking-[0%] mr-2">
+                <p className="text-[15px] md:text-[16px]">
+                  <strong className="font-montserrat font-black text-[15px] md:text-[16px] leading-[200%] tracking-[0%] mr-2">
                     E-mail_
                   </strong>
                   contact@portrush.io
                 </p>
-                <p>
-                  <strong className="font-montserrat font-black text-[16px] leading-[200%] tracking-[0%] mr-2">
+                <p className="text-[15px] md:text-[16px]">
+                  <strong className="font-montserrat font-black text-[15px] md:text-[16px] leading-[200%] tracking-[0%] mr-2">
                     Add_
                   </strong>
                   경기도 성남시 수정구 청계산로 686, 530호
@@ -181,7 +181,13 @@ const ContactUsPage = () => {
               </div>
 
               <div className="mt-4 flex-1">
-                <div className="w-full h-full rounded-[48px] overflow-hidden bg-gray-300">
+                <div
+                  className="
+      w-[336px] h-[280px] rounded-[20px] 
+      md:w-full md:h-full md:rounded-[48px] 
+      overflow-hidden bg-gray-300 mx-auto
+    "
+                >
                   <iframe
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyABd9fhYjiNZkzFFAxZi5AS5FE_T3QKeQY&q=경기도+성남시+수정구+청계산로+686+530호"
                     width="100%"
@@ -193,10 +199,12 @@ const ContactUsPage = () => {
                   ></iframe>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
-        <FooterModal isOpen={true} onClose={() => {}} />
+        <div className="pt-[60px]"></div>
+        <FooterModal isOpen={true} onClose={() => { }} />
       </div>
 
       <PrivacyModal
