@@ -16,7 +16,7 @@ const features = [
   { icon: "/hill-drive.svg", title: "IP5X 방진/방수" },
   { icon: "/ip5x.svg", title: "대용량 배터리" },
   { icon: "/fieldbookApp.png", title: "FieldBOOK App" },
-  { icon: "/touchscreen.svg", title: "10.1인치 터치 스크린" },
+  { icon: "/touchscreen.svg", title: "10.1인치 터치스크린" },
   { icon: "/golfmap.svg", title: "전 세계 4만개 코스맵" },
 ];
 
@@ -51,12 +51,12 @@ const navLinks = [
     href: "#driving-history",
     text: "주행 능력",
     description:
-      "고출력 모터로 최대 25° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주 행을 안전하게 제어합니다.",
+      "고출력 모터로 최대 25° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.",
     url: "/videos/drive-history.mp4",
   },
   { href: "#ip5x", text: "IP5X 방진/방수" },
   { href: "#battery", text: "대용량 배터리" },
-  { href: "#101screen", text: "10.1 인치 터치 스크린" },
+  { href: "#101screen", text: "10.1 인치 터치스크린" },
   { href: "#fieldbook-app", text: "FieldBOOK  App" },
   { href: "#jivon", text: "제원" },
   { href: "#jvyv", text: "주요 기능" },
@@ -253,7 +253,7 @@ const ProductPage = () => {
           >
             <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
               <span className="font-montserrat font-extrabold text-gray-900">
-                FieldBook
+                FieldBOOK
               </span>
               <span className="font-montserrat font-medium text-gray-900">
                 {"\u00A0"}Technology
@@ -370,36 +370,36 @@ const ProductPage = () => {
                 </div>
 
                 <div className="w-full lg:w-2/3 text-start lg:text-left">
-                  <h2 className="font-montserrat font-[800] text-[20px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4 md:text-[28px] md:leading-[140%]">
+                  <h2 className="font-montserrat font-[800] text-[20px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4 md:text-[32px] md:leading-[140%]">
                     IP5X 방진/방수
                   </h2>
-                  <h3 className="font-pretendard font-[500] text-[15px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[20px] md:leading-[140%]">
+                  <h3 className="font-pretendard font-[500] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
                     IP5X 방진/방수 설계로 어디서나 안정적으로 주행합니다.
                   </h3>
 
                   <div className="flex flex-col gap-2 items-start">
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
                       · 먼지 차단 설계&nbsp;{"  "}
                       <span className="font-[400] text-[#626262] ">
                         - 미세먼지 유입 최소화
                       </span>
                     </p>
 
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
                       · 내구성 강화&nbsp;{" "}
                       <span className="font-[400] text-[#626262] ">
                         - 사계절에 최적화된 견고한 설계
                       </span>
                     </p>
 
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
                       · 현장 신뢰성&nbsp;{" "}
                       <span className="font-[400] text-[#626262] ">
                         - 전 구간에서 안정적으로 작동
                       </span>
                     </p>
 
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
                       · 간편한 유지관리&nbsp;{" "}
                       <span className="font-[400] text-[#626262]">
                         - 내부 오염 감소로 점검·유지 비용 최소화
@@ -429,23 +429,23 @@ const ProductPage = () => {
                 </div>
 
                 <div className="w-full lg:w-2/3 text-start lg:text-left">
-                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
+                  <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
                     대용량 배터리
                   </h3>
-                  <h3 className="font-pretendard font-[500] text-[15px] md:text-[20px] leading-[140%] tracking-[0%] text-[#222222] mb-6">
+                  <h3 className="font-pretendard font-[500] text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222] mb-6">
                     대용량 탈착식 배터리로 1회 충전 시<br />
                     36홀 이상 연속 플레이가 가능합니다.
                   </h3>
 
                   <div className="flex flex-col gap-2 items-start">
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                       · 긴 사용 시간&nbsp;&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 한 번 충전만으로 36홀 이상 연속 플레이
                       </span>
                     </p>
 
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                       · 탈착식 설계&nbsp;&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 예비 배터리 교체로 무중단 운용
@@ -453,7 +453,7 @@ const ProductPage = () => {
                     </p>
 
                     <div className="flex flex-col gap-2 items-start">
-                      <p className="text-[15px] font-[700] leading-[140%] text-[#626262]">
+                      <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262]">
                         · 고출력·안정 전원 공급{" "}
                         <span className="font-[400] leading-[140%] text-[#626262]">
                           - 주행·녹화·통신을 동시에 안정적으로 지원
@@ -461,7 +461,7 @@ const ProductPage = () => {
                       </p>
                     </div>
 
-                    <p className="text-[15px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                       · 간편한 충전·관리&nbsp;&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 충전 부담을 줄이는 실용적 솔루션
@@ -480,18 +480,18 @@ const ProductPage = () => {
                 <div className="relative w-full lg:w-2/5 h-[200px] md:h-auto lg:h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
                   <Image
                     src="/101screen.svg"
-                    alt="10.1인치 터치 스크린"
+                    alt="10.1인치 터치스크린"
                     layout="fill"
                     objectFit="contain"
                     className="md:p-8"
                   />
                 </div>
                 <div className="w-full lg:w-3/5 text-start lg:text-left ">
-                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] md:mt-8 md:mb-4 mb-2">
+                  <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] md:mt-8 md:mb-4 mb-2">
                     10.1인치 터치스크린
                   </h3>
 
-                  <p className="font-pretendard font-medium text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
+                  <p className="font-pretendard font-medium text-base text-[16px] md:text-[20px] lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
                     10.1인치 대형 터치스크린으로 전 세계 4만 개 코스를
                     제공합니다.
                   </p>
@@ -507,22 +507,22 @@ const ProductPage = () => {
                 <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
                   <Image
                     src="/product_fb_app.svg"
-                    alt="10.1인치 터치 스크린"
+                    alt="10.1인치 터치스크린"
                     fill
                     className="object-contain"
                   />
                 </div>
 
                 <div className="w-full lg:w-2/3 text-start lg:text-left">
-                  <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
+                  <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
                     FieldBOOK App
                   </h2>
-                  <h3 className="font-pretendard font-[500] text-[15px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[20px] md:leading-[140%]">
+                  <h3 className="font-pretendard font-[500] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
                     클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석까지 한
                     번에 제공합니다.
                   </h3>
 
-                  <p className="font-pretendard text-base md:text-lg leading-[140%] text-[#626262]">
+                  <p className="font-pretendard text-[15px] md:text-[20px] leading-[140%] text-[#626262]">
                     <span className="font-bold text-[#626262]">
                       · 간편 로그인·대시보드
                     </span>{" "}
@@ -546,14 +546,14 @@ const ProductPage = () => {
               className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
+                <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
                   제원
                 </h2>
-                <h3 className="font-pretendard font-[600] text-[15px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[20px] md:leading-[140%]">
+                <h3 className="font-pretendard font-[600] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
                   상세 사양과 성능 지표를 한눈에 확인하세요.
                 </h3>
 
-                <p className="font-pretendard font-normal text-base md:text-lg lg:text-xl leading-[140%] text-gray-700 mt-3">
+                <p className="font-pretendard font-normal text-[15px] md:text-[20px] lg:text-xl leading-[140%] text-gray-700 mt-3">
                   강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀 제어로
                   가파른 경사와 험로에서도 안정적으로 주행합니다. IP5X 방진
                   설계와 실시간 연결성으로 야외 환경에서도 신뢰할 수 있는 운영을

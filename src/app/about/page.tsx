@@ -26,11 +26,11 @@ const AboutUPage = () => {
               Technology + <br className="block md:hidden" /> Smart Golf
             </h1>
 
-            <p className="mt-6 md:mt-10 font-pretendard  font-bold text-xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222]">
+            <p className="mt-6 md:mt-10 font-pretendard  font-bold text-xl text-[24px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222]">
               (주)포트러시는 검증된 기술력과 축적된 필드 경험으로, 골프장의 운영
               효율과 골퍼의 만족을 동시에 높입니다.
             </p>
-            <p className="mt-4 font-pretendard  font-normal text-base md:text-xl leading-[140%] tracking-[0%] text-[#626262]">
+            <p className="mt-4 font-pretendard  font-normal text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#626262]">
               우리는 AI 비전·GNSS·모바일 연동 기술을 기반으로 스마트 골프
               모빌리티를 개발·제공합니다. 정밀 기술과 운영 안정성을 바탕으로
               국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고 있습니다.
@@ -48,17 +48,18 @@ const AboutUPage = () => {
           </section>
 
           {/* --- Our Goal Section --- */}
-          <section className="px-4 py-8  md:py-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto">
+          <section className="px-4 py-8 md:py-10">
+            <div className=" flex flex-col md:flex-row md:items-start gap-y-10 md:gap-x-6"
+          >
               {/* 1st column: heading */}
-              <div className=" w-full md:w-[226px] ">
-                <h2 className="font-montserrat font-black text-3xl md:text-5xl leading-[140%] tracking-[0%] text-[#222222]">
+              <div className=" w-full md:w-[226px] bg-amber-300 ">
+                <h2 className="font-montserrat font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-[#222222]">
                   Our Goal
                 </h2>
               </div>
 
               {/* 2nd column */}
-              <div className="space-y-[28px]">
+              <div className="space-y-[28px] bg-amber-500">
                 <div className="">
                   <h3 className="font-pretendard  font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
                     신뢰성
@@ -122,18 +123,20 @@ const AboutUPage = () => {
               </h2>
 
               <p className="font-pretendard font-bold text-[19px] md:text-[28px] leading-[140%] tracking-[0%] text-gray-900">
-                필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 차세대 스마트 골프
-                솔루션입니다.
+                필드북(FieldBOOK)은 카트와 앱이 하나로 연결된
+                <span className="hidden md:inline"><br /></span>
+                차세대 스마트 골프 솔루션입니다.
               </p>
 
-              <p className="mt-2 md:mt-3 font-pretendard font-normal  text-[16px] md:text-[22px] leading-[140%] tracking-[0%] text-gray-700">
+              <p className="mt-2 md:mt-3 font-pretendard font-normal  text-[15.5px] md:text-[22px] leading-[140%] tracking-[0%] text-gray-700">
                 AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
+                <span className="hidden md:inline"><br /></span>
                 스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
               </p>
             </div>
 
             {/* Left Column: Images (mobile дээр дараа нь гарах) */}
-            <div className="order-2 md:order-1 relative w-full max-w-[508px] mx-auto mt-8 md:mt-0">
+            <div className="order-2 md:order-1 relative w-full max-w-[508px] mx-auto md:mt-0">
               {/* Background image */}
               <div className=" rounded-[28px] md:rounded-[48px] overflow-hidden">
                 <Image
@@ -160,11 +163,11 @@ const AboutUPage = () => {
         </div>
         <div className=" bg-gray-100 px-4 mt-[90px] md:mt-[160px]">
           <section className="pt-[80px] md:pt-[160px] bg-gray-100 mt-10 md:mt-20 lg:mt-24 m-auto p-auto container max-w-screen-xl">
-            <h2 className="text-[30px] md:text[48px] font-extrabold text-center mb-6 md:mb-12 text-gray-900">
+            <h2 className="text-[30px] md:text-[48px] font-extrabold text-center mb-6 md:mb-12 text-gray-900">
               What We Deliver
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-2 md:gap-10">
+            <div className="grid md:grid-cols-3 gap-2 md:gap-[80px]">
               <DeliverItem
                 img="./Frame94.svg"
                 title="운영 효율 및 비용 절감"
@@ -192,7 +195,7 @@ const AboutUPage = () => {
             </div>
           </section>
           <div className="ml-[82px] pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => {}} />
+            <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>
       </div>
