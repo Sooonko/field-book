@@ -8,7 +8,7 @@ const AboutUPage = () => {
   return (
     <PageLayout>
       <div>
-        <div className="container mx-auto w-full text-gray-800 mt-10 md:mt-20 lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
+        <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
           <section className="text-start md:text-left  py-15 m-auto px-4">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">

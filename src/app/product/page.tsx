@@ -190,18 +190,18 @@ const ProductPage = () => {
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={41}
-                      height={72}
+                      width={120}
+                      height={120}
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     />
                   </div>
                 ) : (
-                  <div className="relative w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
+                  <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
                     <Image
                       src={item.icon}
                       alt={item.title}
                       width={64}
-                      height={64}
+                        height={64}
                       objectFit="contain"
                     />
                   </div>
