@@ -235,7 +235,15 @@ const ProductPage = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setOpen(false);
+                      const id = link.href.substring(1);
+                      const target = document.getElementById(id);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className={`transition-all duration-300 ease-in-out block align-middle ${
                       activeSection === link.href.substring(1)
                         ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
@@ -256,7 +264,16 @@ const ProductPage = () => {
                 <li key={link.href} className="flex-shrink-0">
                   <a
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault(); // default jump-ыг болиулна
+                      setOpen(false);
+
+                      const sectionId = link.href.substring(1);
+                      const target = document.getElementById(sectionId);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className={`flex items-center justify-center h-full text-center transition-all duration-300 ease-in-out ${
                       activeSection === link.href.substring(1)
                         ? "font-pretendard font-black text-[15px] leading-[140%] underline text-gray-900"
