@@ -601,13 +601,11 @@ const ProductPage = () => {
                   제공합니다.
                 </p>
               </div>
-              <div className="rounded-[20px] pb-7 md:p-9">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 md:gap-y-12 bg-gray-100 md:py-[28px] md:px-[36px] py-[20px] px-[26px] rounded-[20px]">
+              <div className="rounded-[20px] pb-7 md:p-9 bg-gray-100">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10 md:py-[16px] md:px-[20px] py-[10px] px-[12px] rounded-[20px]">
                   {specs.map((spec, index) => (
                     <div key={index} className="flex flex-col gap-1">
-                      <p className="text-sm text-gray-700 font-medium">
-                        {spec.title}
-                      </p>
+                      <p className="text-sm text-gray-700 font-medium">{spec.title}</p>
                       <p
                         className="text-base text-gray-900 font-medium leading-[140%]"
                         style={{
@@ -621,6 +619,7 @@ const ProductPage = () => {
                   ))}
                 </div>
               </div>
+
             </section>
             <section
               key={"jvyv"}
@@ -628,11 +627,11 @@ const ProductPage = () => {
               className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-montserrat font-extrabold text-2xl md:text-3xl leading-[140%] text-gray-900 mb-3">
+                <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
                   주요 기능
                 </h2>
 
-                <p className="font-pretendard font-normal text-base md:text-lg lg:text-xl leading-[140%] text-gray-700 mt-3">
+                <p className="font-pretendard font-normal text-[16px] md:text-[24px] lg:text-xl leading-[140%] text-gray-700 mt-3">
                   필드북이 제공하는 25가지 스마트 기능.
                   <br />
                   플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인할 수
