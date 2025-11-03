@@ -105,13 +105,13 @@ export default function HeroSlider() {
               </div>
 
               {/* Image */}
-              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-[68px] md:mt-0 order-2 md:order-2 w-full md:w-auto ">
+              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-[68px] md:mt-0 order-2 md:order-2 w-full  md:w-[594px] h-full md:h-[512px]">
                 <Image
                   src={slide.image}
                   alt={slide.title}
                   width={420}
                   height={300}
-                  className="w-full h-full max-h-[400px] object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>

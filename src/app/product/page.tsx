@@ -64,7 +64,7 @@ const navLinks = [
 const specs = [
   {
     title: "Dimensions",
-    value: "XX × XX × XX cm",
+    value: "W70 × D120 × H90 (cm)",
   },
   {
     title: "Screen",
@@ -72,15 +72,15 @@ const specs = [
   },
   {
     title: "Weight",
-    value: "XX kg",
+    value: "22 kg",
   },
   {
     title: "Follow Distance",
-    value: "XX × XX × XX cm",
+    value: "1.5M ~ 3M",
   },
   {
     title: "Input Power",
-    value: "XX V",
+    value: "36 V",
   },
   {
     title: "Climbing Slope (Max)",
@@ -88,11 +88,11 @@ const specs = [
   },
   {
     title: "Battery Capacity",
-    value: "XX Wh",
+    value: "720 Wh",
   },
   {
     title: "Charging Time",
-    value: "XX h",
+    value: "8 h",
   },
   {
     title: "Waterproof / Dust",
