@@ -11,7 +11,7 @@ const AboutUPage = () => {
         <div className="container mx-auto w-full text-gray-800 mt-10 md:mt-20 lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
           <section className="text-start md:text-left  py-15 m-auto px-4">
-            <div className="w-[225.062px] h-[28px] md:w-auto md:h-auto">
+            <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
                 src="./Group.svg"
                 alt="Portrush Logo"
@@ -60,10 +60,10 @@ const AboutUPage = () => {
               {/* 2nd column */}
               <div className="space-y-[28px]">
                 <div className="">
-                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard  font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
                     신뢰성
                   </h3>
-                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard  font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     안정성이 검증된 내구성과 안전 제어로,
                     <br />
                     언제나 믿을 수 있는 파트너가 됩니다.
@@ -101,7 +101,7 @@ const AboutUPage = () => {
               {/* 3rd column: images */}
               <div className="relative flex">
                 {/* Background image */}
-                <div className="relative w-[90vw] max-w-[500px] rounded-[48px] overflow-hidden  mr-auto">
+                <div className="relative w-[90vw] max-w-[500px]  overflow-hidden  mr-auto">
                   <Image
                     src="/Frame88.png"
                     alt="Golf image 1 (background)"
@@ -117,16 +117,16 @@ const AboutUPage = () => {
           {/* --- Product Section --- */}
           <section className="pt-8 pb-8 md:pt-10 md:pb-20 flex flex-col md:flex-row items-center m-auto px-4 md:px-10 gap-2">
             <div className="order-1 md:order-2 py-8 md:py-20 ml-0 md:ml-[clamp(50px,4%,140px)] text-start md:text-left">
-              <h2 className="font-montserrat font-black text-[48px] leading-[140%] tracking-[0%] text-gray-900 mb-4 md:mb-10">
+              <h2 className="font-montserrat font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-gray-900 mb-4 md:mb-10">
                 Product - FieldBOOK
               </h2>
 
-              <p className="font-pretendard font-bold text-[28px] leading-[140%] tracking-[0%] text-gray-900">
+              <p className="font-pretendard font-bold text-[19px] md:text-[28px] leading-[140%] tracking-[0%] text-gray-900">
                 필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 차세대 스마트 골프
                 솔루션입니다.
               </p>
 
-              <p className="mt-2 md:mt-3 font-pretendard font-normal text-[22px] leading-[140%] tracking-[0%] text-gray-700">
+              <p className="mt-2 md:mt-3 font-pretendard font-normal  text-[16px] md:text-[22px] leading-[140%] tracking-[0%] text-gray-700">
                 AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
                 스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
               </p>
@@ -135,9 +135,9 @@ const AboutUPage = () => {
             {/* Left Column: Images (mobile дээр дараа нь гарах) */}
             <div className="order-2 md:order-1 relative w-full max-w-[508px] mx-auto mt-8 md:mt-0">
               {/* Background image */}
-              <div className="rounded-[48px] overflow-hidden">
+              <div className=" rounded-[28px] md:rounded-[48px] overflow-hidden">
                 <Image
-                  src="./Frame90.svg"
+                  src="./Frame97.svg"
                   alt="FieldBOOK Product"
                   width={608}
                   height={430}
@@ -158,13 +158,13 @@ const AboutUPage = () => {
             </div>
           </section>
         </div>
-        <div className=" bg-gray-100 px-4">
-          <section className="pt-10 md:pt-20 bg-gray-100 mt-10 md:mt-20 lg:mt-24 m-auto p-auto container max-w-screen-xl">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 md:mb-12 text-gray-900">
+        <div className=" bg-gray-100 px-4 mt-[90px] md:mt-[160px]">
+          <section className="pt-[80px] md:pt-[160px] bg-gray-100 mt-10 md:mt-20 lg:mt-24 m-auto p-auto container max-w-screen-xl">
+            <h2 className="text-[30px] md:text[48px] font-extrabold text-center mb-6 md:mb-12 text-gray-900">
               What We Deliver
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-10">
+            <div className="grid md:grid-cols-3 gap-2 md:gap-10">
               <DeliverItem
                 img="./Frame94.svg"
                 title="운영 효율 및 비용 절감"
@@ -190,9 +190,10 @@ const AboutUPage = () => {
                 type="3"
               />
             </div>
+      
           </section>
-          <div className="pr-4 md:pr-10 lg:pr-16">
-            <FooterModal isOpen={true} onClose={() => {}} />
+          <div className="ml-[82px] md:mr-[60px] pb-[60px] md:mb-0">
+            <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>
       </div>
@@ -209,7 +210,7 @@ const GoalItem = ({ title, desc }: { title: string; desc: string }) => (
 );
 const TextItem = ({ text }: { text: string }) => (
   <div className="flex flex-col items-center space-y-1 text-center">
-    <p className="text-sm md:text-base font-pretendard  text-gray-700">
+    <p className="text-[16px] md:text-base font-pretendard  text-gray-700">
       {text}
     </p>
   </div>
@@ -226,7 +227,7 @@ const DeliverItem = ({
   desc: string;
   type: string;
 }) => (
-  <div className=" rounded-2xl ">
+  <div className=" rounded-[20px] ">
     <Image
       src={img}
       alt={title}
@@ -234,8 +235,8 @@ const DeliverItem = ({
       height={200}
       className="w-full md-w-[374px] h-auto object-cover rounded-[20px]"
     />
-    <div className="p-6 text-center pt=[6px]">
-      <h3 className="font-bold text-gray-900 mb-2 text-lg md:text-xl">
+    <div className="p-6 text-center pt-[29px]">
+      <h3 className="font-bold text-gray-900 mb-2 text-[20px]">
         {title}
       </h3>
       {/* <p className=" text-gray-700 leading-relaxed140 text-[16px]">{desc}</p> */}
