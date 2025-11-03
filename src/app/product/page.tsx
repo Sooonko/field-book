@@ -126,6 +126,36 @@ const ProductPage = () => {
   const [showButton, setShowButton] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const asideRef = useRef<HTMLDivElement>(null);
+  const [isFixed, setIsFixed] = useState(false);
+  const [isBottom, setIsBottom] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const aside = asideRef.current;
+      const footer = document.getElementById("sideContent");
+      if (!aside) return;
+
+      const asideRect = aside.getBoundingClientRect();
+      const footerTop = footer ? footer.getBoundingClientRect().top : 0;
+
+      // aside дэлгэцийн дээд талд очоогүй бол fixed биш
+
+      if (asideRect.top > 0) {
+        setIsFixed(false);
+        setIsBottom(false);
+        return;
+      }
+      if (footerTop > 0) {
+        setIsFixed(false);
+        setIsBottom(false);
+      } else {
+        setIsFixed(true);
+        setIsBottom(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   useEffect(() => {
     const sections = document.querySelectorAll("main section[id]");
 
@@ -249,7 +279,14 @@ const ProductPage = () => {
         <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
           <aside
             ref={asideRef}
-            className="w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 sticky h-auto lg:h-screen self-start lg:top-10"
+            className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
+          ${
+            isFixed
+              ? "fixed top-0 left-0 right-0 z-50 bg-white shadow-md p-4"
+              : ""
+          }
+          ${isBottom ? "relative" : ""}
+          lg:sticky lg:top-10 h-auto lg:h-screen self-start`}
           >
             <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
               <span className="font-montserrat font-extrabold text-gray-900">
@@ -320,7 +357,10 @@ const ProductPage = () => {
             </ul>
           </aside>
 
-          <main className="flex-1 min-w-0 w-full mx-auto md:py-8">
+          <main
+            id="sideContent"
+            className="flex-1 min-w-0 w-full mx-auto md:py-8"
+          >
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
               link.href.includes("jvyv") ||
