@@ -192,7 +192,7 @@ const AboutUPage = () => {
             </div>
       
           </section>
-          <div className="ml-[82px] md:mr-[60px] pb-[60px] md:mb-0">
+          <div className=" mr-[19px] md:mr-[60px] pb-[60px] md:mb-0">
             <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>
