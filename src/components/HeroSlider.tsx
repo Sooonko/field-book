@@ -99,13 +99,13 @@ export default function HeroSlider() {
                 <h2 className="text-[28px] md:text-[48px] leading-[1.4] font-black text-gray-900">
                   {slide.title}
                 </h2>
-                <p className="text-[18px] md:text-[24px] leading-[1.4] font-medium text-gray-900">
+                <p className="text-[15px] md:text-[24px] leading-[1.4] font-medium text-gray-900">
                   {slide.desc}
                 </p>
               </div>
 
               {/* Image */}
-              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-[68px] md:mt-0 order-2 md:order-2 w-full md:w-auto">
+              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-[68px] md:mt-0 order-2 md:order-2 w-full md:w-auto ">
                 <Image
                   src={slide.image}
                   alt={slide.title}
