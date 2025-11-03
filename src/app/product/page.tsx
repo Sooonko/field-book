@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import FooterModal from "@/components/Footer";
@@ -124,6 +124,8 @@ const ProductPage = () => {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const [showButton, setShowButton] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const asideRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const sections = document.querySelectorAll("main section[id]");
 
@@ -153,6 +155,34 @@ const ProductPage = () => {
       });
     };
   }, [navLinks]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!asideRef.current) return;
+
+      const asideTop = asideRef.current.offsetTop; // aside эхлэх байрлал
+      const asideHeight = asideRef.current.offsetHeight;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Slider + Features хэсэг дууссаны дараа stick болох логик
+      if (
+        scrollY > asideTop &&
+        scrollY + windowHeight < asideTop + asideHeight + 100
+      ) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 200) {
@@ -190,8 +220,8 @@ const ProductPage = () => {
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={120}
-                      height={120}
+                      width={60}
+                      height={60}
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     />
                   </div>
@@ -217,7 +247,10 @@ const ProductPage = () => {
       </div>
       <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE]">
         <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
-          <aside className="w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 sticky h-auto lg:h-screen self-start lg:top-10">
+          <aside
+            ref={asideRef}
+            className="w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 sticky h-auto lg:h-screen self-start lg:top-10"
+          >
             <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
               <span className="font-montserrat font-extrabold text-gray-900">
                 FieldBook
@@ -258,7 +291,7 @@ const ProductPage = () => {
 
             {/* Mobile horizontal scroll */}
             <ul
-              className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-[375px] h-[60px]`}
+              className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-[375px] h-[60px] `}
             >
               {navLinks.map((link) => (
                 <li key={link.href} className="flex-shrink-0">
