@@ -155,7 +155,7 @@ const ProductPage = () => {
   }, [navLinks]);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 400) {
+      if (window.pageYOffset > 200) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -201,7 +201,7 @@ const ProductPage = () => {
                       src={item.icon}
                       alt={item.title}
                       width={64}
-                        height={64}
+                      height={64}
                       objectFit="contain"
                     />
                   </div>

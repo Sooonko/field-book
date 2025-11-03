@@ -190,10 +190,9 @@ const AboutUPage = () => {
                 type="3"
               />
             </div>
-      
           </section>
-          <div className=" mr-[19px] md:mr-[60px] pb-[60px] md:mb-0">
-            <FooterModal isOpen={true} onClose={() => { }} />
+          <div className="ml-[82px] pb-[60px]  md:mb-0">
+            <FooterModal isOpen={true} onClose={() => {}} />
           </div>
         </div>
       </div>
@@ -236,9 +235,7 @@ const DeliverItem = ({
       className="w-full md-w-[374px] h-auto object-cover rounded-[20px]"
     />
     <div className="p-6 text-center pt-[29px]">
-      <h3 className="font-bold text-gray-900 mb-2 text-[20px]">
-        {title}
-      </h3>
+      <h3 className="font-bold text-gray-900 mb-2 text-[20px]">{title}</h3>
       {/* <p className=" text-gray-700 leading-relaxed140 text-[16px]">{desc}</p> */}
       {type === "1" ? (
         <>
