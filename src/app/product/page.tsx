@@ -477,15 +477,16 @@ const ProductPage = () => {
               className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-                <div className="relative w-full lg:w-2/5 h-[200px] md:h-auto lg:h-auto aspect-square rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
+                <div className="relative w-[400px]  rounded-[48px] bg-gray-100 overflow-hidden flex justify-center items-end ">
                   <Image
                     src="/101screen.svg"
                     alt="10.1인치 터치스크린"
-                    layout="fill"
-                    objectFit="contain"
-                    className="md:p-8"
+                    width={396}
+                    height={278}
+                    className="object-contain opacity-100"
                   />
                 </div>
+
                 <div className="w-full lg:w-3/5 text-start lg:text-left ">
                   <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] md:mt-8 md:mb-4 mb-2">
                     10.1인치 터치스크린

@@ -32,8 +32,9 @@ const AboutUPage = () => {
             </p>
             <p className="mt-4 font-pretendard  font-normal text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#626262]">
               우리는 AI 비전·GNSS·모바일 연동 기술을 기반으로 스마트 골프
-              모빌리티를 개발·제공합니다. 정밀 기술과 운영 안정성을 바탕으로
-              국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고 있습니다.
+              모빌리티를 개발·제공합니다.
+              <br /> 정밀 기술과 운영 안정성을 바탕으로 국내외 골프장의 ‘신뢰할
+              수 있는 파트너’로 자리잡고 있습니다.
             </p>
 
             <div className="mt-10 rounded-[24px] md:rounded-[48px] overflow-hidden ">
@@ -48,18 +49,17 @@ const AboutUPage = () => {
           </section>
 
           {/* --- Our Goal Section --- */}
-          <section className="px-4 py-8 md:py-10">
-            <div className=" flex flex-col md:flex-row md:items-start gap-y-10 md:gap-x-6"
-          >
+          <section className="px-4 py-8 md:pt-10">
+            <div className=" flex flex-col md:flex-row md:items-start gap-y-10 md:gap-x-6">
               {/* 1st column: heading */}
-              <div className=" w-full md:w-[226px] bg-amber-300 ">
-                <h2 className="font-montserrat font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-[#222222]">
+              <div className=" w-full md:w-[360px] ">
+                <h2 className="font-montserrat font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-[#222222] text-left -mt-[12px]">
                   Our Goal
                 </h2>
               </div>
 
               {/* 2nd column */}
-              <div className="space-y-[28px] bg-amber-500">
+              <div className="space-y-[28px] ">
                 <div className="">
                   <h3 className="font-pretendard  font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
                     신뢰성
@@ -93,7 +93,8 @@ const AboutUPage = () => {
                     안전
                   </h3>
                   <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                    No-Go Zone과 장애물 감지,<br></br>
+                    No-Go Zone과 장애물 감지,
+                    <br />
                     지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
                   </p>
                 </div>
@@ -102,7 +103,7 @@ const AboutUPage = () => {
               {/* 3rd column: images */}
               <div className="relative flex">
                 {/* Background image */}
-                <div className="relative w-[90vw] max-w-[500px]  overflow-hidden  mr-auto">
+                <div className="relative w-[90vw] max-w-[500px]  overflow-hidden  mr-auto -mt-[4px]">
                   <Image
                     src="/Frame88.png"
                     alt="Golf image 1 (background)"
@@ -124,13 +125,17 @@ const AboutUPage = () => {
 
               <p className="font-pretendard font-bold text-[19px] md:text-[28px] leading-[140%] tracking-[0%] text-gray-900">
                 필드북(FieldBOOK)은 카트와 앱이 하나로 연결된
-                <span className="hidden md:inline"><br /></span>
+                <span className="hidden md:inline">
+                  <br />
+                </span>
                 차세대 스마트 골프 솔루션입니다.
               </p>
 
               <p className="mt-2 md:mt-3 font-pretendard font-normal  text-[15.5px] md:text-[22px] leading-[140%] tracking-[0%] text-gray-700">
                 AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
-                <span className="hidden md:inline"><br /></span>
+                <span className="hidden md:inline">
+                  <br />
+                </span>
                 스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
               </p>
             </div>
@@ -195,7 +200,7 @@ const AboutUPage = () => {
             </div>
           </section>
           <div className="ml-[82px] pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => { }} />
+            <FooterModal isOpen={true} onClose={() => {}} />
           </div>
         </div>
       </div>

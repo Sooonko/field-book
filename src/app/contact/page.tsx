@@ -140,7 +140,7 @@ const ContactUsPage = () => {
                     을 준수합니다.
                   </p>
 
-                  <div className="mt-[40px]  flex justify-center">
+                  <div className="mt-[40px]  flex justify-start">
                     <button
                       type="submit"
                       className="bg-black text-white font-pretendard  font-bold text-[16px] leading-[140%] tracking-[0%] 
@@ -199,12 +199,11 @@ const ContactUsPage = () => {
                   ></iframe>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
         <div className="pt-[60px]"></div>
-        <FooterModal isOpen={true} onClose={() => { }} />
+        <FooterModal isOpen={true} onClose={() => {}} />
       </div>
 
       <PrivacyModal
