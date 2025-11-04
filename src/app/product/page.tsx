@@ -246,13 +246,13 @@ const ProductPage = () => {
                 className="flex flex-row md:flex-col items-center md:items-center justify-start md:justify-center space-x-4 md:space-x-0 md:space-y-4"
               >
                 {item.icon.endsWith(".png") ? (
-                  <div className="relative w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-lg">
+                  <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
                     <Image
                       src={item.icon}
                       alt={item.title}
-                      width={60}
-                      height={60}
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      width={41}
+                      height={72}
+                      objectFit="contain"
                     />
                   </div>
                 ) : (

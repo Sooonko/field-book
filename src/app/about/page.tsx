@@ -10,7 +10,7 @@ const AboutUPage = () => {
       <div>
         <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
-          <section className="text-start md:text-left  py-15 m-auto px-4">
+          <section className="text-start md:text-left  py-15 m-auto px-4 md:mt-[130px]">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
                 src="./Group.svg"
@@ -21,7 +21,7 @@ const AboutUPage = () => {
               />
             </div>
 
-            <h1 className="font-montserrat font-normal text-[28px] md:text-4xl leading-[140%] tracking-[0%] text-[#222222] mt-[20px]">
+            <h1 className="font-montserrat font-normal text-[28px] md:text-[40px] leading-[140%] tracking-[0%] text-[#222222] mt-[20px]">
               AI mobility + <br className="block md:hidden" /> Trusted
               Technology + <br className="block md:hidden" /> Smart Golf
             </h1>
@@ -37,7 +37,7 @@ const AboutUPage = () => {
               수 있는 파트너’로 자리잡고 있습니다.
             </p>
 
-            <div className="mt-10 rounded-[24px] md:rounded-[48px] overflow-hidden ">
+            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden ">
               <Image
                 src="./Frame87.svg"
                 alt="Golf Field"
@@ -50,49 +50,115 @@ const AboutUPage = () => {
 
           {/* --- Our Goal Section --- */}
           <section className="px-4 py-8 md:pt-10">
-            <div className=" flex flex-col md:flex-row md:items-start gap-y-10 md:gap-x-6">
-              {/* 1st column: heading */}
-              <div className=" w-full md:w-[360px] ">
+            {/* ✅ Desktop only */}
+            <div className="hidden md:flex justify-between">
+              <div className="flex">
+                <div>
+                  <h2 className="font-montserrat font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-[#222222] text-left -mt-[12px] whitespace-nowrap">
+                    Our Goal
+                  </h2>
+                </div>
+                <div className="ml-[100px]">
+                  <div className="space-y-[28px]">
+                    <div>
+                      <h3 className="font-pretendard font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
+                        신뢰성
+                      </h3>
+                      <p className="font-pretendard font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                        안정성이 검증된 내구성과 안전 제어로,
+                        <br />
+                        언제나 믿을 수 있는 파트너가 됩니다.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                        지능형
+                      </h3>
+                      <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                        딥러닝 비전과 정밀 GPS를 기반으로,
+                        <br />
+                        스마트한 라운드를 제공합니다.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                        연결성
+                      </h3>
+                      <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                        카트·앱·서버를 하나로 이어,
+                        <br />
+                        운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                        안전
+                      </h3>
+                      <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                        No-Go Zone과 장애물 감지,
+                        <br />
+                        지능형 제동으로 모든 라운드에서 안전을 최우선으로
+                        합니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="md:-mr-[100px]">
+                <Image
+                  src="/Frame88.png"
+                  alt="Golf image 1 (background)"
+                  width={500}
+                  height={485}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
+            {/* ✅ Mobile only */}
+            <div className="flex flex-col md:hidden gap-y-10">
+              <div className="w-full">
                 <h2 className="font-montserrat font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-[#222222] text-left -mt-[12px]">
                   Our Goal
                 </h2>
               </div>
 
-              {/* 2nd column */}
-              <div className="space-y-[28px] ">
-                <div className="">
-                  <h3 className="font-pretendard  font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
+              <div className="space-y-[28px]">
+                <div>
+                  <h3 className="font-pretendard font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
                     신뢰성
                   </h3>
-                  <p className="font-pretendard  font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     안정성이 검증된 내구성과 안전 제어로,
                     <br />
                     언제나 믿을 수 있는 파트너가 됩니다.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     지능형
                   </h3>
-                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                    딥러닝 비전과 정밀 GPS를 기반으로,<br></br> 스마트한
-                    라운드를 제공합니다.
+                  <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                    딥러닝 비전과 정밀 GPS를 기반으로,
+                    <br />
+                    스마트한 라운드를 제공합니다.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     연결성
                   </h3>
-                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                    카트·앱·서버를 하나로 이어,<br></br>
+                  <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                    카트·앱·서버를 하나로 이어,
+                    <br />
                     운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-pretendard  font-bold text-lg md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
+                  <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
                     안전
                   </h3>
-                  <p className="font-pretendard  font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     No-Go Zone과 장애물 감지,
                     <br />
                     지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
@@ -100,18 +166,14 @@ const AboutUPage = () => {
                 </div>
               </div>
 
-              {/* 3rd column: images */}
-              <div className="relative flex">
-                {/* Background image */}
-                <div className="relative w-[90vw] max-w-[500px]  overflow-hidden  mr-auto -mt-[4px]">
-                  <Image
-                    src="/Frame88.png"
-                    alt="Golf image 1 (background)"
-                    width={500}
-                    height={485}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
+              <div className="relative w-[90vw] max-w-[500px] mr-auto -mt-[4px]">
+                <Image
+                  src="/Frame88.png"
+                  alt="Golf image 1 (background)"
+                  width={500}
+                  height={485}
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </section>
