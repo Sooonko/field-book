@@ -56,9 +56,8 @@ const AppPage = () => {
             </h1>
 
             <p className="mt-5 text-[16px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:text-lg md:leading-relaxed">
-              그날의 스코어를 다시 확인하고, 기억에 남는
-              <span className="whitespace-nowrap">순간을</span>,
-              <span className="whitespace-nowrap">제공합니다.</span>
+              그날의 스코어를 다시 확인하고, 기억에 남는 순간을
+              <br className="block md:hidden" />
               스윙지점과 함께 영상으로 제공합니다. 지금 FieldBOOK 앱을 다운로드
               하세요.
             </p>
@@ -72,10 +71,10 @@ const AppPage = () => {
       </header>
 
       <main>
-        <section className="w-full pt-16 lg:py-0 lg:h-[680px] flex items-end justify-center px-4 md:px-16">
+        <section className="w-full pt-[80px] md:pt-16 lg:py-0 lg:h-[680px] flex items-end justify-center px-4 md:px-16">
           <div className="max-w-[1400px] w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
             {/* Left: Score Cards */}
-            <div className="flex flex-row flex-wrap justify-between gap-6 mt-8 lg:mt-0 order-2 lg:order-1">
+            <div className="flex flex-row flex-wrap justify-between gap-[8px] md:gap-6 mt-8 lg:mt-0 order-2 lg:order-1">
               <div className="rounded-[40px] shadow-xl flex-[0_0_45%]">
                 <img
                   src="/score_card_1.svg"
@@ -180,7 +179,7 @@ const AppPage = () => {
         </section>
 
         <section className="bg-gray-50 py-20 md:py-25 flex flex-col-reverse md:flex-col  items-center justify-center text-center px-4">
-          <div className="flex overflow-x-auto md:gap-6 gap-6 mb-[70px]">
+          <div className="flex overflow-x-auto md:gap-6 gap-[12px] md:mb-[70px]">
             {logos.map((logo, index) => (
               <div
                 key={index}
@@ -197,9 +196,11 @@ const AppPage = () => {
             ))}
           </div>
 
-          <div className="mb-4 md:mb-0">
-            <h2 className="text-2xl md:text-3xl font-bold">간편 공유</h2>
-            <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+          <div className="mb-[50px] md:mb-0">
+            <h2 className="text-[28px] md:text-[40px] font-pretendard  md:text-3xl font-[800]">
+              간편 공유
+            </h2>
+            <p className="text-gray-600 mt-[8px] md:text-[22px] text-[16px] font-pretendard md:mt-[12px] max-w-xl mx-auto">
               최고의 순간을 하이라이트로 간편하게 저장하고{" "}
               <br className="block md:hidden" /> SNS로 나누세요.
             </p>
@@ -239,11 +240,11 @@ const AppPage = () => {
                     className="object-contain"
                   />
                 </button>
-                <button className=" md:w-auto h-[40px]">
+                <button className=" md:w-auto w-[135px] h-[40px]">
                   <Image
-                    src="/google-play-badge.svg"
+                    src="/google-play-badge-app.svg"
                     alt="Get it on Google Play"
-                    width={120}
+                    width={135}
                     height={40}
                     className="object-contain"
                   />

@@ -10,7 +10,7 @@ const AboutUPage = () => {
       <div className="overflow-x-hidden">
         <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
-          <section className="text-start md:text-left  py-15 m-auto px-4 md:mt-[130px]">
+          <section className="text-start md:text-left  pb-15 md:pt-15 m-auto px-4 mt-[130px]">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
                 src="./Group.svg"
@@ -37,7 +37,7 @@ const AboutUPage = () => {
               수 있는 파트너’로 자리잡고 있습니다.
             </p>
 
-            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden ">
+            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden  h-[120px]">
               <Image
                 src="./Frame87.svg"
                 alt="Golf Field"
@@ -166,7 +166,7 @@ const AboutUPage = () => {
                 </div>
               </div>
 
-              <div className="relative w-[90vw] max-w-[500px] mr-auto -mt-[4px]">
+              <div className="relative w-full  mr-auto -mt-[4px]">
                 <Image
                   src="/Frame88.png"
                   alt="Golf image 1 (background)"
@@ -193,7 +193,7 @@ const AboutUPage = () => {
                 차세대 스마트 골프 솔루션입니다.
               </p>
 
-              <p className="mt-2 md:mt-3 font-pretendard font-normal  text-[15.5px] md:text-[22px] leading-[140%] tracking-[0%] text-gray-700">
+              <p className="mt-2 md:mt-3 font-pretendard font-normal  text-[16px] md:text-[22px] leading-[140%] tracking-[0%] text-gray-700">
                 AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
                 <span className="hidden md:inline">
                   <br />
@@ -261,8 +261,8 @@ const AboutUPage = () => {
               />
             </div>
           </section>
-          <div className="ml-[82px] pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => { }} />
+          <div className="pb-[60px]  md:mb-0">
+            <FooterModal isOpen={true} onClose={() => {}} />
           </div>
         </div>
       </div>
@@ -305,7 +305,9 @@ const DeliverItem = ({
       className="w-full md:w-[374px] h-auto object-cover rounded-[20px]"
     />
     <div className="p-6 text-center pt-[29px]">
-      <h3 className="font-bold text-gray-900 mb-2 text-[20px]">{title}</h3>
+      <h3 className="font-bold font-pretendard text-gray-900 mb-2 text-[20px]">
+        {title}
+      </h3>
       {/* <p className=" text-gray-700 leading-relaxed140 text-[16px]">{desc}</p> */}
       {type === "1" ? (
         <>
