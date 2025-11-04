@@ -51,7 +51,7 @@ const navLinks = [
     href: "#driving-history",
     text: "주행 능력",
     description:
-      "고출력 모터로 최대 25° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.",
+      "고출력 모터로 최대 30° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.",
     url: "/videos/drive-history.mp4",
   },
   { href: "#ip5x", text: "IP5X 방진/방수" },
@@ -493,7 +493,7 @@ const ProductPage = () => {
                     </p>
 
                     <div className="flex flex-col gap-2 items-start">
-                      <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262]">
+                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] whitespace-nowrap">
                         · 고출력·안정 전원 공급{" "}
                         <span className="font-[400] leading-[140%] text-[#626262]">
                           - 주행·녹화·통신을 동시에 안정적으로 지원
@@ -533,8 +533,8 @@ const ProductPage = () => {
                   </h3>
 
                   <p className="font-pretendard font-medium text-base text-[16px] md:text-[20px] lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
-                    10.1인치 대형 터치스크린으로 전 세계 4만 개 코스를
-                    제공합니다.
+                    10.1인치 대형 터치스크린으로
+                    <br />전 세계 4만 개 코스를 제공합니다.
                   </p>
                 </div>
               </div>
@@ -605,7 +605,9 @@ const ProductPage = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10 md:py-[16px] md:px-[20px] py-[10px] px-[12px] rounded-[20px]">
                   {specs.map((spec, index) => (
                     <div key={index} className="flex flex-col gap-1">
-                      <p className="text-sm text-gray-700 font-medium">{spec.title}</p>
+                      <p className="text-sm text-gray-700 font-medium">
+                        {spec.title}
+                      </p>
                       <p
                         className="text-base text-gray-900 font-medium leading-[140%]"
                         style={{
@@ -619,7 +621,6 @@ const ProductPage = () => {
                   ))}
                 </div>
               </div>
-
             </section>
             <section
               key={"jvyv"}
