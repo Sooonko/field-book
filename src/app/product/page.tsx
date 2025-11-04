@@ -287,7 +287,7 @@ const ProductPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div>
+    <div >
       <section className="relative w-full overflow-hidden">
         <Header variant={"solid"} />
         <main className=" flex flex-col items-center mt-[70px]">
@@ -499,10 +499,14 @@ const ProductPage = () => {
                       </span>
                     </p>
 
-                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                       · 간편한 유지관리&nbsp;{" "}
                       <span className="font-[400] text-[#626262]">
-                        - 내부 오염 감소로 점검·유지 비용 최소화
+                        - 내부 오염 감소로 점검·유지 비용{" "}
+                        <br className="block md:hidden" />  
+                        <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                          최소화
+                        </span>
                       </span>
                     </p>
                   </div>
