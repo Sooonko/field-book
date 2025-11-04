@@ -279,7 +279,7 @@ const GoalItem = ({ title, desc }: { title: string; desc: string }) => (
 );
 const TextItem = ({ text }: { text: string }) => (
   <div className="flex flex-col items-center space-y-1 text-center">
-    <p className="text-[16px] md:text-base font-pretendard  text-gray-700">
+    <p className="text-[16px] md:text-base font-pretendard text-gray-700 whitespace-nowrap">
       {text}
     </p>
   </div>
