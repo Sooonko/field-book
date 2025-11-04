@@ -73,14 +73,14 @@ export default function ProductFeatureList() {
           className="flex flex-col md:flex-row border-b border-gray-200 py-6"
         >
           {/* Left Column - Icon + Title */}
-          <div className="w-full md:w-[318px] md:pr-6 mb-4 md:mb-0">
+          <div className="w-full md:w-[318px] md:pr-6 mb-[4px] md:mb-0">
             <div className="flex flex-col md:flex-row items-start gap-[12px]">
               <Image
                 src={feature.icon}
                 alt={`${feature.title} icon`}
-                height={20}
-                width={20}
-                className="w-[20px] h-[20px] mt-[2px] opacity-100"
+                height={32}
+                width={32}
+                className="w-[32px] h-[32px] mt-[2px] opacity-100"
               />
               <p
                 className="text-gray-900 font-[700] text-[18px] leading-[140%] mt-2 md:mt-0"

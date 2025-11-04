@@ -6,26 +6,76 @@ import Header from "@/components/Header";
 import FooterModal from "@/components/Footer";
 import HeroSlider from "@/components/HeroSlider";
 import ProductFeatureList from "@/components/ProductFeatureList";
-
 const features = [
-  { icon: "/auto-follow.svg", title: "Auto-Follow" },
-  { icon: "/club-guide.svg", title: "클럽 가이드" },
-  { icon: "/rec.svg", title: "스윙 녹화/분석" },
-  { icon: "/swing-record.svg", title: "장애물 감지" },
-  { icon: "/obstacle-detect.svg", title: "경사/험로 주행" },
-  { icon: "/hill-drive.svg", title: "IP5X 방진/방수" },
-  { icon: "/ip5x.svg", title: "대용량 배터리" },
-  { icon: "/fieldbookApp.png", title: "FieldBOOK App" },
-  { icon: "/touchscreen.svg", title: "10.1인치 터치스크린" },
-  { icon: "/golfmap.svg", title: "전 세계 4만개 코스맵" },
+  { icon: "/auto-follow.svg", title: "Auto-Follow", alt: "Auto-Follow" },
+  { icon: "/club-guide.svg", title: "클럽 가이드", alt: "클럽 가이드" },
+  {
+    icon: "/rec.svg",
+    title: (
+      <>
+        스윙 녹화/
+        <br className="block md:hidden" />
+        분석
+      </>
+    ),
+    alt: "스윙 녹화/분석",
+  },
+  { icon: "/swing-record.svg", title: "장애물 감지", alt: "장애물 감지" },
+  {
+    icon: "/obstacle-detect.svg",
+    title: (
+      <>
+        경사/험로 <br className="block md:hidden" />
+        주행
+      </>
+    ),
+    alt: "경사/험로 주행",
+  },
+  {
+    icon: "/hill-drive.svg",
+    title: (
+      <>
+        IP5X <br className="block md:hidden" /> 방진/방수
+      </>
+    ),
+    alt: "IP5X 방진/방수",
+  },
+  { icon: "/ip5x.svg", title: "대용량 배터리", alt: "대용량 배터리" },
+  { icon: "/fieldbookApp.png", title: "FieldBOOK App", alt: "FieldBOOK App" },
+  {
+    icon: "/touchscreen.svg",
+    title: (
+      <>
+        10.1인치
+        <br className="block md:hidden" /> 터치스크린
+      </>
+    ),
+    alt: "10.1인치 터치스크린",
+  },
+  {
+    icon: "/golfmap.svg",
+    title: (
+      <>
+        전 세계 4만개
+        <br className="block md:hidden" />
+        코스맵
+      </>
+    ),
+    alt: "전 세계 4만개 코스맵",
+  },
 ];
 
 const navLinks = [
   {
     href: "#auto-follow",
     text: "Auto - Follow",
-    description:
-      "AI 비전으로 사용자를 실시간으로 인식해 완전한 핸즈프리 주행을 제공합니다.",
+    description: (
+      <>
+        AI 비전으로 사용자를 실시간으로 인식해 완전한 핸즈{" "}
+        <br className="block md:hidden" />
+        프리 주행을 제공합니다.
+      </>
+    ),
     url: "/videos/auto-follow.mp4",
   },
   {
@@ -43,15 +93,25 @@ const navLinks = [
   {
     href: "#no-go-zone",
     text: "No-Go Zone/장애물 감지",
-    description:
-      "AI 비전과 정밀 GPS로 장애물과 제한구역을 실시간 자동 감지·회피합니다.",
+    description: (
+      <>
+        AI 비전과 정밀 GPS로 장애물과 제한구역을 실시간{" "}
+        <br className="block md:hidden" />
+        자동 감지·회피합니다.
+      </>
+    ),
     url: "/videos/no-gozone.mp4",
   },
   {
     href: "#driving-history",
     text: "주행 능력",
-    description:
-      "고출력 모터로 최대 30° 경사를 등판합니다. 미끄럼 방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.",
+    description: (
+      <>
+        고출력 모터로 최대 30° 경사를 등판합니다. 미끄럼
+        <br className="block md:hidden" />
+        방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.
+      </>
+    ),
     url: "/videos/drive-history.mp4",
   },
   { href: "#ip5x", text: "IP5X 방진/방수" },
@@ -249,7 +309,7 @@ const ProductPage = () => {
                   <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
                     <Image
                       src={item.icon}
-                      alt={item.title}
+                      alt={item.alt}
                       width={41}
                       height={72}
                       objectFit="contain"
@@ -259,7 +319,7 @@ const ProductPage = () => {
                   <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
                     <Image
                       src={item.icon}
-                      alt={item.title}
+                      alt={item.alt}
                       width={64}
                       height={64}
                       objectFit="contain"
@@ -480,7 +540,7 @@ const ProductPage = () => {
                   <div className="flex flex-col gap-2 items-start">
                     <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                       · 긴 사용 시간&nbsp;&nbsp;
-                      <span className="font-[400] text-[#626262]">
+                      <span className="font-[400] text-[#626262] whitespace-nowrap">
                         - 한 번 충전만으로 36홀 이상 연속 플레이
                       </span>
                     </p>
@@ -559,8 +619,9 @@ const ProductPage = () => {
                     FieldBOOK App
                   </h2>
                   <h3 className="font-pretendard font-[500] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
-                    클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석까지 한
-                    번에 제공합니다.
+                    클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석
+                    <br className="block md:hidden" />
+                    까지 한 번에 제공합니다.
                   </h3>
 
                   <p className="font-pretendard text-[15px] md:text-[20px] leading-[140%] text-[#626262]">
@@ -587,7 +648,7 @@ const ProductPage = () => {
               className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div className="mb-12 text-start">
-                <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
+                <h2 className="font-montserrat font-[800]  text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
                   제원
                 </h2>
                 <h3 className="font-pretendard font-[600] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
@@ -595,10 +656,12 @@ const ProductPage = () => {
                 </h3>
 
                 <p className="font-pretendard font-normal text-[15px] md:text-[20px] lg:text-xl leading-[140%] text-gray-700 mt-3">
-                  강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀 제어로
-                  가파른 경사와 험로에서도 안정적으로 주행합니다. IP5X 방진
-                  설계와 실시간 연결성으로 야외 환경에서도 신뢰할 수 있는 운영을
-                  제공합니다.
+                  강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀{" "}
+                  <br className="block md:hidden" /> 제어로 가파른 경사와
+                  험로에서도 안정적으로 주행합니다.{" "}
+                  <br className="block md:hidden" /> IP5X 방진 설계와 실시간
+                  연결성으로 야외 환경에서도 <br className="block md:hidden" />{" "}
+                  신뢰할 수 있는 운영을 제공합니다.
                 </p>
               </div>
               <div className="rounded-[20px] pb-7 md:p-9 bg-gray-100">
@@ -635,8 +698,8 @@ const ProductPage = () => {
                 <p className="font-pretendard font-normal text-[16px] md:text-[24px] lg:text-xl leading-[140%] text-gray-700 mt-3">
                   필드북이 제공하는 25가지 스마트 기능.
                   <br />
-                  플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인할 수
-                  있습니다.
+                  플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인{" "}
+                  <br className="block md:hidden" />할 수 있습니다.
                 </p>
               </div>
               <ProductFeatureList />
