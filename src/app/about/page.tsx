@@ -7,7 +7,7 @@ import FooterModal from "@/components/Footer";
 const AboutUPage = () => {
   return (
     <PageLayout>
-      <div>
+      <div className="overflow-x-hidden">
         <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
           {/* --- Header Section --- */}
           <section className="text-start md:text-left  py-15 m-auto px-4 md:mt-[130px]">
@@ -234,7 +234,7 @@ const AboutUPage = () => {
               What We Deliver
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-2 md:gap-[80px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[80px]">
               <DeliverItem
                 img="./Frame94.svg"
                 title="운영 효율 및 비용 절감"
@@ -262,7 +262,7 @@ const AboutUPage = () => {
             </div>
           </section>
           <div className="ml-[82px] pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => {}} />
+            <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>
       </div>
@@ -302,7 +302,7 @@ const DeliverItem = ({
       alt={title}
       width={374}
       height={200}
-      className="w-full md-w-[374px] h-auto object-cover rounded-[20px]"
+      className="w-full md:w-[374px] h-auto object-cover rounded-[20px]"
     />
     <div className="p-6 text-center pt-[29px]">
       <h3 className="font-bold text-gray-900 mb-2 text-[20px]">{title}</h3>

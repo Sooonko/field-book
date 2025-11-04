@@ -287,8 +287,8 @@ const ProductPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div >
-      <section className="relative w-full overflow-hidden">
+    <div className="overflow-x-hidden">
+      <section className="relative w-full overflow-hidden ">
         <Header variant={"solid"} />
         <main className=" flex flex-col items-center mt-[70px]">
           <HeroSlider />

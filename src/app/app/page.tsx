@@ -93,7 +93,7 @@ const AppPage = () => {
             </div>
 
             {/* Right: Text */}
-            <div className="w-full lg:w-[450px] lg:pl-12 flex flex-col gap-3 text-center lg:text-left order-1 lg:order-2">
+            <div className="w-full lg:w-[450px] lg:pl-12 flex flex-col gap-3 text-center lg:text-left order-1 lg:order-2 mt-[20px] md:mt-[140px]">
               <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
                 스코어 카드
               </h2>
