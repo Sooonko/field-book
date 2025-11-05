@@ -446,7 +446,7 @@ const ProductPage = () => {
                       귀하의 브라우저는 이 게시물을 지원하지 않습니다.
                     </video>
                   </div>{" "}
-                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
+                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-[4px] md:mb-4">
                     {link.text}
                   </h3>
                   <p className="font-pretendard font-[500] text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
@@ -557,10 +557,14 @@ const ProductPage = () => {
                     </p>
 
                     <div className="flex flex-col gap-[2px] items-start">
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] whitespace-nowrap">
-                        · 고출력·안정 전원 공급{" "}
-                        <span className="font-[400] leading-[140%] text-[#626262]">
-                          - 주행·녹화·통신을 동시에 안정적으로 지원
+                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                        · 고출력·안정 전원 공급&nbsp;{" "}
+                        <span className="font-[400] text-[#626262]">
+                          - 주행·녹화·통신을 동시에{" "}
+                          <br className="block md:hidden" />
+                          <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                            안정적으로 지원
+                          </span>
                         </span>
                       </p>
                     </div>
@@ -598,7 +602,9 @@ const ProductPage = () => {
 
                   <p className="font-pretendard font-medium text-base text-[16px] md:text-[20px] lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
                     10.1인치 대형 터치스크린으로
-                    <br />전 세계 4만 개 코스를 제공합니다.
+                    <br className="hidden md:block" />전 세계 4만 개 코스를{" "}
+                    <br className="block md:hidden" />
+                    제공합니다.
                   </p>
                 </div>
               </div>
@@ -628,27 +634,45 @@ const ProductPage = () => {
                     까지 한 번에 제공합니다.
                   </h3>
 
-                  <p className="font-pretendard text-[15px] md:text-[20px] leading-[140%] text-[#626262]">
-                    <span className="font-bold text-[#626262] leading-[140%]">
-                      · 간편 로그인·대시보드
-                    </span>{" "}
-                    - 오늘의 라운드와 최근 기록 한눈에 확인
-                    <br />
-                    <span className="font-bold leading-[140%]">
-                      · 정밀 스코어보드
-                    </span>{" "}
-                    - 홀별 스코어 및 전체 통계 제공
-                    <br />
-                    <span className="font-bold leading-[140%]">
-                      · 지도 기반 녹화·재생
-                    </span>{" "}
-                    - 코스 맵 녹화 지점 표시 및 즉시 재생
-                    <br />
-                    <span className="font-bold leading-[140%]">
-                      · 원탭 공유
-                    </span>{" "}
-                    - 하이라이트 영상을 링크로 즉시 전송
-                  </p>
+                  <div className="flex flex-col gap-[2px] items-start">
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 간편 로그인·대시보드&nbsp;&nbsp;
+                      <span className="font-[400] text-[#626262] whitespace-nowrap">
+                        - 오늘의 라운드와 최근 기록{" "}
+                        <br className="block md:hidden" />
+                        <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                          한눈에 확인
+                        </span>
+                      </span>
+                    </p>
+
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 정밀 스코어보드&nbsp;&nbsp;
+                      <span className="font-[400] text-[#626262]">
+                        - 홀별 스코어 및 전체 통계 제공
+                      </span>
+                    </p>
+
+                    <div className="flex flex-col gap-[2px] items-start">
+                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                        · 지도 기반 녹화·재생 &nbsp;{" "}
+                        <span className="font-[400] text-[#626262]">
+                          - 코스 맵 녹화 지점 표시 및 즉시
+                          <br className="block md:hidden" />
+                          <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                            재생
+                          </span>
+                        </span>
+                      </p>
+                    </div>
+
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 원탭 공유 &nbsp;&nbsp;
+                      <span className="font-[400] text-[#626262]">
+                        - 하이라이트 영상을 링크로 즉시 전송
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -679,7 +703,7 @@ const ProductPage = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10 md:py-[16px] md:px-[20px] py-[10px] px-[12px] rounded-[20px]">
                   {specs.map((spec, index) => (
                     <div key={index} className="flex flex-col gap-1">
-                      <p className="text-sm text-gray-700 font-medium">
+                      <p className="text-sm text-[#626262] font-medium">
                         {spec.title}
                       </p>
                       <p

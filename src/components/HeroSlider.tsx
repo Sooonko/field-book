@@ -70,7 +70,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="relative w-full overflow-visible py-16">
+    <div className="relative w-full overflow-visible pt-[30px] pb-16 md:pt-16">
       <Swiper
         modules={[Autoplay]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
