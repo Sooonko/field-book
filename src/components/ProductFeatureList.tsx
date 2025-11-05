@@ -27,7 +27,7 @@ export default function ProductFeatureList() {
       title: "GPS 및 코스 내비게이션",
       items: [
         "고정밀 GPS 기반 코스맵",
-        "그린 핀별 거리 표시(앞·중앙·뒤)",
+        "그린 핀별 거리 표시 (앞·중앙·뒤)",
         "전체 홀 맵·홀 전환",
         "빠른 GPS 연결",
         "전 세계 4만 개 코스 지원",

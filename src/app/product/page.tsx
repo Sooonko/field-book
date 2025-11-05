@@ -56,7 +56,7 @@ const features = [
     icon: "/golfmap.svg",
     title: (
       <>
-        전 세계 4만개
+        전 세계 4만개&nbsp;
         <br className="block md:hidden" />
         코스맵
       </>
@@ -430,7 +430,7 @@ const ProductPage = () => {
                 <section
                   key={link.href}
                   id={link.href.substring(1)}
-                  className="w-full  rounded-[20px] max-w-[964px] md:mx-auto py-6 md:p-9"
+                  className="w-full  rounded-[20px] max-w-[964px] md:mx-auto py-6 md:py-9"
                 >
                   <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg overflow-hidden relative">
                     <video
@@ -457,7 +457,7 @@ const ProductPage = () => {
             <section
               key={"ip5x"}
               id={"ip5x"}
-              className="w-full  rounded-[20px]  max-w-[964px] mx-auto py-6 md:p-9"
+              className="w-full  rounded-[20px]  max-w-[964px] mx-auto py-6 md:py-9"
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
                 <div className="w-full h-[410px] lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg overflow-hidden">
@@ -515,7 +515,7 @@ const ProductPage = () => {
             <section
               key={"battery"}
               id={"battery"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
+              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
             >
               <div
                 className="flex flex-col lg:flex-row-reverse  items-center
@@ -587,7 +587,7 @@ const ProductPage = () => {
             <section
               key={"101screen"}
               id={"101screen"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
                 <div className="relative w-[400px]  rounded-[48px] bg-gray-100 overflow-hidden flex justify-center items-end ">
@@ -617,7 +617,7 @@ const ProductPage = () => {
             <section
               key={"fieldbook-app"}
               id={"fieldbook-app"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
             >
               <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
                 <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
@@ -684,7 +684,7 @@ const ProductPage = () => {
             <section
               key={"jivon"}
               id={"jivon"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
+              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
             >
               <div className="mb-12 text-start">
                 <h2 className="font-montserrat font-[800]  text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
@@ -697,14 +697,13 @@ const ProductPage = () => {
                 <p className="font-pretendard font-normal text-[15px] md:text-[20px] lg:text-xl leading-[140%] text-gray-700 mt-3">
                   강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀{" "}
                   <br className="block md:hidden" /> 제어로 가파른 경사와
-                  험로에서도 안정적으로 <br className="hidden md:block" />{" "}
-                  주행합니다. <br className="block md:hidden" /> IP5X 방진
-                  설계와 실시간 연결성으로 야외 환경에서도{" "}
+                  험로에서도 안정적으로 주행합니다. <br className="block" />{" "}
+                  IP5X 방진 설계와 실시간 연결성으로 야외 환경에서도{" "}
                   <br className="block md:hidden" /> 신뢰할 수 있는 운영을
                   제공합니다.
                 </p>
               </div>
-              <div className="rounded-[20px] pb-7 md:p-9 bg-gray-100">
+              <div className="rounded-[20px] pb-7 md:py-9 bg-gray-100">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10 md:py-[16px] md:px-[20px] py-[10px] px-[12px] rounded-[20px]">
                   {specs.map((spec, index) => (
                     <div key={index} className="flex flex-col gap-1">
@@ -728,7 +727,7 @@ const ProductPage = () => {
             <section
               key={"jvyv"}
               id={"jvyv"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
             >
               <div className="mb-12 text-start">
                 <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
