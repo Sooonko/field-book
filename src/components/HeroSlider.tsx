@@ -99,7 +99,10 @@ export default function HeroSlider() {
                 <h2 className="text-[28px] md:text-[48px] leading-[1.4] font-black text-gray-900">
                   {slide.title}
                 </h2>
-                <p className="text-[15px] md:text-[24px] leading-[1.4] font-medium text-gray-900 font-pretendard">
+                <p
+                  className="text-[15px] md:text-[24px] leading-[1.4] font-medium text-gray-900 font-pretendard 
+              whitespace-normal md:whitespace-nowrap overflow-hidden text-ellipsis"
+                >
                   {slide.desc}
                 </p>
               </div>
