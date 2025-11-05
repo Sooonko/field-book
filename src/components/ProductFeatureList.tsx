@@ -66,11 +66,11 @@ export default function ProductFeatureList() {
   ];
 
   return (
-    <div className="w-full max-w-[730px] bg-transparent border-t border-gray-200">
+    <div className="w-full max-w-[730px] bg-transparent">
       {features.map((feature, index) => (
         <div
           key={index}
-          className="flex flex-col md:flex-row border-b border-gray-200 py-6"
+          className="flex md:gap-[160px] max-w-[964px] flex-col md:flex-row border-b border-gray-200 py-6"
         >
           {/* Left Column - Icon + Title */}
           <div className="w-full md:w-[318px] md:pr-6 mb-[4px] md:mb-0">

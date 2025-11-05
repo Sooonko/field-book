@@ -68,9 +68,10 @@ export default function Home() {
   font-pretendard font-normal leading-[140%] tracking-[0%] 
   text-white mb-10"
             >
-              딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적,
-              <br /> 맞춤 클럽 추천, 플레이 영상 자동 저장을 제공함으로써
-              골프장의 운영 효율성과 고객 만족도를 높입니다.
+              딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적, 맞춤 클럽
+              추천, <br />
+              플레이 영상 자동 저장을 제공함으로써 골프장의 운영 효율성과 고객
+              만족도를 높입니다.
             </p>
             <button
               className="

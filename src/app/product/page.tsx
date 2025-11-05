@@ -287,7 +287,7 @@ const ProductPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <section className="relative w-full overflow-hidden ">
         <Header variant={"solid"} />
         <main className=" flex flex-col items-center mt-[70px]">
@@ -335,8 +335,8 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE]">
-        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto">
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE] relative">
+        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto ">
           <aside
             ref={asideRef}
             className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
@@ -477,7 +477,7 @@ const ProductPage = () => {
                     IP5X 방진/방수 설계로 어디서나 안정적으로 주행합니다.
                   </h3>
 
-                  <div className="flex flex-col gap-2 items-start">
+                  <div className="flex flex-col gap-[2px] items-start">
                     <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
                       · 먼지 차단 설계&nbsp;{"  "}
                       <span className="font-[400] text-[#626262] ">
@@ -503,7 +503,7 @@ const ProductPage = () => {
                       · 간편한 유지관리&nbsp;{" "}
                       <span className="font-[400] text-[#626262]">
                         - 내부 오염 감소로 점검·유지 비용{" "}
-                        <br className="block md:hidden" />  
+                        <br className="block md:hidden" />
                         <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
                           최소화
                         </span>
@@ -541,7 +541,7 @@ const ProductPage = () => {
                     36홀 이상 연속 플레이가 가능합니다.
                   </h3>
 
-                  <div className="flex flex-col gap-2 items-start">
+                  <div className="flex flex-col gap-[2px] items-start">
                     <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                       · 긴 사용 시간&nbsp;&nbsp;
                       <span className="font-[400] text-[#626262] whitespace-nowrap">
@@ -556,7 +556,7 @@ const ProductPage = () => {
                       </span>
                     </p>
 
-                    <div className="flex flex-col gap-2 items-start">
+                    <div className="flex flex-col gap-[2px] items-start">
                       <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] whitespace-nowrap">
                         · 고출력·안정 전원 공급{" "}
                         <span className="font-[400] leading-[140%] text-[#626262]">
@@ -629,19 +629,25 @@ const ProductPage = () => {
                   </h3>
 
                   <p className="font-pretendard text-[15px] md:text-[20px] leading-[140%] text-[#626262]">
-                    <span className="font-bold text-[#626262]">
+                    <span className="font-bold text-[#626262] leading-[140%]">
                       · 간편 로그인·대시보드
                     </span>{" "}
                     - 오늘의 라운드와 최근 기록 한눈에 확인
                     <br />
-                    <span className="font-bold ">· 정밀 스코어보드</span> - 홀별
-                    스코어 및 전체 통계 제공
+                    <span className="font-bold leading-[140%]">
+                      · 정밀 스코어보드
+                    </span>{" "}
+                    - 홀별 스코어 및 전체 통계 제공
                     <br />
-                    <span className="font-bold ">· 지도 기반 녹화·재생</span> -
-                    코스 맵 녹화 지점 표시 및 즉시 재생
+                    <span className="font-bold leading-[140%]">
+                      · 지도 기반 녹화·재생
+                    </span>{" "}
+                    - 코스 맵 녹화 지점 표시 및 즉시 재생
                     <br />
-                    <span className="font-bold ">· 원탭 공유</span> - 하이라이트
-                    영상을 링크로 즉시 전송
+                    <span className="font-bold leading-[140%]">
+                      · 원탭 공유
+                    </span>{" "}
+                    - 하이라이트 영상을 링크로 즉시 전송
                   </p>
                 </div>
               </div>
@@ -662,10 +668,11 @@ const ProductPage = () => {
                 <p className="font-pretendard font-normal text-[15px] md:text-[20px] lg:text-xl leading-[140%] text-gray-700 mt-3">
                   강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀{" "}
                   <br className="block md:hidden" /> 제어로 가파른 경사와
-                  험로에서도 안정적으로 주행합니다.{" "}
-                  <br className="block md:hidden" /> IP5X 방진 설계와 실시간
-                  연결성으로 야외 환경에서도 <br className="block md:hidden" />{" "}
-                  신뢰할 수 있는 운영을 제공합니다.
+                  험로에서도 안정적으로 <br className="hidden md:block" />{" "}
+                  주행합니다. <br className="block md:hidden" /> IP5X 방진
+                  설계와 실시간 연결성으로 야외 환경에서도{" "}
+                  <br className="block md:hidden" /> 신뢰할 수 있는 운영을
+                  제공합니다.
                 </p>
               </div>
               <div className="rounded-[20px] pb-7 md:p-9 bg-gray-100">
@@ -699,7 +706,7 @@ const ProductPage = () => {
                   주요 기능
                 </h2>
 
-                <p className="font-pretendard font-normal text-[16px] md:text-[24px] lg:text-xl leading-[140%] text-gray-700 mt-3">
+                <p className="font-pretendard font-[500] text-[16px] md:text-[24px] lg:text-xl leading-[140%] text-[#626262] mt-3">
                   필드북이 제공하는 25가지 스마트 기능.
                   <br />
                   플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인{" "}
@@ -707,12 +714,13 @@ const ProductPage = () => {
                 </p>
               </div>
               <ProductFeatureList />
+              <div className="py-2"></div>
             </section>
-            <div>
-              {" "}
-              <FooterModal isOpen={true} onClose={() => {}} />
-            </div>
           </main>
+        </div>
+        <div className=" absolute bottom-0 right-[60px] pb-2 ">
+          {" "}
+          <FooterModal isOpen={true} onClose={() => {}} />
         </div>
       </div>
 
