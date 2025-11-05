@@ -56,11 +56,10 @@ const AppPage = () => {
             </h1>
 
             <p className="mt-5 text-[16px] md:text-[18px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:leading-relaxed">
-              그날의 스코어를 다시 확인하고, 기억에 남는 순간을 
+              그날의 스코어를 다시 확인하고, 기억에 남는 순간을
               <br className="block md:hidden" />
               스윙지점과 함께 영상으로 제공합니다.<br></br>
-             
-               지금 FieldBOOK 앱을 다운로드 하세요.
+              지금 FieldBOOK 앱을 다운로드 하세요.
             </p>
 
             <div className="mt-8 flex justify-center lg:justify-start space-x-4">
@@ -155,7 +154,7 @@ const AppPage = () => {
 
         <section className="pt-16 md:pt-20 bg-white flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto px-6 gap-12">
           <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-12 mx-auto">
-            <div className="text-center lg:text-left max-w-[462px] w-full order-1 lg:order-1">
+            <div className="text-center lg:text-left max-w-[462px] w-full order-1 lg:order-1 md:-mt-35">
               <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
                 위치 기반 재생
               </h2>
@@ -225,7 +224,7 @@ const AppPage = () => {
 
             {/* Right: Text and Buttons */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start md:pl-10 text-center md:text-left">
-              <h2 className="font-pretendard font-[600] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-center mb-6">
+              <h2 className="font-pretendard font-[600] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-center md:text-start mb-6 ">
                 라운드는 끝나도 <br />
                 <span className="font-pretendard font-[900] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-[#222222] text-center">
                   그날의 여운은 계속됩니다.

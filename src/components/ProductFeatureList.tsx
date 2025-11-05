@@ -6,7 +6,7 @@ export default function ProductFeatureList() {
       icon: "/phone_icon.svg",
       title: "디자인 및 디스플레이",
       items: [
-        "10.1인치 LCD 터치스크린",
+        '"10.1" LCD 터치스크린',
         "IP5X 방진/방수 설계",
         "듀얼 밸런스 앞바퀴 시스템",
       ],

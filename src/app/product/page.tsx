@@ -107,7 +107,7 @@ const navLinks = [
     text: "주행 능력",
     description: (
       <>
-        고출력 모터로 최대 30° 경사를 등판합니다. 미끄럼
+        고출력 모터로 최대 30° 경사를 등판합니다. 미끄럼&nbsp;
         <br className="block md:hidden" />
         방지 전자식 브레이크로 언덕 주행을 안전하게 제어합니다.
       </>
@@ -320,8 +320,8 @@ const ProductPage = () => {
                     <Image
                       src={item.icon}
                       alt={item.alt}
-                      width={64}
-                      height={64}
+                      width={72}
+                      height={72}
                       objectFit="contain"
                     />
                   </div>
@@ -416,10 +416,9 @@ const ProductPage = () => {
               ))}
             </ul>
           </aside>
-
           <main
             id="sideContent"
-            className="flex-1 min-w-0 w-full mx-auto md:py-8"
+            className="flex flex-col flex-1 min-w-0 w-full mx-auto  md:gap-[60px]"
           >
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
@@ -516,7 +515,7 @@ const ProductPage = () => {
             <section
               key={"battery"}
               id={"battery"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9 "
+              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:p-9"
             >
               <div
                 className="flex flex-col lg:flex-row-reverse  items-center
@@ -543,14 +542,14 @@ const ProductPage = () => {
 
                   <div className="flex flex-col gap-[2px] items-start">
                     <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                      · 긴 사용 시간&nbsp;&nbsp;
+                      · 긴 사용 시간&nbsp;
                       <span className="font-[400] text-[#626262] whitespace-nowrap">
                         - 한 번 충전만으로 36홀 이상 연속 플레이
                       </span>
                     </p>
 
                     <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                      · 탈착식 설계&nbsp;&nbsp;
+                      · 탈착식 설계&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 예비 배터리 교체로 무중단 운용
                       </span>
@@ -559,7 +558,13 @@ const ProductPage = () => {
                     <div className="flex flex-col gap-[2px] items-start">
                       <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
                         · 고출력·안정 전원 공급&nbsp;{" "}
-                        <span className="font-[400] text-[#626262]">
+                        <span
+                          className="
+    font-[400] text-[#626262]
+    block md:inline
+    md:whitespace-nowrap  /* prevent wrapping on desktop */
+  "
+                        >
                           - 주행·녹화·통신을 동시에{" "}
                           <br className="block md:hidden" />
                           <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
@@ -570,7 +575,7 @@ const ProductPage = () => {
                     </div>
 
                     <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                      · 간편한 충전·관리&nbsp;&nbsp;
+                      · 간편한 충전·관리&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 충전 부담을 줄이는 실용적 솔루션
                       </span>
@@ -636,7 +641,7 @@ const ProductPage = () => {
 
                   <div className="flex flex-col gap-[2px] items-start">
                     <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                      · 간편 로그인·대시보드&nbsp;&nbsp;
+                      · 간편 로그인·대시보드&nbsp;
                       <span className="font-[400] text-[#626262] whitespace-nowrap">
                         - 오늘의 라운드와 최근 기록{" "}
                         <br className="block md:hidden" />
@@ -647,7 +652,7 @@ const ProductPage = () => {
                     </p>
 
                     <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                      · 정밀 스코어보드&nbsp;&nbsp;
+                      · 정밀 스코어보드&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 홀별 스코어 및 전체 통계 제공
                       </span>
@@ -655,7 +660,7 @@ const ProductPage = () => {
 
                     <div className="flex flex-col gap-[2px] items-start">
                       <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 지도 기반 녹화·재생 &nbsp;{" "}
+                        · 지도 기반 녹화·재생&nbsp;{" "}
                         <span className="font-[400] text-[#626262]">
                           - 코스 맵 녹화 지점 표시 및 즉시
                           <br className="block md:hidden" />
@@ -667,7 +672,7 @@ const ProductPage = () => {
                     </div>
 
                     <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                      · 원탭 공유 &nbsp;&nbsp;
+                      · 원탭 공유&nbsp;
                       <span className="font-[400] text-[#626262]">
                         - 하이라이트 영상을 링크로 즉시 전송
                       </span>

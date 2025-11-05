@@ -64,9 +64,13 @@ export default function Home() {
             </p>
 
             <p
-              className="max-w-4xl text-start text-[15px] md:text-xl 
-  font-pretendard font-normal leading-[140%] tracking-[0%] 
-  text-white mb-10"
+              className="
+    max-w-4xl text-start
+    text-[15px] md:text-[24px]      /* font size: 15px on mobile, 24px on desktop */
+    font-pretendard font-normal     /* Pretendard Regular (400) */
+    leading-[140%] tracking-[0%]
+    text-white mb-10
+  "
             >
               딥러닝 비전과 GPS 기술을 활용하여 실시간 골퍼 추적,
               <br className="block md:hidden" /> 맞춤 클럽 추천,{" "}
@@ -75,6 +79,7 @@ export default function Home() {
               <br className="block md:hidden" /> 골프장의 운영 효율성과 고객
               만족도를 높입니다.
             </p>
+
             <button
               className="
     w-[193px] h-[44px] 
