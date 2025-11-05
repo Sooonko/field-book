@@ -160,19 +160,19 @@ const ContactUsPage = () => {
                 Let&lsquo;s Connect and Collaborate
               </h2>
               <div className="mt-2 space-y-1 text-gray-700 text-sm md:text-base">
-                <p className="text-[15px] md:text-[16px]">
+                <p className="text-[15px] md:text-[16px] font-montserrat">
                   <strong className="font-montserrat font-black   leading-[200%] tracking-[0%] mr-2">
                     T_
                   </strong>
                   070.7633.0118
                 </p>
-                <p className="text-[15px] md:text-[16px]">
+                <p className="text-[15px] md:text-[16px] font-montserrat">
                   <strong className="font-montserrat font-black text-[15px] md:text-[16px] leading-[200%] tracking-[0%] mr-2">
                     E-mail_
                   </strong>
                   contact@portrush.io
                 </p>
-                <p className="text-[15px] md:text-[16px]">
+                <p className="text-[15px] md:text-[16px] font-montserrat">
                   <strong className="font-montserrat font-black text-[15px] md:text-[16px] leading-[200%] tracking-[0%] mr-2">
                     Add_
                   </strong>

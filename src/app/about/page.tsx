@@ -27,15 +27,22 @@ const AboutUPage = () => {
             </h1>
 
             <p className="mt-6 md:mt-10 font-pretendard font-bold text-xl text-[23px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] ">
-              (주)포트러시는 검증된 기술력과
+              (주)포트러시는 검증된 기술력과&nbsp;
               <br className="block md:hidden" />
               축적된 필드 경험으로,
               <br className="block md:hidden" />
-              골프장의 운영 효율과 골퍼의 만족을   <br className="block md:hidden" />동시에 높입니다.
+              골프장의 운영 효율과 골퍼의 만족을{" "}
+              <br className="block md:hidden" />
+              동시에 높입니다.
             </p>
             <p className="mt-4 font-pretendard  font-normal text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#626262]">
-              (주)포트러시는 AI 비전·GNSS·모바일 연동 기술을  <br className="block md:hidden" /> 기반으로 스마트 골프 모빌리티를 개발·제공합니다. <br className="block md:hidden" />
-              <br className="hidden md:block" /> 우리는 정밀 기술과 운영 안정성을 바탕으로   <br className="block md:hidden" /> 국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고<br className="block md:hidden" /> 있습니다.
+              (주)포트러시는 AI 비전·GNSS·모바일 연동 기술을{" "}
+              <br className="block md:hidden" /> 기반으로 스마트 골프 모빌리티를
+              개발·제공합니다. <br className="block md:hidden" />
+              <br className="hidden md:block" /> 우리는 정밀 기술과 운영
+              안정성을 바탕으로 <br className="block md:hidden" /> 국내외
+              골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고
+              <br className="block md:hidden" /> 있습니다.
             </p>
 
             <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden  h-auto md:w-auto">
@@ -66,7 +73,7 @@ const AboutUPage = () => {
                         신뢰성
                       </h3>
                       <p className="font-pretendard font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                        안정성이 검증된 내구성과 안전 제어로,
+                        현장에서 검증된 내구성과 안전 제어로,
                         <br />
                         언제나 믿을 수 있는 파트너가 됩니다.
                       </p>
@@ -76,9 +83,9 @@ const AboutUPage = () => {
                         지능형
                       </h3>
                       <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                        딥러닝 비전과 정밀 GPS를 기반으로,
-                        <br />
-                        스마트한 라운드를 제공합니다.
+                        비전 인식과 정밀 GPS를 기반으로, <br />
+                        플레이를 기록하고 분석하며 더 스마트한 라운드를
+                        만듭니다.
                       </p>
                     </div>
                     <div>
@@ -86,7 +93,7 @@ const AboutUPage = () => {
                         연결성
                       </h3>
                       <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                        카트·앱·서버를 하나로 이어,
+                        카트·앱·서버를 하나로 이어, 카트·앱·서버를 하나로 이어,
                         <br />
                         운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
                       </p>
@@ -130,7 +137,7 @@ const AboutUPage = () => {
                     신뢰성
                   </h3>
                   <p className="font-pretendard font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                    안정성이 검증된 내구성과 안전 제어로,
+                    현장에서 검증된 내구성과 안전 제어로,
                     <br />
                     언제나 믿을 수 있는 파트너가 됩니다.
                   </p>
@@ -140,9 +147,8 @@ const AboutUPage = () => {
                     지능형
                   </h3>
                   <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
-                    딥러닝 비전과 정밀 GPS를 기반으로,
-                    <br />
-                    스마트한 라운드를 제공합니다.
+                    비전 인식과 정밀 GPS를 기반으로, <br />
+                    플레이를 기록하고 분석하며 더 스마트한 라운드를 만듭니다.
                   </p>
                 </div>
                 <div>
@@ -187,7 +193,7 @@ const AboutUPage = () => {
               </h2>
 
               <p className="font-pretendard font-bold text-[19px] md:text-[28px] leading-[140%] tracking-[0%] text-gray-900">
-                필드북(FieldBOOK)은 카트와 앱이 하나로 연결된
+                필드북(FieldBOOK)은 카트와 앱이 하나로 연결된&nbsp;
                 <span className="hidden md:inline">
                   <br />
                 </span>
@@ -235,7 +241,7 @@ const AboutUPage = () => {
               What We Deliver
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[80px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[80px] ">
               <DeliverItem
                 img="./Frame94.svg"
                 title="운영 효율 및 비용 절감"
@@ -263,7 +269,7 @@ const AboutUPage = () => {
             </div>
           </section>
           <div className="pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => { }} />
+            <FooterModal isOpen={true} onClose={() => {}} />
           </div>
         </div>
       </div>
@@ -312,8 +318,18 @@ const DeliverItem = ({
       {/* <p className=" text-gray-700 leading-relaxed140 text-[16px]">{desc}</p> */}
       {type === "1" ? (
         <>
-          <TextItem text="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화" />
-          <TextItem text="충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호 " />
+          {/* Mobile */}
+          <div className="block md:hidden">
+            <TextItem text="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화" />
+            <TextItem text="충돌 방지·No-Go Zone 기술로 안전사고 예방 및 " />
+            <TextItem text="코스 보호" />
+          </div>
+
+          {/* Desktop */}
+          <div className="hidden md:block">
+            <TextItem text="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화" />
+            <TextItem text="충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호" />
+          </div>
         </>
       ) : type === "2" ? (
         <>

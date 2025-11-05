@@ -56,7 +56,7 @@ const AppPage = () => {
             </h1>
 
             <p className="mt-5 text-[16px] md:text-[18px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:leading-relaxed">
-              그날의 스코어를 다시 확인하고, 기억에 남는 순간을
+              그날의 스코어를 다시 확인하고, 기억에 남는 순간을&nbsp;
               <br className="block md:hidden" />
               스윙지점과 함께 영상으로 제공합니다.<br></br>
               지금 FieldBOOK 앱을 다운로드 하세요.
