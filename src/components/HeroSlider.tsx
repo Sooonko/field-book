@@ -11,31 +11,61 @@ const slides = [
   {
     id: 0,
     title: "AI 로 골프의 모든 순간을",
-    desc: "자동 추적, 클럽 가이드, 고화질 영상 녹화로 그날을 라운딩을 완성하다.",
+    desc: (
+      <>
+        자동 추적, 클럽 가이드, 고화질 영상 녹화로&nbsp;
+        <br className="block md:hidden" />
+        그날을 라운딩을 완성하다.
+      </>
+    ),
     image: "/golf_0.svg",
   },
   {
     id: 1,
     title: "AI 로 골프의 모든 순간을",
-    desc: "자동 추적, 클럽 가이드, 고화질 영상 녹화로 그날을 라운딩을 완성하다.",
+    desc: (
+      <>
+        자동 추적, 클럽 가이드, 고화질 영상 녹화로&nbsp;
+        <br className="block md:hidden" />
+        그날을 라운딩을 완성하다.
+      </>
+    ),
     image: "/golf_1.svg",
   },
   {
     id: 2,
     title: "AI 로 골프의 모든 순간을",
-    desc: "자동 추적, 클럽 가이드, 고화질 영상 녹화로 그날을 라운딩을 완성하다.",
+    desc: (
+      <>
+        자동 추적, 클럽 가이드, 고화질 영상 녹화로&nbsp;
+        <br className="block md:hidden" />
+        그날을 라운딩을 완성하다.
+      </>
+    ),
     image: "/golf_2.svg",
   },
   {
     id: 3,
     title: "AI 로 골프의 모든 순간을",
-    desc: "자동 추적, 클럽 가이드, 고화질 영상 녹화로 그날을 라운딩을 완성하다.",
+    desc: (
+      <>
+        자동 추적, 클럽 가이드, 고화질 영상 녹화로&nbsp;
+        <br className="block md:hidden" />
+        그날을 라운딩을 완성하다.
+      </>
+    ),
     image: "/golf_3.svg",
   },
   {
     id: 4,
     title: "AI 로 골프의 모든 순간을",
-    desc: "자동 추적, 클럽 가이드, 고화질 영상 녹화로 그날을 라운딩을 완성하다.",
+    desc: (
+      <>
+        자동 추적, 클럽 가이드, 고화질 영상 녹화로&nbsp;
+        <br className="block md:hidden" />
+        그날을 라운딩을 완성하다.
+      </>
+    ),
     image: "/golf_5.svg",
   },
 ];
@@ -91,12 +121,12 @@ export default function HeroSlider() {
             className="!w-[85%] sm:!w-[85%] md:!w-[90%] transition-all duration-300 md:pt-2"
           >
             <div
-              className="flex flex-col  rounded-[20px] md:flex-row items-center md:items-end justify-between md:rounded-[48px] overflow-hidden px-4 md:px-20 shadow-sm relative bg-gradient-to-r from-[#EAEAEA] via-[#FDFDFD] to-[#D3D3D3] py-14 min-h-[600px]"
+              className="flex flex-col  rounded-[20px] md:flex-row items-center md:items-end justify-between md:rounded-[48px] overflow-hidden px-4 md:px-20 shadow-sm relative bg-gradient-to-r from-[#EAEAEA] via-[#FDFDFD] to-[#D3D3D3] py-8 md:py-14 h-[420px] md:h-auto"
               // style={{ height: "500px" }}
             >
               {/* Text */}
               <div className="flex flex-col gap-4 z-10 order-1 md:order-1 text-center md:text-left">
-                <h2 className="text-[28px] md:text-[48px] leading-[1.4] font-black text-gray-900">
+                <h2 className="text-[24px] md:text-[48px] leading-[1.4] font-black text-gray-900 font-pretendard">
                   {slide.title}
                 </h2>
                 <p
@@ -108,13 +138,13 @@ export default function HeroSlider() {
               </div>
 
               {/* Image */}
-              <div className="flex justify-center md:justify-end items-center flex-shrink-0 mt-[68px] md:mt-0 order-2 md:order-2 w-full  md:w-[594px] h-full md:h-[512px]">
+              <div className="flex justify-center md:justify-end items-center flex-shrink-0 md:mt-0 order-2 md:order-2 w-[247px] md:w-[594px]  md:h-[512px]">
                 <Image
                   src={slide.image}
                   alt={slide.title}
                   width={420}
                   height={300}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain "
                 />
               </div>
             </div>
@@ -124,7 +154,7 @@ export default function HeroSlider() {
 
       {/* Custom pagination */}
       <div className="absolute -bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-[10px] z-20">
-        <div className="flex items-center gap-[12px] bg-gray-100 rounded-[1000px] px-[20px] py-[8px] w-[188px] h-[40px]">
+        <div className="flex items-center gap-[12px] bg-gray-100 rounded-[1000px] px-[10px] py-[8px] w-[188px] h-[40px]">
           <div className="relative w-[80px] h-[8px] bg-gray-300 rounded-full overflow-hidden">
             <div
               className="absolute top-0 left-0 h-full bg-gray-800 transition-all duration-75"
