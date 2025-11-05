@@ -389,7 +389,7 @@ const ProductPage = () => {
 
             {/* Mobile horizontal scroll */}
             <ul
-              className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-[375px] h-[60px] `}
+              className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-full h-[60px] `}
             >
               {navLinks.map((link) => (
                 <li key={link.href} className="flex-shrink-0">
@@ -419,7 +419,7 @@ const ProductPage = () => {
           </aside>
           <main
             id="sideContent"
-            className="flex flex-col flex-1 min-w-0 w-full mx-auto  md:gap-[60px]"
+            className="flex flex-col flex-1 min-w-0 w-full mx-auto gap-[60px]  md:gap-[160px] pt-[40px] md:pt-[100px]"
           >
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
@@ -431,7 +431,7 @@ const ProductPage = () => {
                 <section
                   key={link.href}
                   id={link.href.substring(1)}
-                  className="w-full  rounded-[20px] max-w-[964px] md:mx-auto py-6 md:py-9"
+                  className="w-full  rounded-[20px] max-w-[964px] md:mx-auto  "
                 >
                   <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg overflow-hidden relative">
                     <video
@@ -458,7 +458,7 @@ const ProductPage = () => {
             <section
               key={"ip5x"}
               id={"ip5x"}
-              className="w-full  rounded-[20px]  max-w-[964px] mx-auto py-6 md:py-9"
+              className="w-full  rounded-[20px]  max-w-[964px] mx-auto  "
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
                 <div className="w-full h-[410px] lg:w-1/3 aspect-square rounded-2xl bg-gray-100 shadow-lg overflow-hidden">
@@ -516,7 +516,7 @@ const ProductPage = () => {
             <section
               key={"battery"}
               id={"battery"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
+              className="w-full rounded-[20px] max-w-[964px] mx-auto  "
             >
               <div
                 className="flex flex-col lg:flex-row-reverse  items-center
@@ -588,7 +588,7 @@ const ProductPage = () => {
             <section
               key={"101screen"}
               id={"101screen"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
             >
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
                 <div className="relative w-[400px]  rounded-[48px] bg-gray-100 overflow-hidden flex justify-center items-end ">
@@ -618,7 +618,7 @@ const ProductPage = () => {
             <section
               key={"fieldbook-app"}
               id={"fieldbook-app"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
             >
               <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
                 <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
@@ -685,7 +685,7 @@ const ProductPage = () => {
             <section
               key={"jivon"}
               id={"jivon"}
-              className="w-full rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
+              className="w-full rounded-[20px] max-w-[964px] mx-auto  "
             >
               <div className="mb-12 text-start">
                 <h2 className="font-montserrat font-[800]  text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
@@ -728,7 +728,7 @@ const ProductPage = () => {
             <section
               key={"jvyv"}
               id={"jvyv"}
-              className="w-full  rounded-[20px] max-w-[964px] mx-auto py-6 md:py-9"
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
             >
               <div className="mb-12 text-start">
                 <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
