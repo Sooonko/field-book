@@ -343,7 +343,7 @@ const ProductPage = () => {
             className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
           ${
             isFixed
-              ? "fixed top-0 left-0 right-0 z-50 bg-white shadow-md p-4"
+              ? "fixed md:block top-0 left-0 right-0 z-50 bg-white  md:bg-transparent shadow-md md:shadow-none p-4 md:p-0"
               : ""
           }
           ${isBottom ? "relative" : ""}
@@ -419,7 +419,7 @@ const ProductPage = () => {
           </aside>
           <main
             id="sideContent"
-            className="flex flex-col flex-1 min-w-0 w-full mx-auto gap-[60px]  md:gap-[160px] pt-[40px] md:pt-[100px]"
+            className="flex flex-col flex-1 min-w-0 w-full mx-auto gap-[60px]  md:gap-[160px] pt-[40px] md:pt-[100px] pb-8"
           >
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
@@ -743,7 +743,7 @@ const ProductPage = () => {
                 </p>
               </div>
               <ProductFeatureList />
-              <div className="py-2"></div>
+              <div className="py-4"></div>
             </section>
           </main>
         </div>
@@ -753,7 +753,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {!showButton ? null : (
+      {!showButton && window.innerWidth >= 1024 ? null : (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed z-20 w-[52px] h-[52px] right-[16px] bottom-[16px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
