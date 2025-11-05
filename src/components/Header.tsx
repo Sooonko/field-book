@@ -32,15 +32,15 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
       >
         <div className="flex justify-between items-start p-4 md:p-8 lg:px-16 lg:py-12">
           {/* Desktop Logo unchanged */}
-          <Link href="/" className="flex flex-col items-start">
-            <Image
-              src="/BI.svg"
-              alt="logo"
-              width={180}
-              height={32}
-              className={isSolid ? "filter invert" : ""}
-            />
-          </Link>
+            <Link href="/" className="flex flex-col items-start">
+              <Image
+                src="/BI.svg"
+                alt="logo"
+                width={240}
+                height={23}
+              className={`w-[130px] md:w-[240px] h-auto ${isSolid ? "filter invert" : ""}`}
+              />
+            </Link>
 
           {/* Lang + Menu Buttons remain unchanged */}
           <div className="flex items-center space-x-3 md:space-x-5 h-full">
@@ -86,9 +86,9 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
               <Image
                 src="/menu.svg"
                 alt="menu"
-                width={36}
-                height={38}
-                className={isSolid ? "filter invert" : ""}
+                width={28}
+                height={28}
+                className={`w-[24px] md:w-[28px] h-auto ${isSolid ? "filter invert" : ""}`}
               />
             </button>
           </div>

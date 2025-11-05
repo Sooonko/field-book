@@ -7,10 +7,10 @@ import FooterModal from "@/components/Footer";
 const AboutUPage = () => {
   return (
     <PageLayout>
-      <div className="overflow-x-hidden">
-        <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14 ">
+      <div className="overflow-x-hidden ">
+        <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14  ">
           {/* --- Header Section --- */}
-          <section className="text-start md:text-left  pb-15 md:pt-15 m-auto px-4 mt-[130px]">
+          <section className="text-start md:text-left  pb-15 md:pt-15 m-auto px-4 mt-[100px] md:mt-[130px]">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
                 src="./Group.svg"
@@ -26,18 +26,19 @@ const AboutUPage = () => {
               Technology + <br className="block md:hidden" /> Smart Golf
             </h1>
 
-            <p className="mt-6 md:mt-10 font-pretendard  font-bold text-xl text-[24px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222]">
-              (주)포트러시는 검증된 기술력과 축적된 필드 경험으로, 골프장의 운영
-              효율과 골퍼의 만족을 동시에 높입니다.
+            <p className="mt-6 md:mt-10 font-pretendard font-bold text-xl text-[23px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] ">
+              (주)포트러시는 검증된 기술력과
+              <br className="block md:hidden" />
+              축적된 필드 경험으로,
+              <br className="block md:hidden" />
+              골프장의 운영 효율과 골퍼의 만족을   <br className="block md:hidden" />동시에 높입니다.
             </p>
             <p className="mt-4 font-pretendard  font-normal text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#626262]">
-              우리는 AI 비전·GNSS·모바일 연동 기술을 기반으로 스마트 골프
-              모빌리티를 개발·제공합니다.
-              <br /> 정밀 기술과 운영 안정성을 바탕으로 국내외 골프장의 ‘신뢰할
-              수 있는 파트너’로 자리잡고 있습니다.
+              (주)포트러시는 AI 비전·GNSS·모바일 연동 기술을  <br className="block md:hidden" /> 기반으로 스마트 골프 모빌리티를 개발·제공합니다. <br className="block md:hidden" />
+              <br className="hidden md:block" /> 우리는 정밀 기술과 운영 안정성을 바탕으로   <br className="block md:hidden" /> 국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고<br className="block md:hidden" /> 있습니다.
             </p>
 
-            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden  h-[120px]">
+            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden  h-auto md:w-auto">
               <Image
                 src="./Frame87.svg"
                 alt="Golf Field"
@@ -262,7 +263,7 @@ const AboutUPage = () => {
             </div>
           </section>
           <div className="pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => {}} />
+            <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>
       </div>

@@ -48,18 +48,19 @@ const AppPage = () => {
           </div>
 
           {/* Right: Text and Buttons */}
-          <div className="w-full lg:w-2.5/4 lg:pl-3 pb-0 lg:pb-20 text-center lg:text-left order-1 lg:order-2">
-            <h1 className="font-pretendard md:text-start font-black text-[26px] leading-[140%] text-center md:text-4xl md:leading-snug mt-[100px]">
+          <div className="w-full lg:w-2.5/4 lg:pl-3 pb-0 lg:pb-34 text-center lg:text-left order-1 lg:order-2">
+            <h1 className="font-pretendard md:text-start font-black text-[26px] leading-[140%] text-center md:text-[46px] md:leading-snug mt-[40px]">
               FieldBOOK 앱과 함께라면
               <br />
               플레이의 여운은 계속됩니다.
             </h1>
 
-            <p className="mt-5 text-[16px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:text-lg md:leading-relaxed">
-              그날의 스코어를 다시 확인하고, 기억에 남는 순간을
+            <p className="mt-5 text-[16px] md:text-[18px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:leading-relaxed">
+              그날의 스코어를 다시 확인하고, 기억에 남는 순간을 
               <br className="block md:hidden" />
-              스윙지점과 함께 영상으로 제공합니다. 지금 FieldBOOK 앱을 다운로드
-              하세요.
+              스윙지점과 함께 영상으로 제공합니다.<br></br>
+             
+               지금 FieldBOOK 앱을 다운로드 하세요.
             </p>
 
             <div className="mt-8 flex justify-center lg:justify-start space-x-4">
@@ -92,7 +93,7 @@ const AppPage = () => {
             </div>
 
             {/* Right: Text */}
-            <div className="w-full lg:w-[450px] lg:pl-12 flex flex-col gap-3 text-center lg:text-left order-1 lg:order-2 mt-[20px] md:mt-[140px]">
+            <div className="w-full lg:w-[450px] lg:pl-12 flex flex-col gap-3 text-center lg:text-left order-1 lg:order-2 mt-[20px] md:mb-[20px] ">
               <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
                 스코어 카드
               </h2>
