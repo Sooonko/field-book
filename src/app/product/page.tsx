@@ -753,7 +753,9 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {!showButton && window.innerWidth >= 1024 ? null : (
+      {!showButton &&
+      typeof window !== "undefined" &&
+      window.innerWidth >= 1024 ? null : (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed z-20 w-[52px] h-[52px] right-[16px] bottom-[16px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
