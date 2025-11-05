@@ -56,7 +56,8 @@ const features = [
     icon: "/golfmap.svg",
     title: (
       <>
-        전 세계 4만개&nbsp;
+        전 세계 4만개
+        <span className="hidden md:inline">&nbsp;</span>
         <br className="block md:hidden" />
         코스맵
       </>
