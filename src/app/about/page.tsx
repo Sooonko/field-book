@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import PageLayout from '../../components/PageLayout';
+import Image from "next/image";
+import PageLayout from "../../components/PageLayout";
 
 const AboutUPage = () => {
   return (
@@ -9,17 +9,26 @@ const AboutUPage = () => {
       <div className="container mx-auto w-full text-gray-800 pt-[102px] m-auto p-auto ">
         {/* --- Header Section --- */}
         <section className="text-center md:text-left py-14 m-auto px-10">
-          <Image src="./Group.svg" alt="Portrush Logo" width={370} height={46} className="mx-auto md:mx-0" />
+          <Image
+            src="./Group.svg"
+            alt="Portrush Logo"
+            width={370}
+            height={46}
+            className="mx-auto md:mx-0"
+          />
           <h1 className="text-gray-700 mt-2 text-lg font-medium text-[40px] font-montserrat">
             AI mobility + Trusted Technology + Smart Golf
           </h1>
 
           <p className="mt-9 text-[15px] md:text-[32px] leading-relaxed font-semibold text-gray-900">
-            (주)포트러시는 검증된 기술력과 축적된 필드 경험으로, 골프장의 운영 효율과 골퍼의 만족을 동시에 높입니다.
+            (주)포트러시는 검증된 기술력과 축적된 필드 경험으로, 골프장의 운영
+            효율과 골퍼의 만족을 동시에 높입니다.
           </p>
           <p className="mt-4  leading-relaxed text-gray-600 text-[24px]">
-            우리는 AI 비전·GNSS·모바일 연동 기술을 기반으로 스마트 골프 모빌리티를 개발·제공합니다.
-            <br /> 정밀 기술과 운영 안정성을 바탕으로 국내외 골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고 있습니다.
+            우리는 AI 비전·GNSS·모바일 연동 기술을 기반으로 스마트 골프
+            모빌리티를 개발·제공합니다.
+            <br /> 정밀 기술과 운영 안정성을 바탕으로 국내외 골프장의 ‘신뢰할 수
+            있는 파트너’로 자리잡고 있습니다.
           </p>
 
           <div className="mt-10 rounded-4xl overflow-hidden ">
@@ -38,33 +47,45 @@ const AboutUPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 items-start m-auto px-4 px-auto">
             {/* 1st column: heading */}
             <div className=" w-full md:w-[226px]  ">
-              <h2 className="text-3xl md:text-[48px] font-bold font-montserrat text-gray-900">Our Goal</h2>
+              <h2 className="text-3xl md:text-[48px] font-bold font-montserrat text-gray-900">
+                Our Goal
+              </h2>
             </div>
 
             {/* 2nd column */}
             <div className="space-y-[28px] ml-auto">
               <div className="">
-                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">신뢰성</h3>
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">
+                  신뢰성
+                </h3>
                 <p className="text-sm text-gray-600 mt-1  md:text-[20px]">
-                  안정성이 검증된 내구성과 안전 제어로,<br></br> 언제나 믿을 수 있는 파트너가 됩니다.
+                  안정성이 검증된 내구성과 안전 제어로,<br></br> 언제나 믿을 수
+                  있는 파트너가 됩니다.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">지능형</h3>
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">
+                  지능형
+                </h3>
                 <p className="text-sm text-gray-600 mt-1  md:text-[20px]">
-                  딥러닝 비전과 정밀 GPS를 기반으로,<br></br> 스마트한 라운드를 제공합니다.
+                  딥러닝 비전과 정밀 GPS를 기반으로,<br></br> 스마트한 라운드를
+                  제공합니다.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">연결성</h3>
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">
+                  연결성
+                </h3>
                 <p className="text-sm text-gray-600 mt-1  md:text-[20px]">
                   카트·앱·서버를 하나로 이어,<br></br>
                   운영자와 골퍼 모두에게 매끄러운 경험을 제공합니다.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">안전</h3>
+                <h3 className="text-lg font-bold text-gray-900 md:text-[24px]">
+                  안전
+                </h3>
                 <p className="text-sm text-gray-600 mt-1 md:text-[20px]">
                   No-Go Zone과 장애물 감지,<br></br>
                   지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
@@ -75,33 +96,18 @@ const AboutUPage = () => {
             {/* 3rd column: images */}
             <div className="relative flex ml-4 md:ml-10">
               {/* Background image */}
-              <div className="relative w-[80vw] max-w-[371px] rounded-[48px] overflow-hidden  mr-auto">
+              <div className="relative w-[100vw] max-w-[371px] rounded-[48px] overflow-hidden  mr-auto">
                 <Image
-                  src="/Frame88.svg"
+                  src="/frame88.png"
                   alt="Golf image 1 (background)"
                   width={371}
                   height={485}
                   className="w-full h-auto object-cover"
                 />
               </div>
-
-              {/* Foreground small image */}
-              <div className="absolute bottom-[-15%] right-[-15%] 
-              md:bottom-[-90px] md:right-[-60px] rounded-[36px] overflow-hidden">
-                <Image
-                  src="/Frame89.svg"
-                  alt="Golf image 2 (foreground)"
-                  width={200}
-                  height={383}
-                  className="w-[50%] md:w-[200px] h-auto object-cover"
-                />
-              </div>
             </div>
-
-
           </div>
         </section>
-
 
         {/* --- Product Section --- */}
         <section className="py-20 grid md:grid-cols-2 gap-12 items-center m-auto px-10">
@@ -136,18 +142,19 @@ const AboutUPage = () => {
               Product - FieldBOOK
             </h2>
             <p className="font-semibold text-gray-800 leading-relaxed text-[28px]">
-              필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 <br /> 차세대 스마트 골프 솔루션입니다.
+              필드북(FieldBOOK)은 카트와 앱이 하나로 연결된 <br /> 차세대 스마트
+              골프 솔루션입니다.
             </p>
             <p className="mt-3 text-gray-600 leading-relaxed text-[22px]">
-              AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,<br />
+              AI 비전 기반 자동 추종, 정밀 GPS 코스맵, 스윙 자동 녹화·재생,
+              <br />
               스코어카드까지 골프의 모든 순간을 하나로 제공합니다.
             </p>
           </div>
         </section>
 
-
         {/* --- What We Deliver Section --- */}
-        <section className="py-20 bg-gray-100 mt-[160px] m-auto p-auto p-30">
+        <section className="py-20 bg-gray-100 mt-[160px] m-auto p-auto md:p-30 p-4">
           <h2 className="text-[48px] font-extrabold text-center mb-12 text-gray-900">
             What We Deliver
           </h2>
@@ -158,7 +165,7 @@ const AboutUPage = () => {
               title="운영 효율 및 비용 절감"
               desc="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화
               충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호"
-              type='1'
+              type="1"
             />
             <DeliverItem
               img="./Frame92.svg"
@@ -166,7 +173,7 @@ const AboutUPage = () => {
               desc="골프장 안의 디지털 매출 허브
               시설 교체 없는 스마트 전환
               광고·스토어·데이터로 새 수익원 확보"
-              type='2'
+              type="2"
             />
             <DeliverItem
               img="./Frame93.svg"
@@ -175,7 +182,7 @@ const AboutUPage = () => {
                 SNS를 통한 바이럴 마케팅
                 필드 위에서 실천하는 ESG 가치
                 고객 만족도 및 재방문율 상승"
-              type='3'
+              type="3"
             />
           </div>
         </section>
@@ -193,35 +200,51 @@ const GoalItem = ({ title, desc }: { title: string; desc: string }) => (
 );
 const TextItem = ({ text }: { text: string }) => (
   <div className="flex flex-col items-center space-y-1 text-center">
-    <p className="text-[16px] font-pretendard  text-gray-700">
-      {text}
-    </p>
+    <p className="text-[16px] font-pretendard  text-gray-700">{text}</p>
   </div>
-
 );
 
-const DeliverItem = ({ img, title, desc, type }: { img: string; title: string; desc: string, type: string }) => (
+const DeliverItem = ({
+  img,
+  title,
+  desc,
+  type,
+}: {
+  img: string;
+  title: string;
+  desc: string;
+  type: string;
+}) => (
   <div className=" rounded-2xl ">
-    <Image src={img} alt={title} width={374} height={200} className="w-full md-w-[374px] h-[220px] object-cover rounded-[20px]" />
+    <Image
+      src={img}
+      alt={title}
+      width={374}
+      height={200}
+      className="w-full md-w-[374px] h-[220px] object-cover rounded-[20px]"
+    />
     <div className="p-6 text-center pt=[6px]">
       <h3 className="font-bold text-gray-900 mb-2 text-[20px]">{title}</h3>
       {/* <p className=" text-gray-700 leading-relaxed140 text-[16px]">{desc}</p> */}
-      {
-        type === '1' ? (
-          <><TextItem text='AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화' />
-            <TextItem text='충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호 ' /></>
-        ) : type === '2' ? (
-          <><TextItem text='골프장 안의 디지털 매출 허브' />
-            <TextItem text='시설 교체 없는 스마트 전환' />
-            <TextItem text='광고·스토어·데이터로 새 수익원 확보' />
-          </>
-        ) : (
-          <><TextItem text='스마트 골프코스로 도약' />
-            <TextItem text='SNS를 통한 바이럴 마케팅' />
-            <TextItem text='필드 위에서 실천하는 ESG 가치' />
-            <TextItem text='고객 만족도 및 재방문율 상승' /></>
-        )
-      }
+      {type === "1" ? (
+        <>
+          <TextItem text="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화" />
+          <TextItem text="충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호 " />
+        </>
+      ) : type === "2" ? (
+        <>
+          <TextItem text="골프장 안의 디지털 매출 허브" />
+          <TextItem text="시설 교체 없는 스마트 전환" />
+          <TextItem text="광고·스토어·데이터로 새 수익원 확보" />
+        </>
+      ) : (
+        <>
+          <TextItem text="스마트 골프코스로 도약" />
+          <TextItem text="SNS를 통한 바이럴 마케팅" />
+          <TextItem text="필드 위에서 실천하는 ESG 가치" />
+          <TextItem text="고객 만족도 및 재방문율 상승" />
+        </>
+      )}
     </div>
   </div>
 );
