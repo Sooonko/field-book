@@ -336,8 +336,8 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE] relative">
-        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto ">
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE] relative ">
+        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-4 lg:px-10 mx-auto pb-10 ">
           <aside
             ref={asideRef}
             className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
