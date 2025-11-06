@@ -21,7 +21,7 @@ const ContactUsPage = () => {
         <div className="w-full max-w-6xl pt-[80px] md:pt-[120px] lg:pt-[160px]">
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left Column: Form */}
-            <div className="flex flex-col pb-6 md:pb-12 ">
+            <div className="flex flex-col pb-6 md:pb-12 md:border-none border-b-1 pb-16  md:pb-0 border-gray-200 ">
               <h1
                 className="font-pretendard font-black text-[32px] leading-[140%] tracking-[0%] text-[#222222]"
                 style={{
