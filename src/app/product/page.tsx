@@ -288,7 +288,7 @@ const ProductPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div>
+    <div className=" bg-white">
       <section className="relative w-full overflow-hidden ">
         <Header variant={"solid"} />
         <main className=" flex flex-col items-center mt-[70px]">
@@ -341,11 +341,10 @@ const ProductPage = () => {
           <aside
             ref={asideRef}
             className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
-          ${
-            isFixed
-              ? "fixed md:block top-0 left-0 right-0 z-50 bg-white  md:bg-transparent shadow-md md:shadow-none p-4 md:p-0"
-              : ""
-          }
+          ${isFixed
+                ? "fixed md:block top-0 left-0 right-0 z-50 bg-white  md:bg-transparent shadow-md md:shadow-none p-4 md:p-0"
+                : ""
+              }
           ${isBottom ? "relative" : ""}
           lg:sticky lg:top-10 h-auto lg:h-screen self-start`}
           >
@@ -375,11 +374,10 @@ const ProductPage = () => {
                         target.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className={`transition-all duration-300 ease-in-out block align-middle ${
-                      activeSection === link.href.substring(1)
-                        ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
-                        : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
-                    }`}
+                    className={`transition-all duration-300 ease-in-out block align-middle ${activeSection === link.href.substring(1)
+                      ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
+                      : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
+                      }`}
                   >
                     {link.text}
                   </a>
@@ -405,11 +403,10 @@ const ProductPage = () => {
                         target.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className={`flex items-center justify-center h-full text-center transition-all duration-300 ease-in-out ${
-                      activeSection === link.href.substring(1)
-                        ? "font-pretendard font-black text-[15px] leading-[140%] underline text-gray-900"
-                        : "font-pretendard font-medium text-[15px] leading-[140%] text-[#626262]"
-                    }`}
+                    className={`flex items-center justify-center h-full text-center transition-all duration-300 ease-in-out ${activeSection === link.href.substring(1)
+                      ? "font-pretendard font-black text-[15px] leading-[140%] underline text-gray-900"
+                      : "font-pretendard font-medium text-[15px] leading-[140%] text-[#626262]"
+                      }`}
                   >
                     {link.text}
                   </a>
@@ -423,11 +420,11 @@ const ProductPage = () => {
           >
             {navLinks.map((link) =>
               link.href.includes("jivon") ||
-              link.href.includes("jvyv") ||
-              link.href.includes("ip5x") ||
-              link.href.includes("battery") ||
-              link.href.includes("101screen") ||
-              link.href.includes("fieldbook-app") ? null : (
+                link.href.includes("jvyv") ||
+                link.href.includes("ip5x") ||
+                link.href.includes("battery") ||
+                link.href.includes("101screen") ||
+                link.href.includes("fieldbook-app") ? null : (
                 <section
                   key={link.href}
                   id={link.href.substring(1)}
@@ -749,13 +746,13 @@ const ProductPage = () => {
         </div>
         <div className=" absolute bottom-0 right-[60px] pb-2 ">
           {" "}
-          <FooterModal isOpen={true} onClose={() => {}} />
+          <FooterModal isOpen={true} onClose={() => { }} />
         </div>
       </div>
 
       {!showButton &&
-      typeof window !== "undefined" &&
-      window.innerWidth >= 1024 ? null : (
+        typeof window !== "undefined" &&
+        window.innerWidth >= 1024 ? null : (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed z-20 w-[52px] h-[52px] right-[16px] bottom-[16px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"

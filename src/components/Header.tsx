@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ variant = "transparent" }) => {
       <header
         className={`absolute top-0 left-0 z-30 w-full ${bgColor} ${textColor}`}
       >
-        <div className="flex justify-between items-start p-4 md:p-8 lg:px-16 lg:py-12">
+        <div className="flex justify-between items-start p-5 md:p-8 lg:px-[100px] lg:py-12">
           {/* Desktop Logo unchanged */}
             <Link href="/" className="flex flex-col items-start">
               <Image

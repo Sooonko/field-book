@@ -8,9 +8,8 @@ const AboutUPage = () => {
   return (
     <PageLayout>
       <div className="overflow-x-hidden ">
-        <div className="container mx-auto w-full text-gray-800  mt-[40px] md:mt-[179px] lg:mt-24 p-auto px-4 md:px-10 lg:px-14  ">
-          {/* --- Header Section --- */}
-          <section className="text-start md:text-left  pb-15 md:pt-15 m-auto px-4 mt-[100px] md:mt-[130px]">
+        <div className="mx-auto md:max-w-[75%] w-full text-gray-800 mt-[40px] md:mt-[179px] lg:mt-24 px-1">
+          <section className="text-start md:text-left pb-15 md:pt-15 mt-[100px] md:mt-[130px]">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
                 src="./Group.svg"
@@ -45,7 +44,7 @@ const AboutUPage = () => {
               <br className="block md:hidden" /> 있습니다.
             </p>
 
-            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden  h-auto md:w-auto">
+            <div className="mt-[40px] md:mt-[80px] rounded-[24px] md:rounded-[48px] overflow-hidden  h-auto md:w-auto md:mx-auto">
               <Image
                 src="./Frame87.svg"
                 alt="Golf Field"
@@ -112,13 +111,13 @@ const AboutUPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="md:-mr-[100px]">
+              <div className="md:-mr-[91px] 2xl:-mr-[150px]">
                 <Image
                   src="/Frame88.png"
                   alt="Golf image 1 (background)"
-                  width={500}
+                  width={571}
                   height={485}
-                  className="w-full h-auto object-cover"
+                  className="w-full md:w-[571px] h-auto md:h-[500px] object-contain"
                 />
               </div>
             </div>
@@ -269,7 +268,7 @@ const AboutUPage = () => {
             </div>
           </section>
           <div className="pb-[60px]  md:mb-0">
-            <FooterModal isOpen={true} onClose={() => {}} />
+            <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>
       </div>
