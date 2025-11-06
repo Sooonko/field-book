@@ -8,7 +8,7 @@ const AboutUPage = () => {
   return (
     <PageLayout>
       <div className="overflow-x-hidden ">
-        <div className="mx-auto md:max-w-[75%] w-full text-gray-800 mt-[40px] md:mt-[179px] lg:mt-24 px-1">
+        <div className="mx-auto md:max-w-[70%] w-full text-gray-800 mt-[40px] md:mt-[179px] lg:mt-24 px-4 md:px-0">
           <section className="text-start md:text-left pb-15 md:pt-15 mt-[100px] md:mt-[130px]">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
@@ -35,10 +35,10 @@ const AboutUPage = () => {
               동시에 높입니다.
             </p>
             <p className="mt-4 font-pretendard  font-normal text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#626262]">
-              (주)포트러시는 AI 비전·GNSS·모바일 연동 기술을{" "}
+              우리는 AI 비전·GNSS·모바일 연동 기술을{" "}
               <br className="block md:hidden" /> 기반으로 스마트 골프 모빌리티를
               개발·제공합니다. <br className="block md:hidden" />
-              <br className="hidden md:block" /> 우리는 정밀 기술과 운영
+              <br className="hidden md:block" />  정밀 기술과 운영
               안정성을 바탕으로 <br className="block md:hidden" /> 국내외
               골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고
               <br className="block md:hidden" /> 있습니다.
@@ -267,7 +267,7 @@ const AboutUPage = () => {
               />
             </div>
           </section>
-          <div className="pb-[60px]  md:mb-0">
+          <div className="bottom-0 pb-[30px] md:mb-0">
             <FooterModal isOpen={true} onClose={() => { }} />
           </div>
         </div>

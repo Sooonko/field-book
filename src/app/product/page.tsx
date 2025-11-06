@@ -288,7 +288,7 @@ const ProductPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className=" bg-white">
+    <div className=" bg-white pb-[30px]">
       <section className="relative w-full overflow-hidden ">
         <Header variant={"solid"} />
         <main className=" flex flex-col items-center mt-[70px]">
@@ -744,7 +744,7 @@ const ProductPage = () => {
             </section>
           </main>
         </div>
-        <div className=" absolute bottom-0 right-[60px] pb-2 ">
+        <div className=" absolute bottom-0 right-[9px] md:right-[60px] pb-2 ">
           {" "}
           <FooterModal isOpen={true} onClose={() => { }} />
         </div>

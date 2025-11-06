@@ -202,7 +202,7 @@ const ContactUsPage = () => {
             </div>
           </div>
         </div>
-        <div className="pt-[60px]"></div>
+        <div className="bottom-0 pt-[60px]"></div>
         <FooterModal isOpen={true} onClose={() => {}} />
       </div>
 
