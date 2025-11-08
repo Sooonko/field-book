@@ -244,6 +244,7 @@ const AboutUPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[80px] ">
               <DeliverItem
                 img="./Frame94.svg"
+                video="false"
                 title="운영 효율 및 비용 절감"
                 desc="AI 캐디로 인력 부담을 줄이고 운영 효율을 극대화
               충돌 방지·No-Go Zone 기술로 안전사고 예방 및 코스 보호"
@@ -251,6 +252,7 @@ const AboutUPage = () => {
               />
               <DeliverItem
                 img="./Frame92.svg"
+                video="false"
                 title="수익 창출 및 부가가치 확대"
                 desc="골프장 안의 디지털 매출 허브
               시설 교체 없는 스마트 전환
@@ -258,7 +260,8 @@ const AboutUPage = () => {
                 type="2"
               />
               <DeliverItem
-                img="./Frame93.svg"
+                img="./videos/frame93.mp4"
+                video="true"
                 title="클럽 브랜드 이미지 및 고객 경험 강화"
                 desc="스마트 골프코스로 도약
                 SNS를 통한 바이럴 마케팅
@@ -294,20 +297,37 @@ const DeliverItem = ({
   title,
   desc,
   type,
+  video,
 }: {
   img: string;
   title: string;
   desc: string;
   type: string;
+  video: string;
 }) => (
   <div className=" rounded-[20px] ">
-    <Image
-      src={img}
-      alt={title}
-      width={374}
-      height={200}
-      className="w-full md:w-[374px] h-auto object-cover rounded-[20px]"
-    />
+    {video == "true" ? (
+      <video
+        className="w-full md:w-[374px] h-[220px] object-cover rounded-[20px]"
+        src={img}
+        autoPlay
+        muted
+        loop
+        playsInline
+        controls={false} // 필요시 true로 변경 가능
+      >
+        귀하의 브라우저는 이 게시물을 지원하지 않습니다.
+      </video>
+    ) : (
+      <Image
+        src={img}
+        alt={title}
+        width={374}
+        height={200}
+        className="w-full md:w-[374px] h-auto object-cover rounded-[20px]"
+      />
+    )}
+
     <div className="p-6 text-center pt-[29px]">
       <h3 className="font-bold font-pretendard text-gray-900 mb-2 text-[20px]">
         {title}
