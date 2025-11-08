@@ -6,10 +6,10 @@ import FooterModal from "@/components/Footer";
 
 const AboutUPage = () => {
   return (
-    <PageLayout>
+    <PageLayout footerBgColor="bg-gray-100">
       <div className="overflow-x-hidden ">
-        <div className="mx-auto md:max-w-[70%] w-full text-gray-800 mt-[40px] md:mt-[179px] lg:mt-24 px-4 md:px-0">
-          <section className="text-start md:text-left pb-15 md:pt-15 mt-[100px] md:mt-[130px]">
+        <div className="mx-auto md:max-w-[70%] w-full text-gray-800 mt-[40px] md:mt-[200px] lg:mt-24 px-[20px]  md:px-0">
+          <section className="text-start md:text-left pb-15 md:pt-15 mt-[100px] md:mt-[160px]">
             <div className="w-[225.062255859375px] h-[28px] md:w-[370px] md:h-[46px]">
               <Image
                 src="./Group.svg"
@@ -25,7 +25,7 @@ const AboutUPage = () => {
               Technology + <br className="block md:hidden" /> Smart Golf
             </h1>
 
-            <p className="mt-6 md:mt-10 font-pretendard font-bold text-xl text-[23px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] ">
+            <p className="mt-6 md:mt-10 font-pretendard font-bold text-xl md:text-[clamp(24px,2vw,32px)] leading-[140%] tracking-[0%] text-[#222222] whitespace-nowrap">
               (주)포트러시는 검증된 기술력과&nbsp;
               <br className="block md:hidden" />
               축적된 필드 경험으로,
@@ -34,13 +34,14 @@ const AboutUPage = () => {
               <br className="block md:hidden" />
               동시에 높입니다.
             </p>
+
             <p className="mt-4 font-pretendard  font-normal text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#626262]">
               우리는 AI 비전·GNSS·모바일 연동 기술을{" "}
               <br className="block md:hidden" /> 기반으로 스마트 골프 모빌리티를
               개발·제공합니다. <br className="block md:hidden" />
-              <br className="hidden md:block" />  정밀 기술과 운영
-              안정성을 바탕으로 <br className="block md:hidden" /> 국내외
-              골프장의 ‘신뢰할 수 있는 파트너’로 자리잡고
+              <br className="hidden md:block" /> 정밀 기술과 운영 안정성을
+              바탕으로 <br className="block md:hidden" /> 국내외 골프장의
+              ‘신뢰할 수 있는 파트너’로 자리잡고
               <br className="block md:hidden" /> 있습니다.
             </p>
 
@@ -71,7 +72,7 @@ const AboutUPage = () => {
                       <h3 className="font-pretendard font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
                         신뢰성
                       </h3>
-                      <p className="font-pretendard font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                      <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                         현장에서 검증된 내구성과 안전 제어로,
                         <br />
                         언제나 믿을 수 있는 파트너가 됩니다.
@@ -79,7 +80,7 @@ const AboutUPage = () => {
                     </div>
                     <div>
                       <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
-                        지능형
+                        지능화
                       </h3>
                       <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                         비전 인식과 정밀 GPS를 기반으로, <br />
@@ -111,13 +112,13 @@ const AboutUPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="md:-mr-[91px] 2xl:-mr-[150px]">
+              <div className="md:-mr-[91px] 2xl:-mr-[160px]">
                 <Image
                   src="/Frame88.png"
                   alt="Golf image 1 (background)"
                   width={571}
                   height={485}
-                  className="w-full md:w-[571px] h-auto md:h-[500px] object-contain"
+                  className="w-full md:w-[571px] 2xl:w-[600px] h-auto md:h-[500px] object-contain"
                 />
               </div>
             </div>
@@ -135,7 +136,7 @@ const AboutUPage = () => {
                   <h3 className="font-pretendard font-bold text-[20px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222]">
                     신뢰성
                   </h3>
-                  <p className="font-pretendard font-normal text-[16px] md:text-[20px] leading-[140%] tracking-[0%] text-[#626262] mt-1">
+                  <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     현장에서 검증된 내구성과 안전 제어로,
                     <br />
                     언제나 믿을 수 있는 파트너가 됩니다.
@@ -143,7 +144,7 @@ const AboutUPage = () => {
                 </div>
                 <div>
                   <h3 className="font-pretendard text-[20px] font-bold md:text-xl leading-[140%] tracking-[0%] text-[#222222]">
-                    지능형
+                    지능화
                   </h3>
                   <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     비전 인식과 정밀 GPS를 기반으로, <br />
@@ -222,7 +223,7 @@ const AboutUPage = () => {
               </div>
 
               {/* Foreground image (overlap) */}
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20%] md:bottom-[-150px] md:right-[-90px] w-[50%] md:w-[301px]">
+              <div className="absolute left-[50px] bottom-[-20%] md:bottom-[-150px] w-[50%] md:w-[301px]">
                 <Image
                   src="/Frame91.svg"
                   alt="Golf image 2 (foreground)"
@@ -234,9 +235,9 @@ const AboutUPage = () => {
             </div>
           </section>
         </div>
-        <div className=" bg-gray-100 px-4 mt-[90px] md:mt-[160px]">
+        <div className=" bg-gray-100 px-[20px] md:px-4 mt-[90px] md:mt-[160px]">
           <section className="pt-[80px] md:pt-[160px] bg-gray-100 mt-10 md:mt-20 lg:mt-24 m-auto p-auto container max-w-screen-xl">
-            <h2 className="text-[30px] md:text-[48px] font-extrabold text-center mb-6 md:mb-12 text-gray-900">
+            <h2 className="font-[Montserrat]  font-black text-[24px] md:text-[48px] leading-[140%] tracking-[0%] text-center  text-gray-900 mb-6 md:mb-12">
               What We Deliver
             </h2>
 
@@ -267,9 +268,6 @@ const AboutUPage = () => {
               />
             </div>
           </section>
-          <div className="bottom-0 pb-[30px] md:mb-0">
-            <FooterModal isOpen={true} onClose={() => { }} />
-          </div>
         </div>
       </div>
     </PageLayout>

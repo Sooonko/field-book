@@ -16,12 +16,12 @@ const ContactUsPage = () => {
   };
 
   return (
-    <PageLayout>
-      <div className="flex flex-col items-center px-4  overflow-hidden md:overflow-visible">
+    <PageLayout footerBgColor="bg-white">
+      <div className="flex flex-col items-center px-[20px] md:px-4  overflow-hidden md:overflow-visible">
         <div className="w-full max-w-6xl pt-[100px] md:pt-[200px] lg:pt-[200px]">
           <div className="grid md:grid-cols-2 gap-16 items-stretch">
             {/* Left Column: Form */}
-            <div className="flex flex-col pb-6 md:pb-12 md:border-none border-b-1 pb-16  md:pb-0 border-gray-200 ">
+            <div className="flex flex-col  md:border-none border-b-1 pb-16  md:pb-0 border-gray-200 ">
               <h1
                 className="font-pretendard font-black text-[32px] leading-[140%] tracking-[0%] text-[#222222]"
                 style={{
@@ -203,7 +203,6 @@ const ContactUsPage = () => {
           </div>
         </div>
         <div className="bottom-0 pt-[60px]"></div>
-        <FooterModal isOpen={true} onClose={() => {}} />
       </div>
 
       <PrivacyModal

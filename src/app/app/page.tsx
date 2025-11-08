@@ -33,7 +33,7 @@ const logos = [
 
 const AppPage = () => {
   return (
-    <PageLayout isSolid={true}>
+    <PageLayout isSolid={true} footerBgColor="bg-white">
       <header className="bg-[#1E5E61] text-white h-auto lg:h-[800px] pt-16 lg:py-0">
         <div className="max-w-[1400px] mx-auto h-full flex flex-col lg:flex-row items-end justify-center lg:justify-between px-6 sm:px-12">
           {/* Left: Phone Mockup */}
@@ -58,7 +58,7 @@ const AppPage = () => {
             <p className="mt-5 text-[16px] md:text-[18px] md:text-start leading-[140%] font-pretendard font-medium text-center text-gray-100 md:leading-relaxed">
               그날의 스코어를 다시 확인하고, 기억에 남는 순간을&nbsp;
               <br className="block md:hidden" />
-              스윙지점과 함께 영상으로 제공합니다.<br></br>
+              스윙 지점과 함께 영상으로 제공합니다.<br></br>
               지금 FieldBOOK 앱을 다운로드 하세요.
             </p>
 
@@ -71,7 +71,7 @@ const AppPage = () => {
       </header>
 
       <main>
-        <section className="w-full pt-[80px] md:pt-16 lg:py-0 lg:h-[680px] flex items-end justify-center px-4 md:px-16">
+        <section className="w-full pt-[80px] md:pt-16 lg:py-0 lg:h-[680px] flex items-end justify-center px-[20px]  md:px-16">
           <div className="max-w-[1400px] w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
             {/* Left: Score Cards */}
             <div className="flex flex-row flex-wrap justify-between gap-[8px] md:gap-6 mt-8 lg:mt-0 order-2 lg:order-1">
@@ -106,7 +106,7 @@ const AppPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-100 text-center px-4">
+        <section className="py-20 bg-gray-100 text-center px-[20px] md:px-4">
           <h2 className="text-[28px] md:text-center leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
             녹화 영상 재생
           </h2>
@@ -152,7 +152,7 @@ const AppPage = () => {
           </div>
         </section>
 
-        <section className="pt-16 md:pt-20 bg-white flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto px-6 gap-12">
+        <section className="pt-16 md:pt-20 bg-white flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto  px-6 gap-12">
           <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-12 mx-auto">
             <div className="text-center lg:text-left max-w-[462px] w-full order-1 lg:order-1 md:-mt-35">
               <h2 className="text-[28px] md:text-start leading-[140%] font-pretendard font-extrabold text-center md:text-[40px] md:leading-[140%]">
@@ -210,7 +210,7 @@ const AppPage = () => {
         <section className="relative w-full pt-16 px-6 md:px-20">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center">
             {/* Left: Phone Image */}
-            <div className="relative flex justify-center md:justify-end w-full md:w-1/2 mb-10 md:mb-0">
+            <div className="relative flex justify-center md:justify-end md:pr-[140px] w-full md:w-1/2 mb-10 md:mb-0">
               <div className="relative w-[250px] sm:w-[300px] md:w-[390px]">
                 <Image
                   src="/phone_1.svg"
@@ -223,7 +223,7 @@ const AppPage = () => {
             </div>
 
             {/* Right: Text and Buttons */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start md:pl-10 text-center md:text-left">
+            <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start  text-center md:text-left">
               <h2 className="font-pretendard font-[600] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-center md:text-start mb-6 ">
                 라운드는 끝나도 <br />
                 <span className="font-pretendard font-[900] text-[24px] md:text-[44px] leading-[140%] tracking-[0%] text-[#222222] text-center">
@@ -253,9 +253,6 @@ const AppPage = () => {
             </div>
           </div>
         </section>
-        <div className="mr-6 mb-8 md:mb-0">
-          <FooterModal isOpen={true} onClose={() => {}} />
-        </div>
       </main>
     </PageLayout>
   );
