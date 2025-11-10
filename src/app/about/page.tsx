@@ -57,7 +57,7 @@ const AboutUPage = () => {
           </section>
 
           {/* --- Our Goal Section --- */}
-          <section className="px-4 py-8 md:pt-10">
+          <section className="md:px-4 px-1 py-8 md:pt-10">
             {/* ✅ Desktop only */}
             <div className="hidden md:flex justify-between">
               <div className="flex">
@@ -168,7 +168,9 @@ const AboutUPage = () => {
                   <p className="font-pretendard font-normal text-base md:text-lg leading-[140%] tracking-[0%] text-[#626262] mt-1">
                     No-Go Zone과 장애물 감지,
                     <br />
-                    지능형 제동으로 모든 라운드에서 안전을 최우선으로 합니다.
+                    지능형 제동으로 모든 라운드에서 안전을 최우선으로{" "}
+                    <br className="block md:hidden" />
+                    합니다.
                   </p>
                 </div>
               </div>

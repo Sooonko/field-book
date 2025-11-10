@@ -299,7 +299,7 @@ const ProductPage = () => {
           }`}
         >
           <div className="flex justify-center w-full bg-white py-12 pt-20 md:py-24 px-[20px] md:px-4">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-16 ">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-16 ">
               {features.map((item, index) => (
                 <div
                   key={index}
@@ -327,7 +327,7 @@ const ProductPage = () => {
                     </div>
                   )}
 
-                  <p className="font-pretendard font-medium text-base md:text-lg leading-[140%] text-gray-900 text-left md:text-center">
+                  <p className="font-pretendard font-medium text-base text-[14px] md:text-lg leading-[140%] text-gray-900 text-left md:text-center">
                     {item.title}
                   </p>
                 </div>
@@ -751,12 +751,21 @@ const ProductPage = () => {
         {!showButton &&
         typeof window !== "undefined" &&
         window.innerWidth >= 1024 ? null : (
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed z-20 w-[52px] h-[52px] right-[16px] bottom-[16px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
-          >
-            <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
-          </button>
+          <div>
+            {" "}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="fixed md:hidden z-20 w-[52px] h-[52px] right-[16px] md:bottom-[16px] top-[563px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
+            >
+              <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
+            </button>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="fixed hidden md:flex z-20 w-[52px] h-[52px] right-[16px] md:bottom-[16px]  lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full  items-center justify-center shadow-lg hover:bg-gray-300 transition"
+            >
+              <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
+            </button>
+          </div>
         )}
       </div>
     </PageLayout>
