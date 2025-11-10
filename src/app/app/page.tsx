@@ -129,7 +129,7 @@ const AppPage = () => {
             <div
               className="
       absolute overflow-hidden
-      sm:rounded-[26px]
+      rounded-[20px]
       md:rounded-[33px]
     "
               style={{
