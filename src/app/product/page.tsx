@@ -189,27 +189,37 @@ const ProductPage = () => {
   const [isFixed, setIsFixed] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const aside = asideRef.current;
-      const footer = document.getElementById("sideContent");
-      if (!aside) return;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const aside = asideRef.current;
+          const footer = document.getElementById("sideContent");
+          if (!aside) {
+            ticking = false;
+            return;
+          }
 
-      const asideRect = aside.getBoundingClientRect();
-      const footerTop = footer ? footer.getBoundingClientRect().top : 0;
+          const asideRect = aside.getBoundingClientRect();
+          const footerTop = footer ? footer.getBoundingClientRect().top : 0;
 
-      // aside дэлгэцийн дээд талд очоогүй бол fixed биш
+          let nextIsFixed = false;
 
-      if (asideRect.top > 0) {
-        setIsFixed(false);
-        setIsBottom(false);
-        return;
-      }
-      if (footerTop > 0) {
-        setIsFixed(false);
-        setIsBottom(false);
-      } else {
-        setIsFixed(true);
-        setIsBottom(false);
+          if (asideRect.top <= 0 && footerTop <= 0) {
+            nextIsFixed = true;
+          }
+
+          // Төвөггүй toggle → flicker алга болно
+          setIsFixed((prev) => {
+            if (prev !== nextIsFixed) return nextIsFixed;
+            return prev;
+          });
+
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
@@ -288,58 +298,57 @@ const ProductPage = () => {
   }, []);
   return (
     <PageLayout footerBgColor="md:bg-[#FBFBFE]">
-      <div className=" bg-white ">
-        <section className="relative w-full overflow-hidden ">
-          <main className=" flex flex-col items-center mt-[70px]">
-            <HeroSlider />
-          </main>
-        </section>
-        <div
-          className={`transition-all duration-500 overflow-hidden opacity-100" 
+      <section className="relative w-full overflow-hidden ">
+        <main className=" flex flex-col items-center mt-[70px]">
+          <HeroSlider />
+        </main>
+      </section>
+      <div
+        className={`transition-all duration-500 overflow-hidden opacity-100" 
           }`}
-        >
-          <div className="flex justify-center w-full bg-white py-12 pt-20 md:py-24 px-[20px] md:px-4">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-16 ">
-              {features.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-row md:flex-col items-center md:items-center justify-start md:justify-center space-x-4 md:space-x-0 md:space-y-4"
-                >
-                  {item.icon.endsWith(".png") ? (
-                    <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
-                      <Image
-                        src={item.icon}
-                        alt={item.alt}
-                        width={41}
-                        height={72}
-                        objectFit="contain"
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
-                      <Image
-                        src={item.icon}
-                        alt={item.alt}
-                        width={72}
-                        height={72}
-                        objectFit="contain"
-                      />
-                    </div>
-                  )}
+      >
+        <div className="flex justify-center w-full bg-white py-12 pt-20 md:py-24 px-[20px] md:px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-16 ">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-row md:flex-col items-center md:items-center justify-start md:justify-center space-x-4 md:space-x-0 md:space-y-4"
+              >
+                {item.icon.endsWith(".png") ? (
+                  <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
+                    <Image
+                      src={item.icon}
+                      alt={item.alt}
+                      width={41}
+                      height={72}
+                      objectFit="contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-gray-100 rounded-lg flex items-center justify-center p-4 md:p-7">
+                    <Image
+                      src={item.icon}
+                      alt={item.alt}
+                      width={72}
+                      height={72}
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
 
-                  <p className="font-pretendard font-medium text-base text-[14px] md:text-lg leading-[140%] text-gray-900 text-left md:text-center">
-                    {item.title}
-                  </p>
-                </div>
-              ))}
-            </div>
+                <p className="font-pretendard font-medium text-base text-[14px] md:text-lg leading-[140%] text-gray-900 text-left md:text-center">
+                  {item.title}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE] relative ">
-          <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-[20px] md:px-4 lg:px-10 mx-auto pb-10 ">
-            <aside
-              ref={asideRef}
-              className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
+      </div>
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 md:bg-[#FBFBFE] relative ">
+        <div className="w-full max-w-[1440px] flex flex-col lg:flex-row mt-10 md:gap-12 lg:gap-20 px-[20px] md:px-4 lg:px-10 mx-auto pb-10 ">
+          <aside
+            ref={asideRef}
+            className={`w-full lg:w-[336px] max-w-full lg:max-w-[336px] py-2 lg:py-0 transition-all duration-300
           ${
             isFixed
               ? "fixed md:block top-0 left-0 right-0 z-50 bg-white  md:bg-transparent shadow-md md:shadow-none p-4 md:p-0 "
@@ -347,427 +356,426 @@ const ProductPage = () => {
           }
           ${isBottom ? "relative" : ""}
           lg:sticky lg:top-10 h-auto lg:h-screen self-start`}
+          >
+            <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
+              <span className="font-montserrat font-extrabold text-gray-900">
+                FieldBOOK
+              </span>
+              <span className="font-montserrat font-medium text-gray-900">
+                {"\u00A0"}Technology
+              </span>
+            </h2>
+
+            {/* Desktop list (хуучин) */}
+            <ul
+              className={`hidden lg:flex flex-col gap-6 text-base mt-6 lg:mt-0`}
             >
-              <h2 className="flex text-2xl md:text-[28px] leading-[140%] tracking-[0%] mb-0 lg:mb-12">
-                <span className="font-montserrat font-extrabold text-gray-900">
-                  FieldBOOK
-                </span>
-                <span className="font-montserrat font-medium text-gray-900">
-                  {"\u00A0"}Technology
-                </span>
-              </h2>
-
-              {/* Desktop list (хуучин) */}
-              <ul
-                className={`hidden lg:flex flex-col gap-6 text-base mt-6 lg:mt-0`}
-              >
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpen(false);
-                        const id = link.href.substring(1);
-                        const target = document.getElementById(id);
-                        if (target) {
-                          target.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className={`transition-all duration-300 ease-in-out block align-middle ${
-                        activeSection === link.href.substring(1)
-                          ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
-                          : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
-                      }`}
-                    >
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Mobile horizontal scroll */}
-              <ul
-                className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-full h-[60px] `}
-              >
-                {navLinks.map((link) => (
-                  <li key={link.href} className="flex-shrink-0">
-                    <a
-                      href={link.href}
-                      onClick={(e) => {
-                        e.preventDefault(); // default jump-ыг болиулна
-                        setOpen(false);
-
-                        const sectionId = link.href.substring(1);
-                        const target = document.getElementById(sectionId);
-                        if (target) {
-                          target.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className={`flex items-center justify-center h-full text-center transition-all duration-300 ease-in-out ${
-                        activeSection === link.href.substring(1)
-                          ? "font-pretendard font-black text-[15px] leading-[140%] underline text-gray-900"
-                          : "font-pretendard font-medium text-[15px] leading-[140%] text-[#626262]"
-                      }`}
-                    >
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </aside>
-            <main
-              id="sideContent"
-              className="flex flex-col flex-1 min-w-0 w-full mx-auto gap-[60px]  md:gap-[160px] pt-[40px] md:pt-[100px] pb-8"
-            >
-              {navLinks.map((link) =>
-                link.href.includes("jivon") ||
-                link.href.includes("jvyv") ||
-                link.href.includes("ip5x") ||
-                link.href.includes("battery") ||
-                link.href.includes("101screen") ||
-                link.href.includes("fieldbook-app") ? null : (
-                  <section
-                    key={link.href}
-                    id={link.href.substring(1)}
-                    className="w-full  rounded-[20px] max-w-[964px] md:mx-auto  "
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setOpen(false);
+                      const id = link.href.substring(1);
+                      const target = document.getElementById(id);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className={`transition-all duration-300 ease-in-out block align-middle ${
+                      activeSection === link.href.substring(1)
+                        ? "font-pretendard font-black text-xl md:text-2xl lg:text-[26px] leading-[140%] underline text-gray-900"
+                        : "font-pretendard font-medium text-lg md:text-xl lg:text-[20px] leading-[140%] text-gray-500"
+                    }`}
                   >
-                    <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg overflow-hidden relative">
-                      <video
-                        className="absolute top-0 left-0 w-full h-full object-cover"
-                        src={link.url}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        controls={false} // 필요시 true로 변경 가능
-                      >
-                        귀하의 브라우저는 이 게시물을 지원하지 않습니다.
-                      </video>
-                    </div>{" "}
-                    <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-[4px] md:mb-4">
-                      {link.text}
-                    </h3>
-                    <p className="font-pretendard font-[500] text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
-                      {link.description}
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* Mobile horizontal scroll */}
+            <ul
+              className={`flex lg:hidden overflow-x-auto gap-[12px] py-[19px] w-full h-[60px] `}
+            >
+              {navLinks.map((link) => (
+                <li key={link.href} className="flex-shrink-0">
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault(); // default jump-ыг болиулна
+                      setOpen(false);
+
+                      const sectionId = link.href.substring(1);
+                      const target = document.getElementById(sectionId);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className={`flex items-center justify-center h-full text-center transition-all duration-300 ease-in-out ${
+                      activeSection === link.href.substring(1)
+                        ? "font-pretendard font-black text-[15px] leading-[140%] underline text-gray-900"
+                        : "font-pretendard font-medium text-[15px] leading-[140%] text-[#626262]"
+                    }`}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+          <main
+            id="sideContent"
+            className="flex flex-col flex-1 min-w-0 w-full mx-auto gap-[60px]  md:gap-[160px] pt-[40px] md:pt-[100px] pb-8"
+          >
+            {navLinks.map((link) =>
+              link.href.includes("jivon") ||
+              link.href.includes("jvyv") ||
+              link.href.includes("ip5x") ||
+              link.href.includes("battery") ||
+              link.href.includes("101screen") ||
+              link.href.includes("fieldbook-app") ? null : (
+                <section
+                  key={link.href}
+                  id={link.href.substring(1)}
+                  className="w-full  rounded-[20px] max-w-[964px] md:mx-auto  "
+                >
+                  <div className="w-full aspect-video rounded-2xl bg-gray-100 p-4 md:p-10 shadow-lg overflow-hidden relative">
+                    <video
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                      src={link.url}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls={false} // 필요시 true로 변경 가능
+                    >
+                      귀하의 브라우저는 이 게시물을 지원하지 않습니다.
+                    </video>
+                  </div>{" "}
+                  <h3 className="font-montserrat font-[800] text-2xl md:text-3xl leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-[4px] md:mb-4">
+                    {link.text}
+                  </h3>
+                  <p className="font-pretendard font-[500] text-base md:text-lg lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
+                    {link.description}
+                  </p>
+                </section>
+              )
+            )}
+            <section
+              key={"ip5x"}
+              id={"ip5x"}
+              className="w-full  rounded-[20px]  max-w-[964px] mx-auto  "
+            >
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
+                <div className="w-full h-[410px] lg:w-1/3 aspect-square rounded-[20px] md:rounded-2xl  overflow-hidden">
+                  <img
+                    src="/ip5x-section.svg"
+                    alt="description"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="w-full lg:w-2/3 text-start lg:text-left">
+                  <h2 className="font-montserrat font-[800] text-[20px] leading-[140%] tracking-[0%] text-[#222222] md:mt-8 mb-4 md:text-[32px] md:leading-[140%]">
+                    IP5X 방진/방수
+                  </h2>
+                  <h3 className="font-pretendard font-[600] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
+                    IP5X 방진/방수 설계로 어디서나 안정적으로 주행합니다.
+                  </h3>
+
+                  <div className="flex flex-col gap-[2px] items-start">
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 먼지 차단 설계&nbsp;{"  "}
+                      <span className="font-[400] text-[#626262] ">
+                        - 미세먼지 유입 최소화
+                      </span>
                     </p>
-                  </section>
-                )
-              )}
-              <section
-                key={"ip5x"}
-                id={"ip5x"}
-                className="w-full  rounded-[20px]  max-w-[964px] mx-auto  "
-              >
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
-                  <div className="w-full h-[410px] lg:w-1/3 aspect-square rounded-[20px] md:rounded-2xl  overflow-hidden">
-                    <img
-                      src="/ip5x-section.svg"
-                      alt="description"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
 
-                  <div className="w-full lg:w-2/3 text-start lg:text-left">
-                    <h2 className="font-montserrat font-[800] text-[20px] leading-[140%] tracking-[0%] text-[#222222] md:mt-8 mb-4 md:text-[32px] md:leading-[140%]">
-                      IP5X 방진/방수
-                    </h2>
-                    <h3 className="font-pretendard font-[600] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
-                      IP5X 방진/방수 설계로 어디서나 안정적으로 주행합니다.
-                    </h3>
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 내구성 강화&nbsp;{" "}
+                      <span className="font-[400] text-[#626262] ">
+                        - 사계절에 최적화된 견고한 설계
+                      </span>
+                    </p>
 
-                    <div className="flex flex-col gap-[2px] items-start">
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
-                        · 먼지 차단 설계&nbsp;{"  "}
-                        <span className="font-[400] text-[#626262] ">
-                          - 미세먼지 유입 최소화
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
+                      · 현장 신뢰성&nbsp;{" "}
+                      <span className="font-[400] text-[#626262] ">
+                        - 전 구간에서 안정적으로 작동
+                      </span>
+                    </p>
+
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 간편한 유지관리&nbsp;{" "}
+                      <span className="font-[400] text-[#626262]">
+                        - 내부 오염 감소로 점검·유지 비용{" "}
+                        <br className="block md:hidden" />
+                        <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                          최소화
                         </span>
-                      </p>
-
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
-                        · 내구성 강화&nbsp;{" "}
-                        <span className="font-[400] text-[#626262] ">
-                          - 사계절에 최적화된 견고한 설계
-                        </span>
-                      </p>
-
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262]  flex flex-wrap">
-                        · 현장 신뢰성&nbsp;{" "}
-                        <span className="font-[400] text-[#626262] ">
-                          - 전 구간에서 안정적으로 작동
-                        </span>
-                      </p>
-
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 간편한 유지관리&nbsp;{" "}
-                        <span className="font-[400] text-[#626262]">
-                          - 내부 오염 감소로 점검·유지 비용{" "}
-                          <br className="block md:hidden" />
-                          <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
-                            최소화
-                          </span>
-                        </span>
-                      </p>
-                    </div>
+                      </span>
+                    </p>
                   </div>
                 </div>
-              </section>
-              <section
-                key={"battery"}
-                id={"battery"}
-                className="w-full rounded-[20px] max-w-[964px] mx-auto  "
-              >
-                <div
-                  className="flex flex-col lg:flex-row-reverse  items-center
+              </div>
+            </section>
+            <section
+              key={"battery"}
+              id={"battery"}
+              className="w-full rounded-[20px] max-w-[964px] mx-auto  "
+            >
+              <div
+                className="flex flex-col lg:flex-row-reverse  items-center
  justify-center gap-6 lg:gap-14"
-                >
-                  <div className="relative w-full lg:w-1/3 h-[200px] md:h-auto lg:h-auto aspect-square rounded-[20px] lg:rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
-                    <Image
-                      src="/battery.svg"
-                      alt="대용량 배터리"
-                      layout="fill"
-                      objectFit="contain"
-                      className="md:p-8"
-                    />
-                  </div>
+              >
+                <div className="relative w-full lg:w-1/3 h-[200px] md:h-auto lg:h-auto aspect-square rounded-[20px] lg:rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
+                  <Image
+                    src="/battery.svg"
+                    alt="대용량 배터리"
+                    layout="fill"
+                    objectFit="contain"
+                    className="md:p-8"
+                  />
+                </div>
 
-                  <div className="w-full lg:w-2/3 text-start lg:text-left">
-                    <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
-                      대용량 배터리
-                    </h3>
-                    <h3 className="font-pretendard font-[500] text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222] mb-6">
-                      대용량 탈착식 배터리로 1회 충전 시<br />
-                      36홀 이상 연속 플레이가 가능합니다.
-                    </h3>
+                <div className="w-full lg:w-2/3 text-start lg:text-left">
+                  <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] mt-8 mb-4">
+                    대용량 배터리
+                  </h3>
+                  <h3 className="font-pretendard font-[500] text-[16px] md:text-[24px] leading-[140%] tracking-[0%] text-[#222222] mb-6">
+                    대용량 탈착식 배터리로 1회 충전 시<br />
+                    36홀 이상 연속 플레이가 가능합니다.
+                  </h3>
+
+                  <div className="flex flex-col gap-[2px] items-start">
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 긴 사용 시간&nbsp;
+                      <span className="font-[400] text-[#626262] whitespace-nowrap">
+                        - 한 번 충전만으로 36홀 이상 연속 플레이
+                      </span>
+                    </p>
+
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 탈착식 설계&nbsp;
+                      <span className="font-[400] text-[#626262]">
+                        - 예비 배터리 교체로 무중단 운용
+                      </span>
+                    </p>
 
                     <div className="flex flex-col gap-[2px] items-start">
-                      <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 긴 사용 시간&nbsp;
-                        <span className="font-[400] text-[#626262] whitespace-nowrap">
-                          - 한 번 충전만으로 36홀 이상 연속 플레이
-                        </span>
-                      </p>
-
-                      <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 탈착식 설계&nbsp;
-                        <span className="font-[400] text-[#626262]">
-                          - 예비 배터리 교체로 무중단 운용
-                        </span>
-                      </p>
-
-                      <div className="flex flex-col gap-[2px] items-start">
-                        <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                          · 고출력·안정 전원 공급&nbsp;{" "}
-                          <span
-                            className="
+                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                        · 고출력·안정 전원 공급&nbsp;{" "}
+                        <span
+                          className="
     font-[400] text-[#626262]
     block md:inline
     md:whitespace-nowrap  /* prevent wrapping on desktop */
   "
-                          >
-                            - 주행·녹화·통신을 동시에{" "}
-                            <br className="block md:hidden" />
-                            <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
-                              안정적으로 지원
-                            </span>
+                        >
+                          - 주행·녹화·통신을 동시에{" "}
+                          <br className="block md:hidden" />
+                          <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                            안정적으로 지원
                           </span>
-                        </p>
-                      </div>
-
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 간편한 충전·관리&nbsp;
-                        <span className="font-[400] text-[#626262]">
-                          - 충전 부담을 줄이는 실용적 솔루션
                         </span>
                       </p>
                     </div>
-                  </div>
-                </div>
-              </section>
-              <section
-                key={"101screen"}
-                id={"101screen"}
-                className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
-              >
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-                  <div className="relative w-full md:w-[400px] rounded-[20px] md:rounded-[48px] bg-gray-100 overflow-hidden flex justify-center items-end ">
-                    <Image
-                      src="/101screen.svg"
-                      alt="10.1인치 터치스크린"
-                      width={396}
-                      height={278}
-                      className="object-contain opacity-100"
-                    />
-                  </div>
 
-                  <div className="w-full lg:w-3/5 text-start lg:text-left ">
-                    <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] md:mt-8 md:mb-4 mb-2">
-                      10.1인치 터치스크린
-                    </h3>
-
-                    <p className="font-pretendard font-medium text-base text-[16px] md:text-[20px] lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
-                      10.1인치 대형 터치스크린으로
-                      <br className="hidden md:block" />전 세계 4만 개 코스를{" "}
-                      <br className="block md:hidden" />
-                      제공합니다.
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 간편한 충전·관리&nbsp;
+                      <span className="font-[400] text-[#626262]">
+                        - 충전 부담을 줄이는 실용적 솔루션
+                      </span>
                     </p>
                   </div>
                 </div>
-              </section>
-              <section
-                key={"fieldbook-app"}
-                id={"fieldbook-app"}
-                className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
-              >
-                <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
-                  <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
-                    <Image
-                      src="/product_fb_app.svg"
-                      alt="10.1인치 터치스크린"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-
-                  <div className="w-full lg:w-2/3 text-start lg:text-left">
-                    <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
-                      FieldBOOK App
-                    </h2>
-                    <h3 className="font-pretendard font-[500] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
-                      클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석
-                      <br className="block md:hidden" />
-                      까지 한 번에 제공합니다.
-                    </h3>
-
-                    <div className="flex flex-col gap-[2px] items-start">
-                      <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 간편 로그인·대시보드&nbsp;
-                        <span className="font-[400] text-[#626262] whitespace-nowrap">
-                          - 오늘의 라운드와 최근 기록{" "}
-                          <br className="block md:hidden" />
-                          <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
-                            한눈에 확인
-                          </span>
-                        </span>
-                      </p>
-
-                      <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 정밀 스코어보드&nbsp;
-                        <span className="font-[400] text-[#626262]">
-                          - 홀별 스코어 및 전체 통계 제공
-                        </span>
-                      </p>
-
-                      <div className="flex flex-col gap-[2px] items-start">
-                        <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                          · 지도 기반 녹화·재생&nbsp;{" "}
-                          <span className="font-[400] text-[#626262]">
-                            - 코스 맵 녹화 지점 표시 및 즉시
-                            <br className="block md:hidden" />
-                            <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
-                              재생
-                            </span>
-                          </span>
-                        </p>
-                      </div>
-
-                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
-                        · 원탭 공유&nbsp;
-                        <span className="font-[400] text-[#626262]">
-                          - 하이라이트 영상을 링크로 즉시 전송
-                        </span>
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </section>
+            <section
+              key={"101screen"}
+              id={"101screen"}
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
+            >
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+                <div className="relative w-full md:w-[400px] rounded-[20px] md:rounded-[48px] bg-gray-100 overflow-hidden flex justify-center items-end ">
+                  <Image
+                    src="/101screen.svg"
+                    alt="10.1인치 터치스크린"
+                    width={396}
+                    height={278}
+                    className="object-contain opacity-100"
+                  />
                 </div>
-              </section>
-              <section
-                key={"jivon"}
-                id={"jivon"}
-                className="w-full rounded-[20px] max-w-[964px] mx-auto  "
-              >
-                <div className="mb-12 text-start">
-                  <h2 className="font-montserrat font-[800]  text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
-                    제원
-                  </h2>
-                  <h3 className="font-pretendard font-[600] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
-                    상세 사양과 성능 지표를 한눈에 확인하세요.
+
+                <div className="w-full lg:w-3/5 text-start lg:text-left ">
+                  <h3 className="font-montserrat font-[800] text-[20px] md:text-[32px] leading-[140%] tracking-[0%] text-[#222222] md:mt-8 md:mb-4 mb-2">
+                    10.1인치 터치스크린
                   </h3>
 
-                  <p className="font-pretendard font-normal text-[15px] md:text-[20px] lg:text-xl leading-[140%] text-gray-700 mt-3">
-                    강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀{" "}
-                    <br className="block md:hidden" /> 제어로 가파른 경사와
-                    험로에서도 안정적으로 주행합니다. <br className="block" />{" "}
-                    IP5X 방진 설계와 실시간 연결성으로 야외 환경에서도{" "}
-                    <br className="block md:hidden" /> 신뢰할 수 있는 운영을
+                  <p className="font-pretendard font-medium text-base text-[16px] md:text-[20px] lg:text-xl leading-[140%] tracking-[0%] text-[#626262]">
+                    10.1인치 대형 터치스크린으로
+                    <br className="hidden md:block" />전 세계 4만 개 코스를{" "}
+                    <br className="block md:hidden" />
                     제공합니다.
                   </p>
                 </div>
-                <div className="rounded-[20px] pb-[20px] pt-[20px] pr-[26px] pl-[26px]  md:pb-9 md:pt-9 bg-gray-100">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10 md:py-[16px] md:px-[20px]  rounded-[20px]">
-                    {specs.map((spec, index) => (
-                      <div key={index} className="flex flex-col gap-1">
-                        <p className="text-sm text-[#626262] font-medium">
-                          {spec.title}
-                        </p>
-                        <p
-                          className="text-base text-gray-900 font-medium leading-[140%]"
-                          style={{
-                            fontFamily: "Pretendard, sans-serif",
-                            letterSpacing: "0%",
-                          }}
-                        >
-                          {spec.value}
-                        </p>
-                      </div>
-                    ))}
+              </div>
+            </section>
+            <section
+              key={"fieldbook-app"}
+              id={"fieldbook-app"}
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
+            >
+              <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 lg:gap-16">
+                <div className="relative w-full lg:w-1/3 h-[420px] lg:h-[530px] flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/product_fb_app.svg"
+                    alt="10.1인치 터치스크린"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+
+                <div className="w-full lg:w-2/3 text-start lg:text-left">
+                  <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
+                    FieldBOOK App
+                  </h2>
+                  <h3 className="font-pretendard font-[500] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
+                    클럽 거리·카트 자동 연동, 스코어·스윙 영상 재생·분석
+                    <br className="block md:hidden" />
+                    까지 한 번에 제공합니다.
+                  </h3>
+
+                  <div className="flex flex-col gap-[2px] items-start">
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 간편 로그인·대시보드&nbsp;
+                      <span className="font-[400] text-[#626262] whitespace-nowrap">
+                        - 오늘의 라운드와 최근 기록{" "}
+                        <br className="block md:hidden" />
+                        <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                          한눈에 확인
+                        </span>
+                      </span>
+                    </p>
+
+                    <p className="text-[15px] md:text-[20px]  font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 정밀 스코어보드&nbsp;
+                      <span className="font-[400] text-[#626262]">
+                        - 홀별 스코어 및 전체 통계 제공
+                      </span>
+                    </p>
+
+                    <div className="flex flex-col gap-[2px] items-start">
+                      <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                        · 지도 기반 녹화·재생&nbsp;{" "}
+                        <span className="font-[400] text-[#626262]">
+                          - 코스 맵 녹화 지점 표시 및 즉시
+                          <br className="block md:hidden" />
+                          <span className="block md:inline mt-[2px] md:mt-0 ml-[10px] md:ml-0">
+                            재생
+                          </span>
+                        </span>
+                      </p>
+                    </div>
+
+                    <p className="text-[15px] md:text-[20px] font-[700] leading-[140%] text-[#626262] flex flex-wrap">
+                      · 원탭 공유&nbsp;
+                      <span className="font-[400] text-[#626262]">
+                        - 하이라이트 영상을 링크로 즉시 전송
+                      </span>
+                    </p>
                   </div>
                 </div>
-              </section>
-              <section
-                key={"jvyv"}
-                id={"jvyv"}
-                className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
-              >
-                <div className="mb-[28px] md:mb-[60px] text-start">
-                  <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
-                    주요 기능
-                  </h2>
+              </div>
+            </section>
+            <section
+              key={"jivon"}
+              id={"jivon"}
+              className="w-full rounded-[20px] max-w-[964px] mx-auto  "
+            >
+              <div className="mb-12 text-start">
+                <h2 className="font-montserrat font-[800]  text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
+                  제원
+                </h2>
+                <h3 className="font-pretendard font-[600] text-[16px] leading-[140%] tracking-[0%] text-[#222222] mb-6 md:text-[24px] md:leading-[140%]">
+                  상세 사양과 성능 지표를 한눈에 확인하세요.
+                </h3>
 
-                  <p className="font-pretendard font-[500] text-[16px] md:text-[24px] lg:text-xl leading-[140%] text-[#626262] mt-3">
-                    필드북이 제공하는 25가지 스마트 기능.
-                    <br />
-                    플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인{" "}
-                    <br className="block md:hidden" />할 수 있습니다.
-                  </p>
+                <p className="font-pretendard font-normal text-[15px] md:text-[20px] lg:text-xl leading-[140%] text-gray-700 mt-3">
+                  강력한 배터리로 하루 종일 운행하고, 고출력 구동과 정밀{" "}
+                  <br className="block md:hidden" /> 제어로 가파른 경사와
+                  험로에서도 안정적으로 주행합니다. <br className="block" />{" "}
+                  IP5X 방진 설계와 실시간 연결성으로 야외 환경에서도{" "}
+                  <br className="block md:hidden" /> 신뢰할 수 있는 운영을
+                  제공합니다.
+                </p>
+              </div>
+              <div className="rounded-[20px] pb-[20px] pt-[20px] pr-[26px] pl-[26px]  md:pb-9 md:pt-9 bg-gray-100">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10 md:py-[16px] md:px-[20px]  rounded-[20px]">
+                  {specs.map((spec, index) => (
+                    <div key={index} className="flex flex-col gap-1">
+                      <p className="text-sm text-[#626262] font-medium">
+                        {spec.title}
+                      </p>
+                      <p
+                        className="text-base text-gray-900 font-medium leading-[140%]"
+                        style={{
+                          fontFamily: "Pretendard, sans-serif",
+                          letterSpacing: "0%",
+                        }}
+                      >
+                        {spec.value}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-                <ProductFeatureList />
-                <div className="py-4"></div>
-              </section>
-            </main>
-          </div>
-        </div>
+              </div>
+            </section>
+            <section
+              key={"jvyv"}
+              id={"jvyv"}
+              className="w-full  rounded-[20px] max-w-[964px] mx-auto  "
+            >
+              <div className="mb-[28px] md:mb-[60px] text-start">
+                <h2 className="font-montserrat font-extrabold text-[20px] md:text-[32px] leading-[140%] text-gray-900 mb-3">
+                  주요 기능
+                </h2>
 
-        {!showButton &&
-        typeof window !== "undefined" &&
-        window.innerWidth >= 1024 ? null : (
-          <div>
-            {" "}
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="fixed md:hidden z-20 w-[52px] h-[52px] right-[16px] md:bottom-[16px] top-[563px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
-            >
-              <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
-            </button>
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="fixed hidden md:flex z-20 w-[52px] h-[52px] right-[16px] md:bottom-[16px]  lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full  items-center justify-center shadow-lg hover:bg-gray-300 transition"
-            >
-              <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
-            </button>
-          </div>
-        )}
+                <p className="font-pretendard font-[500] text-[16px] md:text-[24px] lg:text-xl leading-[140%] text-[#626262] mt-3">
+                  필드북이 제공하는 25가지 스마트 기능.
+                  <br />
+                  플레이 부터 운영까지, 현장에 필요한 기능을 쉽게 확인{" "}
+                  <br className="block md:hidden" />할 수 있습니다.
+                </p>
+              </div>
+              <ProductFeatureList />
+              <div className="py-4"></div>
+            </section>
+          </main>
+        </div>
       </div>
+
+      {!showButton &&
+      typeof window !== "undefined" &&
+      window.innerWidth >= 1024 ? null : (
+        <div>
+          {" "}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed md:hidden z-20 w-[52px] h-[52px] right-[16px] md:bottom-[16px] top-[563px] lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-300 transition"
+          >
+            <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
+          </button>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed hidden md:flex z-20 w-[52px] h-[52px] right-[16px] md:bottom-[16px]  lg:right-[32px] lg:bottom-[32px] bg-[#EFEFEF] rounded-full  items-center justify-center shadow-lg hover:bg-gray-300 transition"
+          >
+            <Image src="/arrow.svg" alt="arrow" width={24} height={24} />
+          </button>
+        </div>
+      )}
     </PageLayout>
   );
 };
